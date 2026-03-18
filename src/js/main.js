@@ -301,7 +301,7 @@ window.switchLanguage = function(lang) {
 
 // ===== FONCTION POUR TÉLÉCHARGER CV =====
 window.downloadCV = function() {
-    const currentLang = localStorage.getItem('preferred-language') || 'fr';
+    const currentLang = localStorage.getItem('preferred-language') || 'en';
     
     // Créer une modale de choix de langue
     const modal = document.createElement('div');
@@ -338,8 +338,8 @@ window.downloadCV = function() {
 document.addEventListener('DOMContentLoaded', function() {
     console.log('📦 DOM chargé, initialisation...');
     
-    // Charger la langue préférée
-    const savedLang = localStorage.getItem('preferred-language') || 'fr';
+    // Charger la langue préférée - MAINTENANT ANGLAIS PAR DÉFAUT
+    const savedLang = localStorage.getItem('preferred-language') || 'en';
     window.switchLanguage(savedLang);
 
     // Initialisation AOS
@@ -498,7 +498,7 @@ document.addEventListener('DOMContentLoaded', function() {
             
             const submitBtn = contactForm.querySelector('button[type="submit"]');
             const originalText = submitBtn.innerHTML;
-            const currentLang = localStorage.getItem('preferred-language') || 'fr';
+            const currentLang = localStorage.getItem('preferred-language') || 'en';
             
             submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> ' + 
                 (currentLang === 'fr' ? 'Envoi...' : 'Sending...');
