@@ -15,7 +15,7 @@ const translations = {
         },
         hero: {
             available: "Disponible pour des opportunités",
-            description: "Étudiant en dernière année d'IT à l'University of Kigali, spécialisé en Data Science et Développement Full-Stack. Passionné par la fintech et l'IA.",
+            description: "Diplômé en IT de l'University of Kigali, spécialisé en Data Science et Développement Full-Stack. Passionné par la fintech et l'IA.",
             contact: "Me contacter",
             cv: "CV",
             scroll: "Défiler",
@@ -127,7 +127,7 @@ const translations = {
         },
         hero: {
             available: "Available for opportunities",
-            description: "Final-year IT student at the University of Kigali, specializing in Data Science and Full-Stack Development. Passionate about fintech and AI.",
+            description: "IT Graduate from the University of Kigali, specializing in Data Science and Full-Stack Development. Passionate about fintech and AI.",
             contact: "Contact me",
             cv: "Resume",
             scroll: "Scroll",
@@ -308,22 +308,22 @@ window.downloadCV = function() {
     modal.className = 'fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm';
     modal.innerHTML = `
         <div class="bg-dark-200 p-8 rounded-2xl border border-blue-500/20 max-w-md w-full mx-4">
-            <h3 class="text-2xl font-bold text-white mb-6 text-center" data-i18n="cv.title">Choisissez votre langue</h3>
+            <h3 class="text-2xl font-bold text-white mb-6 text-center" data-i18n="cv.title">Choose your language</h3>
             <div class="space-y-4">
                 <a href="Resume/Ange%20KOUMBA%20Resume%282025%29.pdf" 
                    download="Ange_KOUMBA_CV_FR.pdf"
                    class="block w-full py-4 px-6 bg-blue-600 hover:bg-blue-700 rounded-xl text-white font-medium text-center transition-all">
-                    🇫🇷 <span data-i18n="cv.french">CV Français</span>
+                    🇫🇷 <span data-i18n="cv.french">French CV</span>
                 </a>
                 <a href="Resume/Ange%20KOUMBA%20Resume%282025%29_EN.pdf" 
                    download="Ange_KOUMBA_CV_EN.pdf"
                    class="block w-full py-4 px-6 bg-blue-600 hover:bg-blue-700 rounded-xl text-white font-medium text-center transition-all">
-                    🇬🇧 <span data-i18n="cv.english">CV English</span>
+                    🇬🇧 <span data-i18n="cv.english">English CV</span>
                 </a>
             </div>
             <button onclick="this.parentElement.parentElement.remove()" 
                     class="mt-6 w-full py-2 text-gray-400 hover:text-white transition-colors">
-                ✕ <span data-i18n="contact.form.close">Fermer</span>
+                ✕ <span data-i18n="contact.form.close">Close</span>
             </button>
         </div>
     `;
@@ -338,7 +338,18 @@ window.downloadCV = function() {
 document.addEventListener('DOMContentLoaded', function() {
     console.log('📦 DOM chargé, initialisation...');
     
-    // Charger la langue préférée - MAINTENANT ANGLAIS PAR DÉFAUT
+    // FORCER L'ANGLAIS POUR TOUS LES NOUVEAUX VISITEURS
+    // Vérifier si c'est la première visite APRÈS le déploiement
+    const isFirstVisitAfterDeploy = !localStorage.getItem('language-version-v2');
+    
+    if (isFirstVisitAfterDeploy) {
+        // Forcer l'anglais et marquer que la version a été appliquée
+        localStorage.setItem('preferred-language', 'en');
+        localStorage.setItem('language-version-v2', 'true');
+        console.log('🇬🇧 Première visite - anglais forcé');
+    }
+    
+    // Charger la langue préférée (maintenant 'en' par défaut pour les nouveaux)
     const savedLang = localStorage.getItem('preferred-language') || 'en';
     window.switchLanguage(savedLang);
 
@@ -533,7 +544,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Dynamic year
     const yearElement = document.querySelector('.footer .text-gray-500');
     if (yearElement) {
-        yearElement.innerHTML = `© ${new Date().getFullYear()} Ange KOUMBA. <span data-i18n="footer.rights">Tous droits réservés.</span>`;
+        yearElement.innerHTML = `© ${new Date().getFullYear()} Ange KOUMBA. <span data-i18n="footer.rights">All rights reserved.</span>`;
     }
 });
 
