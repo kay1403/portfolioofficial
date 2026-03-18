@@ -272,7 +272,7 @@ window.switchLanguage = function(lang) {
         return;
     }
     
-    // Traduire les textes (data-i18n) - AVEC innerHTML POUR LES SAUTS DE LIGNE
+    // Traduire les textes (data-i18n) - avec innerHTML pour les sauts de ligne
     document.querySelectorAll('[data-i18n]').forEach(element => {
         const path = element.getAttribute('data-i18n');
         const keys = path.split('.');
@@ -288,7 +288,6 @@ window.switchLanguage = function(lang) {
                 }
             }
             if (value !== undefined && value !== null) {
-                // UTILISER innerHTML AU LIEU DE textContent
                 element.innerHTML = value;
             } else {
                 console.warn('⚠️ Traduction manquante:', path);
@@ -373,18 +372,9 @@ window.downloadCV = function() {
 document.addEventListener('DOMContentLoaded', function() {
     console.log('📦 DOM chargé, initialisation...');
     
-    // 1. Déterminer la langue (ANGLAIS PAR DÉFAUT)
+    // Charger la langue préférée (anglais par défaut)
     const savedLang = localStorage.getItem('preferred-language') || 'en';
-    
-    // 2. Lancer la traduction immédiatement
     window.switchLanguage(savedLang);
-    
-    // 3. Forcer le changement de texte pour le bouton actif
-    document.querySelectorAll('.lang-btn').forEach(btn => {
-        if(btn.getAttribute('data-lang') === savedLang) {
-            btn.classList.add('active', 'bg-blue-500/20');
-        }
-    });
 
     // Initialisation AOS
     AOS.init({
