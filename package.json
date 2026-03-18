@@ -1,31 +1,29 @@
 {
   "name": "ange_koumba_portfolio",
   "version": "1.0.0",
-  "description": "",
+  "description": "Portfolio professionnel d'Ange KOUMBA - Data Scientist & Full-Stack Developer",
   "main": "index.js",
   "scripts": {
     "dev": "tailwindcss -i ./src/input.css -o ./dist/css/style.css --watch",
     "build": "tailwindcss -i ./src/input.css -o ./dist/css/style.css --minify",
     "copy:js": "cp src/js/main.js dist/js/",
-    "watch:js": "nodemon --watch src/js --ext js --exec 'npm run copy:js'",
-    "watch": "npm run dev & npm run watch:js",
-    "build:all": "npm run build && npm run copy:js"
+    "build:all": "npm run build && npm run copy:js",
+    "netlify": "npm run build:all"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/kay1403/Ange_Koumba_PortFolio.git"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "portfolio",
+    "tailwindcss",
+    "data-scientist",
+    "full-stack"
+  ],
+  "author": "Ange KOUMBA",
   "license": "ISC",
-  "type": "commonjs",
-  "bugs": {
-    "url": "https://github.com/kay1403/Ange_Koumba_PortFolio/issues"
-  },
-  "homepage": "https://github.com/kay1403/Ange_Koumba_PortFolio#readme",
   "devDependencies": {
     "autoprefixer": "^10.4.27",
-    "nodemon": "^3.1.14",
     "postcss": "^8.5.8",
     "tailwindcss": "^3.4.0"
   }
