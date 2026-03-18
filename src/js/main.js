@@ -4,6 +4,10 @@ emailjs.init("xPli5Qr1N_RE53QJ9");
 // ===== SYSTÈME DE CHANGEMENT DE LANGUE =====
 const translations = {
     fr: {
+        lang: {
+            fr: "FR",
+            en: "EN"
+        },
         nav: {
             home: "Accueil",
             about: "À propos",
@@ -15,7 +19,7 @@ const translations = {
         },
         hero: {
             available: "Disponible pour des opportunités",
-            description: "Diplômé en IT de l'University of Kigali, spécialisé en Data Science et Développement Full-Stack. Passionné par la fintech et l'IA.",
+            description: "Diplômé en IT de l'University of Kigali,<br>spécialisé en <span class='text-blue-400'>Data Science</span> et <span class='text-blue-400'>Développement Full-Stack</span>.<br>Passionné par la fintech et l'IA.",
             contact: "Me contacter",
             cv: "CV",
             scroll: "Défiler",
@@ -56,13 +60,13 @@ const translations = {
         projects: {
             subtitle: "MES RÉALISATIONS",
             title: "Projets phares",
-            desc1: "Système de gestion de bibliothèque avec Django, API REST, et authentification JWT.",
-            desc2: "Backend complet pour plateforme e-commerce avec Django REST Framework.",
-            desc3: "Application de transfert d'argent avec authentification sécurisée.",
-            desc4: "Application météo interactive avec architecture responsive et système de favoris.",
-            desc5: "Système de gestion d'actes de naissance avec génération de QR codes et PDF.",
-            desc6: "Plateforme SaaS avec authentification 2FA, RBAC, et audit trail.",
-            desc7: "Système IoT de surveillance des sols avec analyse de données en temps réel.",
+            desc1: "Système de gestion de bibliothèque avec <span class='text-blue-400'>Django</span>,<br>API REST, et authentification JWT.",
+            desc2: "Backend complet pour plateforme e-commerce<br>avec <span class='text-blue-400'>Django REST Framework</span>.",
+            desc3: "Application de transfert d'argent<br>avec authentification sécurisée.",
+            desc4: "Application météo interactive<br>avec architecture responsive et système de favoris.",
+            desc5: "Système de gestion d'actes de naissance<br>avec génération de QR codes et PDF.",
+            desc6: "Plateforme SaaS avec authentification 2FA,<br>RBAC, et audit trail.",
+            desc7: "Système IoT de surveillance des sols<br>avec analyse de données en temps réel.",
             demo: "Voir la démo",
             source: "Code source",
             comingSoon: "Démo à venir",
@@ -79,7 +83,18 @@ const translations = {
         certs: {
             subtitle: "MES CERTIFICATIONS",
             title: "Parcours ALX Africa",
-            click: "Cliquer pour voir"
+            click: "Cliquer pour voir",
+            backend: "Back-End Web Development",
+            frontend: "Front-End Web Development",
+            dataAnalytics: "Data Analytics",
+            python: "Python Programming",
+            prodev: "ProDev Backend",
+            founder: "Founder Academy",
+            professional: "Professional Foundations",
+            freelancer: "Freelancer Academy",
+            cybersecurity: "Cybersécurité",
+            machineLearning: "Machine Learning",
+            dataEngineering: "Data Engineering"
         },
         contact: {
             subtitle: "RESTONS EN CONTACT",
@@ -100,13 +115,15 @@ const translations = {
             }
         },
         footer: {
-            description: "Créateur de solutions innovantes à l'intersection des données et du développement logiciel.",
+            description: "Créateur de solutions innovantes à l'intersection<br>des données et du développement logiciel.",
             rights: "Tous droits réservés."
         },
         stats: {
             projects: "Projets",
             certifications: "Certifications",
-            experience: "Années d'exp."
+            experience: "Années d'exp.",
+            inProgress: "En cours",
+            comingSoon: "Mai 2026"
         },
         cv: {
             title: "Choisissez votre langue",
@@ -116,6 +133,10 @@ const translations = {
         }
     },
     en: {
+        lang: {
+            fr: "FR",
+            en: "EN"
+        },
         nav: {
             home: "Home",
             about: "About",
@@ -127,7 +148,7 @@ const translations = {
         },
         hero: {
             available: "Available for opportunities",
-            description: "IT Graduate from the University of Kigali, specializing in Data Science and Full-Stack Development. Passionate about fintech and AI.",
+            description: "IT Graduate from the University of Kigali,<br>specializing in <span class='text-blue-400'>Data Science</span> and <span class='text-blue-400'>Full-Stack Development</span>.<br>Passionate about fintech and AI.",
             contact: "Contact me",
             cv: "Resume",
             scroll: "Scroll",
@@ -168,13 +189,13 @@ const translations = {
         projects: {
             subtitle: "MY WORK",
             title: "Featured Projects",
-            desc1: "Library management system with Django, REST API, and JWT authentication.",
-            desc2: "Complete backend for e-commerce platform with Django REST Framework.",
-            desc3: "Money transfer application with secure authentication.",
-            desc4: "Interactive weather app with responsive architecture and favorites system.",
-            desc5: "Birth certificate management system with QR code and PDF generation.",
-            desc6: "SaaS platform with 2FA authentication, RBAC, and audit trail.",
-            desc7: "IoT soil monitoring system with real-time data analysis.",
+            desc1: "Library management system with <span class='text-blue-400'>Django</span>,<br>REST API, and JWT authentication.",
+            desc2: "Complete backend for e-commerce platform<br>with <span class='text-blue-400'>Django REST Framework</span>.",
+            desc3: "Money transfer application<br>with secure authentication.",
+            desc4: "Interactive weather app<br>with responsive architecture and favorites system.",
+            desc5: "Birth certificate management system<br>with QR code and PDF generation.",
+            desc6: "SaaS platform with 2FA authentication,<br>RBAC, and audit trail.",
+            desc7: "IoT soil monitoring system<br>with real-time data analysis.",
             demo: "Live demo",
             source: "Source code",
             comingSoon: "Demo coming soon",
@@ -191,7 +212,18 @@ const translations = {
         certs: {
             subtitle: "MY CERTIFICATIONS",
             title: "ALX Africa Journey",
-            click: "Click to view"
+            click: "Click to view",
+            backend: "Back-End Web Development",
+            frontend: "Front-End Web Development",
+            dataAnalytics: "Data Analytics",
+            python: "Python Programming",
+            prodev: "ProDev Backend",
+            founder: "Founder Academy",
+            professional: "Professional Foundations",
+            freelancer: "Freelancer Academy",
+            cybersecurity: "Cybersecurity",
+            machineLearning: "Machine Learning",
+            dataEngineering: "Data Engineering"
         },
         contact: {
             subtitle: "LET'S CONNECT",
@@ -212,13 +244,15 @@ const translations = {
             }
         },
         footer: {
-            description: "Creator of innovative solutions at the intersection of data and software development.",
+            description: "Creator of innovative solutions at the intersection<br>of data and software development.",
             rights: "All rights reserved."
         },
         stats: {
             projects: "Projects",
             certifications: "Certifications",
-            experience: "Years exp."
+            experience: "Years exp.",
+            inProgress: "In progress",
+            comingSoon: "May 2026"
         },
         cv: {
             title: "Choose your language",
@@ -238,7 +272,7 @@ window.switchLanguage = function(lang) {
         return;
     }
     
-    // Traduire les textes (data-i18n)
+    // Traduire les textes (data-i18n) - AVEC innerHTML POUR LES SAUTS DE LIGNE
     document.querySelectorAll('[data-i18n]').forEach(element => {
         const path = element.getAttribute('data-i18n');
         const keys = path.split('.');
@@ -253,8 +287,9 @@ window.switchLanguage = function(lang) {
                     break;
                 }
             }
-            if (value) {
-                element.textContent = value;
+            if (value !== undefined && value !== null) {
+                // UTILISER innerHTML AU LIEU DE textContent
+                element.innerHTML = value;
             } else {
                 console.warn('⚠️ Traduction manquante:', path);
             }
@@ -338,20 +373,18 @@ window.downloadCV = function() {
 document.addEventListener('DOMContentLoaded', function() {
     console.log('📦 DOM chargé, initialisation...');
     
-    // FORCER L'ANGLAIS POUR TOUS LES NOUVEAUX VISITEURS
-    // Vérifier si c'est la première visite APRÈS le déploiement
-    const isFirstVisitAfterDeploy = !localStorage.getItem('language-version-v2');
-    
-    if (isFirstVisitAfterDeploy) {
-        // Forcer l'anglais et marquer que la version a été appliquée
-        localStorage.setItem('preferred-language', 'en');
-        localStorage.setItem('language-version-v2', 'true');
-        console.log('🇬🇧 Première visite - anglais forcé');
-    }
-    
-    // Charger la langue préférée (maintenant 'en' par défaut pour les nouveaux)
+    // 1. Déterminer la langue (ANGLAIS PAR DÉFAUT)
     const savedLang = localStorage.getItem('preferred-language') || 'en';
+    
+    // 2. Lancer la traduction immédiatement
     window.switchLanguage(savedLang);
+    
+    // 3. Forcer le changement de texte pour le bouton actif
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+        if(btn.getAttribute('data-lang') === savedLang) {
+            btn.classList.add('active', 'bg-blue-500/20');
+        }
+    });
 
     // Initialisation AOS
     AOS.init({
