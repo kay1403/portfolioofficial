@@ -17,4 +17,5 @@ dist/
 
 # OS files
 Thumbs.db
-desktop.ini
+desktop.inidist/
+dist/

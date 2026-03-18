@@ -1,11 +1,11 @@
 [build]
-  command = "npm run build:all"
+  command = "npm run netlify"
   publish = "."
 
 [build.environment]
   NODE_VERSION = "18"
 
-# CORRECTION DU MIME TYPE
+# Headers pour les types MIME corrects
 [[headers]]
   for = "/dist/js/*"
   [headers.values]
