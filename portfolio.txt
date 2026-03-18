@@ -23,13 +23,13 @@
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     
-    <!-- Font Awesome 6 (Gratuit) -->
+    <!-- Font Awesome 6 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <!-- Tailwind CSS (compilé) -->
     <link rel="stylesheet" href="dist/css/style.css">
     
-    <!-- AOS Animation (fallback) -->
+    <!-- AOS Animation -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body class="relative">
@@ -56,25 +56,32 @@
         </svg>
     </div>
 
+    <!-- Language Switcher -->
+    <div class="fixed top-24 right-4 z-50 flex gap-2">
+        <button onclick="switchLanguage('fr')" class="px-3 py-1 rounded-full glass-effect text-sm font-medium text-white hover:bg-blue-500/20 transition-all lang-btn active" data-lang="fr">FR</button>
+        <button onclick="switchLanguage('en')" class="px-3 py-1 rounded-full glass-effect text-sm font-medium text-white hover:bg-blue-500/20 transition-all lang-btn" data-lang="en">EN</button>
+    </div>
+
     <!-- Navigation -->
     <nav class="fixed top-0 w-full z-50 glass-effect border-b border-blue-500/20" id="navbar">
         <div class="container-custom">
             <div class="flex items-center justify-between h-20">
                 <!-- Logo -->
                 <a href="#home" class="text-3xl font-display font-bold relative group">
-                    <span class="text-white">A</span>
-                    <span class="gradient-text">K</span>
+                    <span class="text-white">Ange</span>
+                    <span class="gradient-text"> KOUMBA</span>
                     <span class="absolute -inset-1 bg-blue-500/20 blur-lg group-hover:blur-xl transition-all duration-300"></span>
                 </a>
 
                 <!-- Desktop Menu -->
                 <div class="hidden md:flex items-center space-x-1">
-                    <a href="#home" class="nav-link active">Accueil</a>
-                    <a href="#about" class="nav-link">À propos</a>
-                    <a href="#experience" class="nav-link">Expérience</a>
-                    <a href="#projects" class="nav-link">Projets</a>
-                    <a href="#skills" class="nav-link">Compétences</a>
-                    <a href="#contact" class="nav-link">Contact</a>
+                    <a href="#home" class="nav-link active" data-i18n="nav.home">Accueil</a>
+                    <a href="#about" class="nav-link" data-i18n="nav.about">À propos</a>
+                    <a href="#experience" class="nav-link" data-i18n="nav.experience">Expérience</a>
+                    <a href="#projects" class="nav-link" data-i18n="nav.projects">Projets</a>
+                    <a href="#skills" class="nav-link" data-i18n="nav.skills">Compétences</a>
+                    <a href="#certifications" class="nav-link" data-i18n="nav.certifications">Certifications</a>
+                    <a href="#contact" class="nav-link" data-i18n="nav.contact">Contact</a>
                 </div>
 
                 <!-- Mobile Menu Button -->
@@ -89,12 +96,13 @@
         <!-- Mobile Menu -->
         <div class="md:hidden absolute w-full bg-dark-200/95 backdrop-blur-xl border-b border-blue-500/20 hidden" id="mobile-menu">
             <div class="container-custom py-6 flex flex-col space-y-4">
-                <a href="#home" class="nav-link text-lg">Accueil</a>
-                <a href="#about" class="nav-link text-lg">À propos</a>
-                <a href="#experience" class="nav-link text-lg">Expérience</a>
-                <a href="#projects" class="nav-link text-lg">Projets</a>
-                <a href="#skills" class="nav-link text-lg">Compétences</a>
-                <a href="#contact" class="nav-link text-lg">Contact</a>
+                <a href="#home" class="nav-link text-lg" data-i18n="nav.home">Accueil</a>
+                <a href="#about" class="nav-link text-lg" data-i18n="nav.about">À propos</a>
+                <a href="#experience" class="nav-link text-lg" data-i18n="nav.experience">Expérience</a>
+                <a href="#projects" class="nav-link text-lg" data-i18n="nav.projects">Projets</a>
+                <a href="#skills" class="nav-link text-lg" data-i18n="nav.skills">Compétences</a>
+                <a href="#certifications" class="nav-link text-lg" data-i18n="nav.certifications">Certifications</a>
+                <a href="#contact" class="nav-link text-lg" data-i18n="nav.contact">Contact</a>
             </div>
         </div>
     </nav>
@@ -110,7 +118,7 @@
                             <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
                             <span class="relative inline-flex rounded-full h-3 w-3 bg-blue-500"></span>
                         </span>
-                        <span class="text-sm text-blue-400">Disponible pour des opportunités</span>
+                        <span class="text-sm text-blue-400" data-i18n="hero.available">Disponible pour des opportunités</span>
                     </div>
 
                     <h1 class="text-5xl md:text-7xl font-display font-bold">
@@ -123,7 +131,7 @@
                         <span class="typed-cursor"></span>
                     </div>
 
-                    <p class="text-xl text-gray-400 max-w-2xl leading-relaxed">
+                    <p class="text-xl text-gray-400 max-w-2xl leading-relaxed" data-i18n="hero.description">
                         Étudiant en dernière année d'IT à l'University of Kigali, 
                         spécialisé en <span class="text-blue-400">Data Science</span> et 
                         <span class="text-blue-400">Développement Full-Stack</span>. 
@@ -133,12 +141,12 @@
                     <!-- CTA Buttons -->
                     <div class="flex flex-wrap gap-4">
                         <a href="#contact" class="btn-primary group">
-                            <span class="relative z-10">Me contacter</span>
+                            <span class="relative z-10" data-i18n="hero.contact">Me contacter</span>
                             <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
                         </a>
                         <a href="Resume/Ange%20KOUMBA%20Resume%282025%29.pdf" class="btn-outline group" download>
                             <i class="fas fa-download mr-2"></i>
-                            CV
+                            <span data-i18n="hero.cv">CV</span>
                         </a>
                     </div>
 
@@ -147,7 +155,7 @@
                         <a href="https://www.linkedin.com/in/ange-koumba-64a634343/" target="_blank" class="w-12 h-12 rounded-full glass-effect flex items-center justify-center text-blue-400 hover:text-blue-300 hover:border-blue-500 transition-all duration-300 hover:scale-110 hover:shadow-glow">
                             <i class="fab fa-linkedin-in text-xl"></i>
                         </a>
-                        <a href="https://github.com/angekoumba" target="_blank" class="w-12 h-12 rounded-full glass-effect flex items-center justify-center text-blue-400 hover:text-blue-300 hover:border-blue-500 transition-all duration-300 hover:scale-110 hover:shadow-glow">
+                        <a href="https://github.com/kay1403" target="_blank" class="w-12 h-12 rounded-full glass-effect flex items-center justify-center text-blue-400 hover:text-blue-300 hover:border-blue-500 transition-all duration-300 hover:scale-110 hover:shadow-glow">
                             <i class="fab fa-github text-xl"></i>
                         </a>
                         <a href="https://twitter.com/angekoumba" target="_blank" class="w-12 h-12 rounded-full glass-effect flex items-center justify-center text-blue-400 hover:text-blue-300 hover:border-blue-500 transition-all duration-300 hover:scale-110 hover:shadow-glow">
@@ -192,7 +200,7 @@
         <!-- Scroll Indicator -->
         <div class="absolute bottom-8 left-1/2 -translate-x-1/2">
             <a href="#about" class="flex flex-col items-center space-y-2 group">
-                <span class="text-sm text-gray-400 group-hover:text-blue-400 transition-colors">Scroll</span>
+                <span class="text-sm text-gray-400 group-hover:text-blue-400 transition-colors" data-i18n="hero.scroll">Scroll</span>
                 <div class="w-6 h-10 border-2 border-gray-400 rounded-full flex justify-center group-hover:border-blue-400 transition-colors">
                     <div class="w-1 h-2 bg-gray-400 rounded-full mt-2 animate-bounce group-hover:bg-blue-400"></div>
                 </div>
@@ -204,8 +212,8 @@
     <section id="about" class="py-32 relative">
         <div class="container-custom">
             <div class="text-center mb-16" data-aos="fade-up">
-                <span class="section-subtitle">QUI SUIS-JE ?</span>
-                <h2 class="section-title gradient-text">À propos de moi</h2>
+                <span class="section-subtitle" data-i18n="about.subtitle">QUI SUIS-JE ?</span>
+                <h2 class="section-title gradient-text" data-i18n="about.title">À propos de moi</h2>
                 <div class="w-24 h-1 bg-blue-500 mx-auto mt-4"></div>
             </div>
 
@@ -218,22 +226,22 @@
                             <div class="w-16 h-16 rounded-full bg-blue-500/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                                 <i class="fas fa-graduation-cap text-3xl text-blue-400"></i>
                             </div>
-                            <h3 class="text-2xl font-display font-bold text-white mb-4">Formation</h3>
+                            <h3 class="text-2xl font-display font-bold text-white mb-4" data-i18n="about.education.title">Formation</h3>
                             <div class="space-y-4">
                                 <div>
-                                    <p class="text-blue-400 font-semibold">BSc en Information Technology</p>
-                                    <p class="text-gray-400">University of Kigali (2022-2025)</p>
+                                    <p class="text-blue-400 font-semibold" data-i18n="about.education.degree1">BSc en Information Technology</p>
+                                    <p class="text-gray-400" data-i18n="about.education.school1">University of Kigali (2022-2025)</p>
                                 </div>
                                 <div>
-                                    <p class="text-blue-400 font-semibold">Technologie Industrielle</p>
-                                    <p class="text-gray-400">Lycée Technique Jean Fidèle Otando</p>
+                                    <p class="text-blue-400 font-semibold" data-i18n="about.education.degree2">Technologie Industrielle</p>
+                                    <p class="text-gray-400" data-i18n="about.education.school2">Lycée Technique Jean Fidèle Otando</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Certifications Card -->
+                <!-- ALX Achievements Card -->
                 <div class="stat-card group" data-aos="fade-up" data-aos-delay="200">
                     <div class="relative">
                         <div class="absolute -inset-1 bg-gradient-to-r from-blue-600 to-blue-800 rounded-2xl blur-xl opacity-0 group-hover:opacity-50 transition-opacity duration-500"></div>
@@ -241,25 +249,49 @@
                             <div class="w-16 h-16 rounded-full bg-blue-500/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                                 <i class="fas fa-certificate text-3xl text-blue-400"></i>
                             </div>
-                            <h3 class="text-2xl font-display font-bold text-white mb-4">Certifications</h3>
-                            <ul class="space-y-3">
-                                <li class="flex items-center gap-2">
+                            <h3 class="text-2xl font-display font-bold text-white mb-4">ALX Certifications</h3>
+                            <div class="space-y-2">
+                                <a href="https://github.com/kay1403/Ange_Koumba_PortFolio/files/certificates/backend.pdf" target="_blank" class="flex items-center gap-2 text-gray-300 hover:text-blue-400 transition-colors group/link">
                                     <i class="fas fa-check-circle text-blue-400"></i>
-                                    <span class="text-gray-300">Pro Backend Developer - ALX</span>
-                                </li>
-                                <li class="flex items-center gap-2">
+                                    <span>Back-End Web Development</span>
+                                    <i class="fas fa-external-link-alt text-xs opacity-0 group-hover/link:opacity-100 transition-opacity"></i>
+                                </a>
+                                <a href="https://github.com/kay1403/Ange_Koumba_PortFolio/files/certificates/frontend.pdf" target="_blank" class="flex items-center gap-2 text-gray-300 hover:text-blue-400 transition-colors group/link">
                                     <i class="fas fa-check-circle text-blue-400"></i>
-                                    <span class="text-gray-300">Data Analytics - ALX</span>
-                                </li>
-                                <li class="flex items-center gap-2">
+                                    <span>Front-End Web Development</span>
+                                    <i class="fas fa-external-link-alt text-xs opacity-0 group-hover/link:opacity-100 transition-opacity"></i>
+                                </a>
+                                <a href="https://github.com/kay1403/Ange_Koumba_PortFolio/files/certificates/data-analytics.pdf" target="_blank" class="flex items-center gap-2 text-gray-300 hover:text-blue-400 transition-colors group/link">
                                     <i class="fas fa-check-circle text-blue-400"></i>
-                                    <span class="text-gray-300">Frontend Development - ALX</span>
-                                </li>
-                                <li class="flex items-center gap-2">
+                                    <span>Data Analytics</span>
+                                    <i class="fas fa-external-link-alt text-xs opacity-0 group-hover/link:opacity-100 transition-opacity"></i>
+                                </a>
+                                <a href="https://github.com/kay1403/Ange_Koumba_PortFolio/files/certificates/python.pdf" target="_blank" class="flex items-center gap-2 text-gray-300 hover:text-blue-400 transition-colors group/link">
                                     <i class="fas fa-check-circle text-blue-400"></i>
-                                    <span class="text-gray-300">Applied AI Lab - WorldQuant</span>
-                                </li>
-                            </ul>
+                                    <span>Python Programming</span>
+                                    <i class="fas fa-external-link-alt text-xs opacity-0 group-hover/link:opacity-100 transition-opacity"></i>
+                                </a>
+                                <a href="https://github.com/kay1403/Ange_Koumba_PortFolio/files/certificates/prodev.pdf" target="_blank" class="flex items-center gap-2 text-gray-300 hover:text-blue-400 transition-colors group/link">
+                                    <i class="fas fa-check-circle text-blue-400"></i>
+                                    <span>ProDev Backend</span>
+                                    <i class="fas fa-external-link-alt text-xs opacity-0 group-hover/link:opacity-100 transition-opacity"></i>
+                                </a>
+                                <a href="https://github.com/kay1403/Ange_Koumba_PortFolio/files/certificates/founder.pdf" target="_blank" class="flex items-center gap-2 text-gray-300 hover:text-blue-400 transition-colors group/link">
+                                    <i class="fas fa-check-circle text-blue-400"></i>
+                                    <span>Founder Academy</span>
+                                    <i class="fas fa-external-link-alt text-xs opacity-0 group-hover/link:opacity-100 transition-opacity"></i>
+                                </a>
+                                <a href="https://github.com/kay1403/Ange_Koumba_PortFolio/files/certificates/professional.pdf" target="_blank" class="flex items-center gap-2 text-gray-300 hover:text-blue-400 transition-colors group/link">
+                                    <i class="fas fa-check-circle text-blue-400"></i>
+                                    <span>Professional Foundations</span>
+                                    <i class="fas fa-external-link-alt text-xs opacity-0 group-hover/link:opacity-100 transition-opacity"></i>
+                                </a>
+                                <a href="https://github.com/kay1403/Ange_Koumba_PortFolio/files/certificates/freelancer.pdf" target="_blank" class="flex items-center gap-2 text-gray-300 hover:text-blue-400 transition-colors group/link">
+                                    <i class="fas fa-check-circle text-blue-400"></i>
+                                    <span>Freelancer Academy</span>
+                                    <i class="fas fa-external-link-alt text-xs opacity-0 group-hover/link:opacity-100 transition-opacity"></i>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -272,19 +304,23 @@
                             <div class="w-16 h-16 rounded-full bg-blue-500/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                                 <i class="fas fa-trophy text-3xl text-blue-400"></i>
                             </div>
-                            <h3 class="text-2xl font-display font-bold text-white mb-4">Distinctions</h3>
+                            <h3 class="text-2xl font-display font-bold text-white mb-4" data-i18n="about.achievements.title">Distinctions</h3>
                             <ul class="space-y-3">
                                 <li class="flex items-center gap-2">
                                     <i class="fas fa-medal text-yellow-400"></i>
-                                    <span class="text-gray-300">Champion Interdépartemental 2025</span>
+                                    <span class="text-gray-300" data-i18n="about.achievements.item1">Champion Interdépartemental 2025</span>
                                 </li>
                                 <li class="flex items-center gap-2">
                                     <i class="fas fa-medal text-yellow-400"></i>
-                                    <span class="text-gray-300">WorldQuant AI Lab Selection</span>
+                                    <span class="text-gray-300" data-i18n="about.achievements.item2">WorldQuant AI Lab Selection</span>
                                 </li>
                                 <li class="flex items-center gap-2">
                                     <i class="fas fa-medal text-yellow-400"></i>
-                                    <span class="text-gray-300">The Gym Rwanda - Intensive Program</span>
+                                    <span class="text-gray-300" data-i18n="about.achievements.item3">The Gym Rwanda - Intensive Program</span>
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <span class="text-gray-300">3,370 Legacy Points - ALX</span>
                                 </li>
                             </ul>
                         </div>
@@ -296,30 +332,197 @@
             <div class="grid grid-cols-2 md:grid-cols-4 gap-6" data-aos="fade-up" data-aos-delay="400">
                 <div class="stat-card text-center">
                     <div class="text-4xl font-display font-bold text-blue-400 mb-2 counter" data-target="15">0</div>
-                    <div class="text-gray-400">Projets</div>
+                    <div class="text-gray-400" data-i18n="stats.projects">Projets</div>
                 </div>
                 <div class="stat-card text-center">
-                    <div class="text-4xl font-display font-bold text-blue-400 mb-2 counter" data-target="8">0</div>
-                    <div class="text-gray-400">Certifications</div>
+                    <div class="text-4xl font-display font-bold text-blue-400 mb-2 counter" data-target="12">0</div>
+                    <div class="text-gray-400" data-i18n="stats.certifications">Certifications</div>
                 </div>
                 <div class="stat-card text-center">
                     <div class="text-4xl font-display font-bold text-blue-400 mb-2 counter" data-target="3">0</div>
-                    <div class="text-gray-400">Années d'exp.</div>
+                    <div class="text-gray-400" data-i18n="stats.experience">Années d'exp.</div>
                 </div>
                 <div class="stat-card text-center">
-                    <div class="text-4xl font-display font-bold text-blue-400 mb-2 counter" data-target="10">0</div>
-                    <div class="text-gray-400">Clients</div>
+                    <div class="text-4xl font-display font-bold text-blue-400 mb-2 counter" data-target="3370">0</div>
+                    <div class="text-gray-400">Legacy Points</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="py-32 relative bg-dark-400/50">
+        <div class="container-custom">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <span class="section-subtitle" data-i18n="certs.subtitle">MES CERTIFICATIONS</span>
+                <h2 class="section-title gradient-text" data-i18n="certs.title">Parcours ALX Africa</h2>
+                <div class="w-24 h-1 bg-blue-500 mx-auto mt-4"></div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <!-- Backend -->
+                <a href="https://github.com/kay1403/Ange_Koumba_PortFolio/files/certificates/backend.pdf" target="_blank" class="stat-card hover:scale-105 transition-all duration-300 group" data-aos="fade-up">
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center group-hover:scale-110 transition-transform">
+                            <i class="fas fa-server text-2xl text-blue-400"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-white">Back-End Web Development</h3>
+                            <p class="text-sm text-blue-400">Cliquer pour voir</p>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Frontend -->
+                <a href="https://github.com/kay1403/Ange_Koumba_PortFolio/files/certificates/frontend.pdf" target="_blank" class="stat-card hover:scale-105 transition-all duration-300 group" data-aos="fade-up" data-aos-delay="50">
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center group-hover:scale-110 transition-transform">
+                            <i class="fas fa-code text-2xl text-blue-400"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-white">Front-End Web Development</h3>
+                            <p class="text-sm text-blue-400">Cliquer pour voir</p>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Data Analytics -->
+                <a href="https://github.com/kay1403/Ange_Koumba_PortFolio/files/certificates/data-analytics.pdf" target="_blank" class="stat-card hover:scale-105 transition-all duration-300 group" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center group-hover:scale-110 transition-transform">
+                            <i class="fas fa-chart-bar text-2xl text-blue-400"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-white">Data Analytics</h3>
+                            <p class="text-sm text-blue-400">Cliquer pour voir</p>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Python -->
+                <a href="https://github.com/kay1403/Ange_Koumba_PortFolio/files/certificates/python.pdf" target="_blank" class="stat-card hover:scale-105 transition-all duration-300 group" data-aos="fade-up" data-aos-delay="150">
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center group-hover:scale-110 transition-transform">
+                            <i class="fab fa-python text-2xl text-blue-400"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-white">Python Programming</h3>
+                            <p class="text-sm text-blue-400">Cliquer pour voir</p>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- ProDev Backend -->
+                <a href="https://github.com/kay1403/Ange_Koumba_PortFolio/files/certificates/prodev.pdf" target="_blank" class="stat-card hover:scale-105 transition-all duration-300 group" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center group-hover:scale-110 transition-transform">
+                            <i class="fas fa-laptop-code text-2xl text-blue-400"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-white">ProDev Backend</h3>
+                            <p class="text-sm text-blue-400">Cliquer pour voir</p>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Founder Academy -->
+                <a href="https://github.com/kay1403/Ange_Koumba_PortFolio/files/certificates/founder.pdf" target="_blank" class="stat-card hover:scale-105 transition-all duration-300 group" data-aos="fade-up" data-aos-delay="250">
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center group-hover:scale-110 transition-transform">
+                            <i class="fas fa-rocket text-2xl text-blue-400"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-white">Founder Academy</h3>
+                            <p class="text-sm text-blue-400">Cliquer pour voir</p>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Professional Foundations -->
+                <a href="https://github.com/kay1403/Ange_Koumba_PortFolio/files/certificates/professional.pdf" target="_blank" class="stat-card hover:scale-105 transition-all duration-300 group" data-aos="fade-up" data-aos-delay="300">
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center group-hover:scale-110 transition-transform">
+                            <i class="fas fa-briefcase text-2xl text-blue-400"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-white">Professional Foundations</h3>
+                            <p class="text-sm text-blue-400">Cliquer pour voir</p>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Freelancer Academy -->
+                <a href="https://github.com/kay1403/Ange_Koumba_PortFolio/files/certificates/freelancer.pdf" target="_blank" class="stat-card hover:scale-105 transition-all duration-300 group" data-aos="fade-up" data-aos-delay="350">
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center group-hover:scale-110 transition-transform">
+                            <i class="fas fa-user-tie text-2xl text-blue-400"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-white">Freelancer Academy</h3>
+                            <p class="text-sm text-blue-400">Cliquer pour voir</p>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Cybersecurity (en cours) -->
+                <div class="stat-card opacity-75" data-aos="fade-up" data-aos-delay="400">
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center">
+                            <i class="fas fa-shield-alt text-2xl text-blue-400"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-white">Cybersecurity</h3>
+                            <p class="text-sm text-yellow-400">En cours</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Machine Learning (en cours) -->
+                <div class="stat-card opacity-75" data-aos="fade-up" data-aos-delay="450">
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center">
+                            <i class="fas fa-brain text-2xl text-blue-400"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-white">Machine Learning</h3>
+                            <p class="text-sm text-yellow-400">En cours</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Data Engineering (à venir) -->
+                <div class="stat-card opacity-50" data-aos="fade-up" data-aos-delay="500">
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center">
+                            <i class="fas fa-database text-2xl text-blue-400"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-white">Data Engineering</h3>
+                            <p class="text-sm text-gray-400">Mai 2026</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Legacy Points Badge -->
+            <div class="mt-12 flex justify-center" data-aos="fade-up">
+                <div class="inline-flex items-center gap-4 px-6 py-3 glass-effect rounded-full hover:shadow-glow transition-all duration-300">
+                    <i class="fas fa-star text-yellow-400 text-2xl"></i>
+                    <div>
+                        <span class="block text-2xl font-bold text-white">3,370</span>
+                        <span class="text-xs text-gray-400">Legacy Points ALX</span>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Experience Section -->
-    <section id="experience" class="py-32 relative bg-dark-400/50">
+    <section id="experience" class="py-32 relative">
         <div class="container-custom">
             <div class="text-center mb-16" data-aos="fade-up">
-                <span class="section-subtitle">MON PARCOURS</span>
-                <h2 class="section-title gradient-text">Expérience professionnelle</h2>
+                <span class="section-subtitle" data-i18n="experience.subtitle">MON PARCOURS</span>
+                <h2 class="section-title gradient-text" data-i18n="experience.title">Expérience professionnelle</h2>
                 <div class="w-24 h-1 bg-blue-500 mx-auto mt-4"></div>
             </div>
 
@@ -333,20 +536,20 @@
                         </span>
                     </div>
                     <div class="glass-effect p-6 rounded-2xl hover:shadow-glow-lg transition-all duration-500">
-                        <h3 class="text-2xl font-display font-bold text-white mb-2">Développeur Front-End</h3>
+                        <h3 class="text-2xl font-display font-bold text-white mb-2" data-i18n="experience.job1.title">Développeur Front-End</h3>
                         <h4 class="text-blue-400 mb-4">Saltel · Kigali, Rwanda</h4>
                         <ul class="space-y-2 text-gray-300 mb-4">
                             <li class="flex items-start gap-2">
                                 <i class="fas fa-chevron-right text-blue-400 mt-1"></i>
-                                <span>Développement d'interfaces responsives avec React, TypeScript et Tailwind CSS</span>
+                                <span data-i18n="experience.job1.desc1">Développement d'interfaces responsives avec React, TypeScript et Tailwind CSS</span>
                             </li>
                             <li class="flex items-start gap-2">
                                 <i class="fas fa-chevron-right text-blue-400 mt-1"></i>
-                                <span>Amélioration de l'expérience utilisateur à travers des designs modernes</span>
+                                <span data-i18n="experience.job1.desc2">Amélioration de l'expérience utilisateur à travers des designs modernes</span>
                             </li>
                             <li class="flex items-start gap-2">
                                 <i class="fas fa-chevron-right text-blue-400 mt-1"></i>
-                                <span>Collaboration avec l'équipe technique sur des problèmes complexes</span>
+                                <span data-i18n="experience.job1.desc3">Collaboration avec l'équipe technique sur des problèmes complexes</span>
                             </li>
                         </ul>
                         <div class="flex flex-wrap gap-2">
@@ -366,16 +569,16 @@
                         </span>
                     </div>
                     <div class="glass-effect p-6 rounded-2xl hover:shadow-glow-lg transition-all duration-500">
-                        <h3 class="text-2xl font-display font-bold text-white mb-2">Représentant de classe</h3>
+                        <h3 class="text-2xl font-display font-bold text-white mb-2" data-i18n="experience.job2.title">Représentant de classe</h3>
                         <h4 class="text-blue-400 mb-4">University of Kigali</h4>
                         <ul class="space-y-2 text-gray-300 mb-4">
                             <li class="flex items-start gap-2">
                                 <i class="fas fa-chevron-right text-blue-400 mt-1"></i>
-                                <span>Liaison entre les étudiants et le corps professoral pour 50+ étudiants</span>
+                                <span data-i18n="experience.job2.desc1">Liaison entre les étudiants et le corps professoral pour 50+ étudiants</span>
                             </li>
                             <li class="flex items-start gap-2">
                                 <i class="fas fa-chevron-right text-blue-400 mt-1"></i>
-                                <span>Facilitation de la communication et résolution de problèmes académiques</span>
+                                <span data-i18n="experience.job2.desc2">Facilitation de la communication et résolution de problèmes académiques</span>
                             </li>
                         </ul>
                         <div class="flex flex-wrap gap-2">
@@ -390,164 +593,268 @@
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="py-32 relative">
+    <section id="projects" class="py-32 relative bg-dark-400/50">
         <div class="container-custom">
             <div class="text-center mb-16" data-aos="fade-up">
-                <span class="section-subtitle">MES RÉALISATIONS</span>
-                <h2 class="section-title gradient-text">Projets phares</h2>
+                <span class="section-subtitle" data-i18n="projects.subtitle">MES RÉALISATIONS</span>
+                <h2 class="section-title gradient-text" data-i18n="projects.title">Projets phares</h2>
                 <div class="w-24 h-1 bg-blue-500 mx-auto mt-4"></div>
             </div>
 
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Project 1 -->
+                <!-- Project 1 - Library Management System -->
                 <div class="project-card group" data-aos="zoom-in" data-aos-duration="800">
                     <div class="relative overflow-hidden h-64">
-                        <img src="images/portfolio1.jpg" alt="E-commerce Platform" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <img src="images/portfolio1.jpg" alt="Library Management System" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                         <div class="absolute inset-0 bg-gradient-to-t from-dark-500 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                         <div class="absolute inset-0 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-4 group-hover:translate-y-0">
-                            <a href="#" class="w-12 h-12 rounded-full bg-blue-600 flex items-center justify-center hover:bg-blue-700 transition-colors">
+                            <a href="https://github.com/kay1403/library-management-system-api" target="_blank" class="w-12 h-12 rounded-full bg-blue-600 flex items-center justify-center hover:bg-blue-700 transition-colors" title="Code source">
                                 <i class="fab fa-github text-white"></i>
                             </a>
-                            <a href="#" class="w-12 h-12 rounded-full bg-blue-600 flex items-center justify-center hover:bg-blue-700 transition-colors">
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-display font-bold text-white mb-2">Library Management System</h3>
+                        <p class="text-gray-400 mb-4" data-i18n="projects.desc1">Système de gestion de bibliothèque avec Django, API REST, et authentification JWT.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="tech-badge">Django</span>
+                            <span class="tech-badge">DRF</span>
+                            <span class="tech-badge">PostgreSQL</span>
+                            <span class="tech-badge">JWT</span>
+                        </div>
+                        <a href="#" class="text-sm text-blue-400 hover:text-blue-300 transition-colors inline-flex items-center gap-1">
+                            <i class="fas fa-external-link-alt"></i>
+                            <span>Lien de démo (à venir)</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 2 - E-commerce Backend -->
+                <div class="project-card group" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="50">
+                    <div class="relative overflow-hidden h-64">
+                        <img src="images/portfolio2.jpg" alt="E-commerce Backend" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-dark-500 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div class="absolute inset-0 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-4 group-hover:translate-y-0">
+                            <a href="https://github.com/kay1403/ecommerce-backend-nexus" target="_blank" class="w-12 h-12 rounded-full bg-blue-600 flex items-center justify-center hover:bg-blue-700 transition-colors" title="Code source">
+                                <i class="fab fa-github text-white"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-display font-bold text-white mb-2">E-commerce Backend</h3>
+                        <p class="text-gray-400 mb-4" data-i18n="projects.desc2">Backend complet pour plateforme e-commerce avec Django REST Framework.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="tech-badge">Django</span>
+                            <span class="tech-badge">DRF</span>
+                            <span class="tech-badge">MySQL</span>
+                            <span class="tech-badge">JWT</span>
+                        </div>
+                        <a href="#" class="text-sm text-blue-400 hover:text-blue-300 transition-colors inline-flex items-center gap-1">
+                            <i class="fas fa-external-link-alt"></i>
+                            <span>Lien de démo (à venir)</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 3 - MoneyTransfer -->
+                <div class="project-card group" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="100">
+                    <div class="relative overflow-hidden h-64">
+                        <img src="images/portfolio3.jpg" alt="MoneyTransfer" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-dark-500 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div class="absolute inset-0 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-4 group-hover:translate-y-0">
+                            <a href="https://github.com/kay1403/MoneyTransfer" target="_blank" class="w-12 h-12 rounded-full bg-blue-600 flex items-center justify-center hover:bg-blue-700 transition-colors" title="Code source">
+                                <i class="fab fa-github text-white"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-display font-bold text-white mb-2">MoneyTransfer</h3>
+                        <p class="text-gray-400 mb-4" data-i18n="projects.desc3">Application de transfert d'argent avec authentification sécurisée.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="tech-badge">Django</span>
+                            <span class="tech-badge">JWT</span>
+                            <span class="tech-badge">PostgreSQL</span>
+                            <span class="tech-badge">API</span>
+                        </div>
+                        <a href="#" class="text-sm text-blue-400 hover:text-blue-300 transition-colors inline-flex items-center gap-1">
+                            <i class="fas fa-external-link-alt"></i>
+                            <span>Lien de démo (à venir)</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 4 - Weather Dashboard -->
+                <div class="project-card group" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="150">
+                    <div class="relative overflow-hidden h-64">
+                        <img src="images/portfolio4.jpg" alt="Weather Dashboard" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-dark-500 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div class="absolute inset-0 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-4 group-hover:translate-y-0">
+                            <a href="https://github.com/kay1403/weather-dashboard" target="_blank" class="w-12 h-12 rounded-full bg-blue-600 flex items-center justify-center hover:bg-blue-700 transition-colors" title="Code source">
+                                <i class="fab fa-github text-white"></i>
+                            </a>
+                            <a href="https://weatherflowak.netlify.app" target="_blank" class="w-12 h-12 rounded-full bg-blue-600 flex items-center justify-center hover:bg-blue-700 transition-colors" title="Voir le site">
                                 <i class="fas fa-external-link-alt text-white"></i>
                             </a>
                         </div>
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-display font-bold text-white mb-2">E-commerce Platform</h3>
-                        <p class="text-gray-400 mb-4">Plateforme e-commerce complète avec React, Django REST Framework, authentification JWT et intégration de paiement.</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="tech-badge">React</span>
-                            <span class="tech-badge">Django</span>
-                            <span class="tech-badge">MySQL</span>
-                            <span class="tech-badge">JWT</span>
+                        <h3 class="text-xl font-display font-bold text-white mb-2">Weather Dashboard</h3>
+                        <p class="text-gray-400 mb-4" data-i18n="projects.desc4">Application météo interactive avec architecture responsive et système de favoris.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="tech-badge">JavaScript</span>
+                            <span class="tech-badge">HTML5</span>
+                            <span class="tech-badge">CSS3</span>
+                            <span class="tech-badge">API</span>
+                        </div>
+                        <div class="flex gap-4">
+                            <a href="https://weatherflowak.netlify.app" target="_blank" class="text-sm text-blue-400 hover:text-blue-300 transition-colors inline-flex items-center gap-1">
+                                <i class="fas fa-external-link-alt"></i>
+                                <span>weatherflowak.netlify.app</span>
+                            </a>
                         </div>
                     </div>
                 </div>
 
-                <!-- Project 2 -->
-                <div class="project-card group" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="100">
+                <!-- Project 5 - BornSafe -->
+                <div class="project-card group" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="200">
                     <div class="relative overflow-hidden h-64">
-                        <img src="images/portfolio2.jpg" alt="SAWAI" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <img src="images/portfolio5.jpg" alt="BornSafe" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                         <div class="absolute inset-0 bg-gradient-to-t from-dark-500 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                         <div class="absolute inset-0 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-4 group-hover:translate-y-0">
-                            <a href="#" class="w-12 h-12 rounded-full bg-blue-600 flex items-center justify-center hover:bg-blue-700 transition-colors">
+                            <a href="https://github.com/kay1403/BornSafe" target="_blank" class="w-12 h-12 rounded-full bg-blue-600 flex items-center justify-center hover:bg-blue-700 transition-colors" title="Code source">
                                 <i class="fab fa-github text-white"></i>
                             </a>
-                            <a href="#" class="w-12 h-12 rounded-full bg-blue-600 flex items-center justify-center hover:bg-blue-700 transition-colors">
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-display font-bold text-white mb-2">BornSafe</h3>
+                        <p class="text-gray-400 mb-4" data-i18n="projects.desc5">Système de gestion d'actes de naissance avec génération de QR codes et PDF.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="tech-badge">Django</span>
+                            <span class="tech-badge">PostgreSQL</span>
+                            <span class="tech-badge">QR Code</span>
+                            <span class="tech-badge">PDF</span>
+                        </div>
+                        <a href="#" class="text-sm text-blue-400 hover:text-blue-300 transition-colors inline-flex items-center gap-1">
+                            <i class="fas fa-external-link-alt"></i>
+                            <span>Lien de démo (à venir)</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 6 - ENTRESAAS -->
+                <div class="project-card group" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="250">
+                    <div class="relative overflow-hidden h-64">
+                        <img src="images/portfolio6.jpg" alt="ENTRESAAS" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-dark-500 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div class="absolute inset-0 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-4 group-hover:translate-y-0">
+                            <a href="https://github.com/kay1403/ENTRESAAS" target="_blank" class="w-12 h-12 rounded-full bg-blue-600 flex items-center justify-center hover:bg-blue-700 transition-colors" title="Code source">
+                                <i class="fab fa-github text-white"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-display font-bold text-white mb-2">ENTRESAAS</h3>
+                        <p class="text-gray-400 mb-4" data-i18n="projects.desc6">Plateforme SaaS avec authentification 2FA, RBAC, et audit trail.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="tech-badge">NestJS</span>
+                            <span class="tech-badge">React</span>
+                            <span class="tech-badge">PostgreSQL</span>
+                            <span class="tech-badge">JWT</span>
+                        </div>
+                        <a href="#" class="text-sm text-blue-400 hover:text-blue-300 transition-colors inline-flex items-center gap-1">
+                            <i class="fas fa-external-link-alt"></i>
+                            <span>Lien de démo (à venir)</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 7 - SAWAI -->
+                <div class="project-card group" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="300">
+                    <div class="relative overflow-hidden h-64">
+                        <img src="images/eagle_s.jpeg" alt="SAWAI" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-dark-500 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div class="absolute inset-0 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-4 group-hover:translate-y-0">
+                            <a href="https://github.com/kay1403/SAWAI" target="_blank" class="w-12 h-12 rounded-full bg-blue-600 flex items-center justify-center hover:bg-blue-700 transition-colors" title="Code source">
+                                <i class="fab fa-github text-white"></i>
+                            </a>
+                            <a href="https://sawailmd.netlify.app" target="_blank" class="w-12 h-12 rounded-full bg-blue-600 flex items-center justify-center hover:bg-blue-700 transition-colors" title="Voir le site">
                                 <i class="fas fa-external-link-alt text-white"></i>
                             </a>
                         </div>
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-display font-bold text-white mb-2">SAWAI - Agriculture Intelligente</h3>
-                        <p class="text-gray-400 mb-4">Système IoT de surveillance des sols avec analyse de données en temps réel utilisant Python et Arduino.</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="tech-badge">IoT</span>
+                        <h3 class="text-xl font-display font-bold text-white mb-2">SAWAI</h3>
+                        <p class="text-gray-400 mb-4" data-i18n="projects.desc7">Système IoT de surveillance des sols avec analyse de données en temps réel.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
                             <span class="tech-badge">Python</span>
+                            <span class="tech-badge">IoT</span>
                             <span class="tech-badge">Arduino</span>
                             <span class="tech-badge">Data Viz</span>
                         </div>
+                        <div class="flex gap-4">
+                            <a href="https://sawailmd.netlify.app" target="_blank" class="text-sm text-blue-400 hover:text-blue-300 transition-colors inline-flex items-center gap-1">
+                                <i class="fas fa-external-link-alt"></i>
+                                <span>sawailmd.netlify.app</span>
+                            </a>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Project 3 -->
-                <div class="project-card group" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="200">
+                <!-- Project 8 - RSSB Clone -->
+                <div class="project-card group" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="350">
                     <div class="relative overflow-hidden h-64">
-                        <img src="images/portfolio3.jpg" alt="Airbnb Clone" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <img src="images/IMG-20230529-WA0004.jpg" alt="RSSB Clone" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                         <div class="absolute inset-0 bg-gradient-to-t from-dark-500 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                         <div class="absolute inset-0 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-4 group-hover:translate-y-0">
-                            <a href="#" class="w-12 h-12 rounded-full bg-blue-600 flex items-center justify-center hover:bg-blue-700 transition-colors">
-                                <i class="fab fa-github text-white"></i>
-                            </a>
-                            <a href="#" class="w-12 h-12 rounded-full bg-blue-600 flex items-center justify-center hover:bg-blue-700 transition-colors">
+                            <a href="https://tailwindcloninggate.netlify.app" target="_blank" class="w-12 h-12 rounded-full bg-blue-600 flex items-center justify-center hover:bg-blue-700 transition-colors" title="Voir le site">
                                 <i class="fas fa-external-link-alt text-white"></i>
                             </a>
                         </div>
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-display font-bold text-white mb-2">Airbnb Clone (Back-End)</h3>
-                        <p class="text-gray-400 mb-4">Backend complet avec Django, authentification, système de réservation et dashboard admin.</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="tech-badge">Django</span>
-                            <span class="tech-badge">DRF</span>
-                            <span class="tech-badge">MySQL</span>
-                            <span class="tech-badge">REST API</span>
+                        <h3 class="text-xl font-display font-bold text-white mb-2">RSSB Clone</h3>
+                        <p class="text-gray-400 mb-4">Clone du site du Rwanda Social Security Board - Optimistic and forward-looking agent of central government, working to achieve the financial security and health of all Rwandans.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="tech-badge">HTML5</span>
+                            <span class="tech-badge">CSS3</span>
+                            <span class="tech-badge">Tailwind</span>
+                            <span class="tech-badge">Responsive</span>
+                        </div>
+                        <div class="flex gap-4">
+                            <a href="https://tailwindcloninggate.netlify.app" target="_blank" class="text-sm text-blue-400 hover:text-blue-300 transition-colors inline-flex items-center gap-1">
+                                <i class="fas fa-external-link-alt"></i>
+                                <span>tailwindcloninggate.netlify.app</span>
+                            </a>
                         </div>
                     </div>
                 </div>
 
-                <!-- Project 4 -->
-                <div class="project-card group" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="300">
-                    <div class="relative overflow-hidden h-64">
-                        <img src="images/portfolio4.jpg" alt="Credit Scoring" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                        <div class="absolute inset-0 bg-gradient-to-t from-dark-500 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                        <div class="absolute inset-0 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-4 group-hover:translate-y-0">
-                            <a href="#" class="w-12 h-12 rounded-full bg-blue-600 flex items-center justify-center hover:bg-blue-700 transition-colors">
-                                <i class="fab fa-github text-white"></i>
-                            </a>
-                            <a href="#" class="w-12 h-12 rounded-full bg-blue-600 flex items-center justify-center hover:bg-blue-700 transition-colors">
-                                <i class="fas fa-external-link-alt text-white"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-display font-bold text-white mb-2">Modèle de Scoring Crédit</h3>
-                        <p class="text-gray-400 mb-4">Modèle ML pour prédire la solvabilité des clients avec Python, Pandas et Scikit-learn.</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="tech-badge">Python</span>
-                            <span class="tech-badge">Scikit-learn</span>
-                            <span class="tech-badge">Pandas</span>
-                            <span class="tech-badge">ML</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 5 -->
+                <!-- Project 9 - Allmende Baumeister -->
                 <div class="project-card group" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="400">
                     <div class="relative overflow-hidden h-64">
-                        <img src="images/portfolio5.jpg" alt="Anonymo App" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <img src="images/IMG-20230529-WA0004.jpg" alt="Allmende Baumeister" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                         <div class="absolute inset-0 bg-gradient-to-t from-dark-500 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                         <div class="absolute inset-0 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-4 group-hover:translate-y-0">
-                            <a href="#" class="w-12 h-12 rounded-full bg-blue-600 flex items-center justify-center hover:bg-blue-700 transition-colors">
-                                <i class="fab fa-github text-white"></i>
-                            </a>
-                            <a href="#" class="w-12 h-12 rounded-full bg-blue-600 flex items-center justify-center hover:bg-blue-700 transition-colors">
+                            <a href="https://websiteprojectgroup3.netlify.app" target="_blank" class="w-12 h-12 rounded-full bg-blue-600 flex items-center justify-center hover:bg-blue-700 transition-colors" title="Voir le site">
                                 <i class="fas fa-external-link-alt text-white"></i>
                             </a>
                         </div>
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-display font-bold text-white mb-2">Anonymo App</h3>
-                        <p class="text-gray-400 mb-4">API REST avec permissions basées sur les rôles, middleware personnalisé et signals.</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="tech-badge">DRF</span>
-                            <span class="tech-badge">JWT</span>
-                            <span class="tech-badge">Python</span>
-                            <span class="tech-badge">PostgreSQL</span>
+                        <h3 class="text-xl font-display font-bold text-white mb-2">Allmende Baumeister</h3>
+                        <p class="text-gray-400 mb-4">Clone du site Allmende Baumeister - Projet de groupe avec design moderne et responsive.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="tech-badge">HTML5</span>
+                            <span class="tech-badge">CSS3</span>
+                            <span class="tech-badge">JavaScript</span>
+                            <span class="tech-badge">Responsive</span>
                         </div>
-                    </div>
-                </div>
-
-                <!-- Project 6 -->
-                <div class="project-card group" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="500">
-                    <div class="relative overflow-hidden h-64">
-                        <img src="images/portfolio6.jpg" alt="Blockchain Research" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                        <div class="absolute inset-0 bg-gradient-to-t from-dark-500 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                        <div class="absolute inset-0 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-4 group-hover:translate-y-0">
-                            <a href="#" class="w-12 h-12 rounded-full bg-blue-600 flex items-center justify-center hover:bg-blue-700 transition-colors">
-                                <i class="fas fa-file-pdf text-white"></i>
+                        <div class="flex gap-4">
+                            <a href="https://websiteprojectgroup3.netlify.app" target="_blank" class="text-sm text-blue-400 hover:text-blue-300 transition-colors inline-flex items-center gap-1">
+                                <i class="fas fa-external-link-alt"></i>
+                                <span>websiteprojectgroup3.netlify.app</span>
                             </a>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-display font-bold text-white mb-2">Sécurité Blockchain</h3>
-                        <p class="text-gray-400 mb-4">Recherche sur l'impact de la blockchain dans la sécurité des transactions financières.</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="tech-badge">Recherche</span>
-                            <span class="tech-badge">Blockchain</span>
-                            <span class="tech-badge">Finance</span>
-                            <span class="tech-badge">Sécurité</span>
                         </div>
                     </div>
                 </div>
@@ -555,20 +862,19 @@
         </div>
     </section>
 
-    <!-- Skills Section - Version Ultra-Moderne -->
-    <section id="skills" class="py-32 relative bg-dark-400/50">
+    <!-- Skills Section -->
+    <section id="skills" class="py-32 relative">
         <div class="container-custom">
             <div class="text-center mb-16" data-aos="fade-up">
-                <span class="section-subtitle">MON EXPERTISE</span>
-                <h2 class="section-title gradient-text">Compétences techniques</h2>
+                <span class="section-subtitle" data-i18n="skills.subtitle">MON EXPERTISE</span>
+                <h2 class="section-title gradient-text" data-i18n="skills.title">Compétences techniques</h2>
                 <div class="w-24 h-1 bg-blue-500 mx-auto mt-4"></div>
             </div>
 
-            <!-- 3D Skills Globe (simulé) -->
+            <!-- 3D Skills Globe -->
             <div class="relative h-96 mb-16 perspective" data-aos="fade-up">
                 <div class="absolute inset-0 flex items-center justify-center animate-rotate-3d">
                     <div class="relative w-64 h-64">
-                        <!-- Orbiting Skills -->
                         <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2">
                             <div class="w-16 h-16 rounded-full bg-blue-500/20 border-2 border-blue-500 flex items-center justify-center animate-pulse">
                                 <i class="fab fa-python text-3xl text-blue-400"></i>
@@ -782,28 +1088,28 @@
             <div class="max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="200">
                 <h3 class="text-2xl font-display font-bold text-white mb-8 text-center">
                     <i class="fas fa-globe text-blue-400 mr-2"></i>
-                    Langues
+                    <span data-i18n="skills.languages">Langues</span>
                 </h3>
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
                     <div class="stat-card text-center group hover:scale-105">
                         <span class="block text-2xl mb-2 animate-wave">🇫🇷</span>
                         <span class="block text-white font-bold">Français</span>
-                        <span class="text-sm text-blue-400">Natif</span>
+                        <span class="text-sm text-blue-400" data-i18n="skills.native">Natif</span>
                     </div>
                     <div class="stat-card text-center group hover:scale-105">
                         <span class="block text-2xl mb-2 animate-wave animation-delay-200">🇬🇧</span>
                         <span class="block text-white font-bold">Anglais</span>
-                        <span class="text-sm text-blue-400">Courant</span>
+                        <span class="text-sm text-blue-400" data-i18n="skills.fluent">Courant</span>
                     </div>
                     <div class="stat-card text-center group hover:scale-105">
                         <span class="block text-2xl mb-2 animate-wave animation-delay-400">🇷🇼</span>
                         <span class="block text-white font-bold">Kinyarwanda</span>
-                        <span class="text-sm text-blue-400">Débutant</span>
+                        <span class="text-sm text-blue-400" data-i18n="skills.beginner">Débutant</span>
                     </div>
                     <div class="stat-card text-center group hover:scale-105">
                         <span class="block text-2xl mb-2 animate-wave animation-delay-600">🇪🇸</span>
                         <span class="block text-white font-bold">Espagnol</span>
-                        <span class="text-sm text-blue-400">Débutant</span>
+                        <span class="text-sm text-blue-400" data-i18n="skills.beginner">Débutant</span>
                     </div>
                 </div>
             </div>
@@ -811,11 +1117,11 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-32 relative">
+    <section id="contact" class="py-32 relative bg-dark-400/50">
         <div class="container-custom">
             <div class="text-center mb-16" data-aos="fade-up">
-                <span class="section-subtitle">RESTONS EN CONTACT</span>
-                <h2 class="section-title gradient-text">Contactez-moi</h2>
+                <span class="section-subtitle" data-i18n="contact.subtitle">RESTONS EN CONTACT</span>
+                <h2 class="section-title gradient-text" data-i18n="contact.title">Contactez-moi</h2>
                 <div class="w-24 h-1 bg-blue-500 mx-auto mt-4"></div>
             </div>
 
@@ -827,7 +1133,7 @@
                             <i class="fas fa-phone-alt text-2xl text-blue-400"></i>
                         </div>
                         <div>
-                            <h3 class="text-lg text-gray-400">Téléphone</h3>
+                            <h3 class="text-lg text-gray-400" data-i18n="contact.phone">Téléphone</h3>
                             <a href="tel:+250737680403" class="text-white hover:text-blue-400 transition-colors">+250 737 680 403</a><br>
                             <a href="tel:+250790363578" class="text-white hover:text-blue-400 transition-colors">+250 790 363 578</a>
                         </div>
@@ -838,7 +1144,7 @@
                             <i class="fas fa-envelope text-2xl text-blue-400"></i>
                         </div>
                         <div>
-                            <h3 class="text-lg text-gray-400">Email</h3>
+                            <h3 class="text-lg text-gray-400" data-i18n="contact.email">Email</h3>
                             <a href="mailto:Angekoumba754@gmail.com" class="text-white hover:text-blue-400 transition-colors">Angekoumba754@gmail.com</a>
                         </div>
                     </div>
@@ -848,7 +1154,7 @@
                             <i class="fas fa-map-marker-alt text-2xl text-blue-400"></i>
                         </div>
                         <div>
-                            <h3 class="text-lg text-gray-400">Localisation</h3>
+                            <h3 class="text-lg text-gray-400" data-i18n="contact.location">Localisation</h3>
                             <p class="text-white">8 KG Avenue, Kigali, Rwanda</p>
                         </div>
                     </div>
@@ -869,26 +1175,26 @@
                     <div class="grid md:grid-cols-2 gap-6">
                         <div class="relative group">
                             <input type="text" name="name" placeholder=" " required class="w-full px-4 py-4 bg-dark-200/50 border border-blue-500/20 rounded-xl text-white placeholder-transparent focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 peer">
-                            <label class="absolute left-4 -top-2.5 bg-dark-500 px-2 text-sm text-gray-400 transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-placeholder-shown:top-4 peer-placeholder-shown:bg-transparent peer-focus:-top-2.5 peer-focus:text-sm peer-focus:text-blue-400 peer-focus:bg-dark-500">Votre nom</label>
+                            <label class="absolute left-4 -top-2.5 bg-dark-500 px-2 text-sm text-gray-400 transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-placeholder-shown:top-4 peer-placeholder-shown:bg-transparent peer-focus:-top-2.5 peer-focus:text-sm peer-focus:text-blue-400 peer-focus:bg-dark-500" data-i18n="contact.form.name">Votre nom</label>
                         </div>
                         <div class="relative group">
                             <input type="email" name="email" placeholder=" " required class="w-full px-4 py-4 bg-dark-200/50 border border-blue-500/20 rounded-xl text-white placeholder-transparent focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 peer">
-                            <label class="absolute left-4 -top-2.5 bg-dark-500 px-2 text-sm text-gray-400 transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-placeholder-shown:top-4 peer-placeholder-shown:bg-transparent peer-focus:-top-2.5 peer-focus:text-sm peer-focus:text-blue-400 peer-focus:bg-dark-500">Votre email</label>
+                            <label class="absolute left-4 -top-2.5 bg-dark-500 px-2 text-sm text-gray-400 transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-placeholder-shown:top-4 peer-placeholder-shown:bg-transparent peer-focus:-top-2.5 peer-focus:text-sm peer-focus:text-blue-400 peer-focus:bg-dark-500" data-i18n="contact.form.email">Votre email</label>
                         </div>
                     </div>
 
                     <div class="relative group">
                         <input type="text" name="subject" placeholder=" " required class="w-full px-4 py-4 bg-dark-200/50 border border-blue-500/20 rounded-xl text-white placeholder-transparent focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 peer">
-                        <label class="absolute left-4 -top-2.5 bg-dark-500 px-2 text-sm text-gray-400 transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-placeholder-shown:top-4 peer-placeholder-shown:bg-transparent peer-focus:-top-2.5 peer-focus:text-sm peer-focus:text-blue-400 peer-focus:bg-dark-500">Sujet</label>
+                        <label class="absolute left-4 -top-2.5 bg-dark-500 px-2 text-sm text-gray-400 transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-placeholder-shown:top-4 peer-placeholder-shown:bg-transparent peer-focus:-top-2.5 peer-focus:text-sm peer-focus:text-blue-400 peer-focus:bg-dark-500" data-i18n="contact.form.subject">Sujet</label>
                     </div>
 
                     <div class="relative group">
                         <textarea name="message" rows="5" placeholder=" " required class="w-full px-4 py-4 bg-dark-200/50 border border-blue-500/20 rounded-xl text-white placeholder-transparent focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 peer resize-none"></textarea>
-                        <label class="absolute left-4 -top-2.5 bg-dark-500 px-2 text-sm text-gray-400 transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-placeholder-shown:top-4 peer-placeholder-shown:bg-transparent peer-focus:-top-2.5 peer-focus:text-sm peer-focus:text-blue-400 peer-focus:bg-dark-500">Votre message</label>
+                        <label class="absolute left-4 -top-2.5 bg-dark-500 px-2 text-sm text-gray-400 transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-placeholder-shown:top-4 peer-placeholder-shown:bg-transparent peer-focus:-top-2.5 peer-focus:text-sm peer-focus:text-blue-400 peer-focus:bg-dark-500" data-i18n="contact.form.message">Votre message</label>
                     </div>
 
                     <button type="submit" class="btn-primary w-full group">
-                        <span class="relative z-10">Envoyer le message</span>
+                        <span class="relative z-10" data-i18n="contact.form.submit">Envoyer le message</span>
                         <i class="fas fa-paper-plane ml-2 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"></i>
                     </button>
                 </form>
@@ -901,17 +1207,17 @@
         <div class="container-custom">
             <div class="flex flex-col items-center text-center">
                 <div class="text-3xl font-display font-bold mb-4">
-                    <span class="text-white">A</span>
-                    <span class="gradient-text">K</span>
+                    <span class="text-white">Ange</span>
+                    <span class="gradient-text"> KOUMBA</span>
                 </div>
-                <p class="text-gray-400 max-w-md mb-6">
+                <p class="text-gray-400 max-w-md mb-6" data-i18n="footer.description">
                     Créateur de solutions innovantes à l'intersection des données et du développement logiciel.
                 </p>
                 <div class="flex space-x-4 mb-6">
                     <a href="https://www.linkedin.com/in/ange-koumba-64a634343/" target="_blank" class="w-10 h-10 rounded-full glass-effect flex items-center justify-center text-blue-400 hover:text-blue-300 hover:border-blue-500 transition-all duration-300 hover:scale-110">
                         <i class="fab fa-linkedin-in"></i>
                     </a>
-                    <a href="https://github.com/angekoumba" target="_blank" class="w-10 h-10 rounded-full glass-effect flex items-center justify-center text-blue-400 hover:text-blue-300 hover:border-blue-500 transition-all duration-300 hover:scale-110">
+                    <a href="https://github.com/kay1403" target="_blank" class="w-10 h-10 rounded-full glass-effect flex items-center justify-center text-blue-400 hover:text-blue-300 hover:border-blue-500 transition-all duration-300 hover:scale-110">
                         <i class="fab fa-github"></i>
                     </a>
                     <a href="https://twitter.com/angekoumba" target="_blank" class="w-10 h-10 rounded-full glass-effect flex items-center justify-center text-blue-400 hover:text-blue-300 hover:border-blue-500 transition-all duration-300 hover:scale-110">
@@ -919,7 +1225,7 @@
                     </a>
                 </div>
                 <div class="text-gray-500 text-sm">
-                    © 2025 Ange KOUMBA. Tous droits réservés.
+                    © 2025 Ange KOUMBA. <span data-i18n="footer.rights">Tous droits réservés.</span>
                 </div>
             </div>
         </div>
@@ -2560,7 +2866,6 @@ if (menuBtn && mobileMenu) {
         mobileMenu.classList.toggle('hidden');
     });
 
-    // Close menu when clicking a link
     document.querySelectorAll('#mobile-menu a').forEach(link => {
         link.addEventListener('click', () => {
             menuBtn.classList.remove('open');
@@ -2641,7 +2946,6 @@ const animateCounter = (counter) => {
     updateCount();
 };
 
-// Intersection Observer for counters
 const counterObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -2654,7 +2958,7 @@ const counterObserver = new IntersectionObserver((entries) => {
 
 counters.forEach(counter => counterObserver.observe(counter));
 
-// Smooth scroll for anchor links
+// Smooth scroll
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
         const href = this.getAttribute('href');
@@ -2688,10 +2992,7 @@ if (contactForm) {
         submitBtn.disabled = true;
 
         try {
-            // Simulate form submission
             await new Promise(resolve => setTimeout(resolve, 2000));
-            
-            // Success notification
             showNotification('Message envoyé avec succès ! Je vous répondrai bientôt.', 'success');
             contactForm.reset();
         } catch (error) {
@@ -2723,7 +3024,7 @@ function showNotification(message, type = 'success') {
     }, 4000);
 }
 
-// Parallax effect on floating shapes
+// Parallax effect
 document.addEventListener('mousemove', (e) => {
     const shapes = document.querySelectorAll('.floating-shape');
     const mouseX = e.clientX / window.innerWidth;
@@ -2741,15 +3042,249 @@ document.addEventListener('mousemove', (e) => {
 window.addEventListener('load', () => {
     document.body.classList.add('loaded');
     
-    // Add entrance animations
     document.querySelectorAll('[data-aos]').forEach(el => {
         el.classList.add('aos-animate');
     });
 });
 
-// Dynamic year in footer
+// Dynamic year
 document.querySelector('.footer .text-gray-500').innerHTML = 
-    `© ${new Date().getFullYear()} Ange KOUMBA. Tous droits réservés.`;-e \n--- FILE: ./src/input.css ---
+    `© ${new Date().getFullYear()} Ange KOUMBA. Tous droits réservés.`;
+
+// ===== SYSTÈME DE CHANGEMENT DE LANGUE AMÉLIORÉ =====
+const translations = {
+    fr: {
+        nav: {
+            home: "Accueil",
+            about: "À propos",
+            experience: "Expérience",
+            projects: "Projets",
+            skills: "Compétences",
+            certifications: "Certifications",
+            contact: "Contact"
+        },
+        hero: {
+            available: "Disponible pour des opportunités",
+            description: "Étudiant en dernière année d'IT à l'University of Kigali, spécialisé en Data Science et Développement Full-Stack. Passionné par la fintech et l'IA.",
+            contact: "Me contacter",
+            cv: "CV",
+            scroll: "Scroll"
+        },
+        about: {
+            subtitle: "QUI SUIS-JE ?",
+            title: "À propos de moi",
+            education: {
+                title: "Formation",
+                degree1: "BSc en Information Technology",
+                school1: "University of Kigali (2022-2025)",
+                degree2: "Technologie Industrielle",
+                school2: "Lycée Technique Jean Fidèle Otando"
+            },
+            achievements: {
+                title: "Distinctions",
+                item1: "Champion Interdépartemental 2025",
+                item2: "WorldQuant AI Lab Selection",
+                item3: "The Gym Rwanda - Intensive Program"
+            }
+        },
+        experience: {
+            subtitle: "MON PARCOURS",
+            title: "Expérience professionnelle",
+            job1: {
+                title: "Développeur Front-End",
+                desc1: "Développement d'interfaces responsives avec React, TypeScript et Tailwind CSS",
+                desc2: "Amélioration de l'expérience utilisateur à travers des designs modernes",
+                desc3: "Collaboration avec l'équipe technique sur des problèmes complexes"
+            },
+            job2: {
+                title: "Représentant de classe",
+                desc1: "Liaison entre les étudiants et le corps professoral pour 50+ étudiants",
+                desc2: "Facilitation de la communication et résolution de problèmes académiques"
+            }
+        },
+        projects: {
+            subtitle: "MES RÉALISATIONS",
+            title: "Projets phares",
+            desc1: "Système de gestion de bibliothèque avec Django, API REST, et authentification JWT.",
+            desc2: "Backend complet pour plateforme e-commerce avec Django REST Framework.",
+            desc3: "Application de transfert d'argent avec authentification sécurisée.",
+            desc4: "Application météo interactive avec architecture responsive et système de favoris.",
+            desc5: "Système de gestion d'actes de naissance avec génération de QR codes et PDF.",
+            desc6: "Plateforme SaaS avec authentification 2FA, RBAC, et audit trail.",
+            desc7: "Système IoT de surveillance des sols avec analyse de données en temps réel."
+        },
+        skills: {
+            subtitle: "MON EXPERTISE",
+            title: "Compétences techniques",
+            languages: "Langues",
+            native: "Natif",
+            fluent: "Courant",
+            beginner: "Débutant"
+        },
+        certs: {
+            subtitle: "MES CERTIFICATIONS",
+            title: "Parcours ALX Africa"
+        },
+        contact: {
+            subtitle: "RESTONS EN CONTACT",
+            title: "Contactez-moi",
+            phone: "Téléphone",
+            email: "Email",
+            location: "Localisation",
+            form: {
+                name: "Votre nom",
+                email: "Votre email",
+                subject: "Sujet",
+                message: "Votre message",
+                submit: "Envoyer le message"
+            }
+        },
+        footer: {
+            description: "Créateur de solutions innovantes à l'intersection des données et du développement logiciel.",
+            rights: "Tous droits réservés."
+        },
+        stats: {
+            projects: "Projets",
+            certifications: "Certifications",
+            experience: "Années d'exp."
+        }
+    },
+    en: {
+        nav: {
+            home: "Home",
+            about: "About",
+            experience: "Experience",
+            projects: "Projects",
+            skills: "Skills",
+            certifications: "Certifications",
+            contact: "Contact"
+        },
+        hero: {
+            available: "Available for opportunities",
+            description: "Final-year IT student at the University of Kigali, specializing in Data Science and Full-Stack Development. Passionate about fintech and AI.",
+            contact: "Contact me",
+            cv: "Resume",
+            scroll: "Scroll"
+        },
+        about: {
+            subtitle: "WHO AM I?",
+            title: "About me",
+            education: {
+                title: "Education",
+                degree1: "BSc in Information Technology",
+                school1: "University of Kigali (2022-2025)",
+                degree2: "Industrial Technology",
+                school2: "Lycée Technique Jean Fidèle Otando"
+            },
+            achievements: {
+                title: "Achievements",
+                item1: "Interdepartmental Champion 2025",
+                item2: "WorldQuant AI Lab Selection",
+                item3: "The Gym Rwanda - Intensive Program"
+            }
+        },
+        experience: {
+            subtitle: "MY JOURNEY",
+            title: "Professional Experience",
+            job1: {
+                title: "Front-End Developer",
+                desc1: "Development of responsive interfaces with React, TypeScript and Tailwind CSS",
+                desc2: "User experience improvement through modern designs",
+                desc3: "Collaboration with technical team on complex problems"
+            },
+            job2: {
+                title: "Class Representative",
+                desc1: "Liaison between students and faculty for 50+ students",
+                desc2: "Communication facilitation and academic problem solving"
+            }
+        },
+        projects: {
+            subtitle: "MY WORK",
+            title: "Featured Projects",
+            desc1: "Library management system with Django, REST API, and JWT authentication.",
+            desc2: "Complete backend for e-commerce platform with Django REST Framework.",
+            desc3: "Money transfer application with secure authentication.",
+            desc4: "Interactive weather app with responsive architecture and favorites system.",
+            desc5: "Birth certificate management system with QR code and PDF generation.",
+            desc6: "SaaS platform with 2FA authentication, RBAC, and audit trail.",
+            desc7: "IoT soil monitoring system with real-time data analysis."
+        },
+        skills: {
+            subtitle: "MY EXPERTISE",
+            title: "Technical Skills",
+            languages: "Languages",
+            native: "Native",
+            fluent: "Fluent",
+            beginner: "Beginner"
+        },
+        certs: {
+            subtitle: "MY CERTIFICATIONS",
+            title: "ALX Africa Journey"
+        },
+        contact: {
+            subtitle: "LET'S CONNECT",
+            title: "Contact me",
+            phone: "Phone",
+            email: "Email",
+            location: "Location",
+            form: {
+                name: "Your name",
+                email: "Your email",
+                subject: "Subject",
+                message: "Your message",
+                submit: "Send message"
+            }
+        },
+        footer: {
+            description: "Creator of innovative solutions at the intersection of data and software development.",
+            rights: "All rights reserved."
+        },
+        stats: {
+            projects: "Projects",
+            certifications: "Certifications",
+            experience: "Years exp."
+        }
+    }
+};
+
+// Fonction améliorée pour changer la langue
+function switchLanguage(lang) {
+    console.log('Changement de langue vers:', lang);
+    
+    // Mettre à jour les attributs data-i18n
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+        const keys = element.getAttribute('data-i18n').split('.');
+        let value = translations[lang];
+        
+        try {
+            keys.forEach(key => {
+                value = value[key];
+            });
+            if (value) {
+                element.textContent = value;
+            }
+        } catch (e) {
+            console.warn('Traduction manquante pour:', element.getAttribute('data-i18n'));
+        }
+    });
+
+    // Mettre à jour les boutons de langue
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.remove('active', 'bg-blue-500/20');
+        if (btn.getAttribute('data-lang') === lang) {
+            btn.classList.add('active', 'bg-blue-500/20');
+        }
+    });
+
+    // Sauvegarder la préférence
+    localStorage.setItem('preferred-language', lang);
+}
+
+// Charger la langue préférée au démarrage
+document.addEventListener('DOMContentLoaded', () => {
+    const savedLang = localStorage.getItem('preferred-language') || 'fr';
+    switchLanguage(savedLang);
+});-e \n--- FILE: ./src/input.css ---
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
