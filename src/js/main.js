@@ -1,4 +1,7 @@
-// ===== SYSTÈME DE CHANGEMENT DE LANGUE - DOIT ÊTRE EN PREMIER ET DÉFINI AVANT TOUT =====
+// ===== CONFIGURATION EMAILJS =====
+emailjs.init("xPli5Qr1N_RE53QJ9");
+
+// ===== SYSTÈME DE CHANGEMENT DE LANGUE =====
 const translations = {
     fr: {
         nav: {
@@ -15,7 +18,8 @@ const translations = {
             description: "Étudiant en dernière année d'IT à l'University of Kigali, spécialisé en Data Science et Développement Full-Stack. Passionné par la fintech et l'IA.",
             contact: "Me contacter",
             cv: "CV",
-            scroll: "Défiler"
+            scroll: "Défiler",
+            download: "Télécharger CV"
         },
         about: {
             subtitle: "QUI SUIS-JE ?",
@@ -61,7 +65,8 @@ const translations = {
             desc7: "Système IoT de surveillance des sols avec analyse de données en temps réel.",
             demo: "Voir la démo",
             source: "Code source",
-            comingSoon: "Démo à venir"
+            comingSoon: "Démo à venir",
+            sourceComing: "Code source à venir"
         },
         skills: {
             subtitle: "MON EXPERTISE",
@@ -87,7 +92,11 @@ const translations = {
                 email: "Votre email",
                 subject: "Sujet",
                 message: "Votre message",
-                submit: "Envoyer le message"
+                submit: "Envoyer le message",
+                sending: "Envoi...",
+                success: "Message envoyé avec succès ! Je vous répondrai bientôt.",
+                error: "Une erreur est survenue. Veuillez réessayer.",
+                close: "Fermer"
             }
         },
         footer: {
@@ -98,6 +107,12 @@ const translations = {
             projects: "Projets",
             certifications: "Certifications",
             experience: "Années d'exp."
+        },
+        cv: {
+            title: "Choisissez votre langue",
+            french: "CV Français",
+            english: "CV English",
+            download: "Télécharger"
         }
     },
     en: {
@@ -115,7 +130,8 @@ const translations = {
             description: "Final-year IT student at the University of Kigali, specializing in Data Science and Full-Stack Development. Passionate about fintech and AI.",
             contact: "Contact me",
             cv: "Resume",
-            scroll: "Scroll"
+            scroll: "Scroll",
+            download: "Download CV"
         },
         about: {
             subtitle: "WHO AM I?",
@@ -161,7 +177,8 @@ const translations = {
             desc7: "IoT soil monitoring system with real-time data analysis.",
             demo: "Live demo",
             source: "Source code",
-            comingSoon: "Demo coming soon"
+            comingSoon: "Demo coming soon",
+            sourceComing: "Source code coming soon"
         },
         skills: {
             subtitle: "MY EXPERTISE",
@@ -187,7 +204,11 @@ const translations = {
                 email: "Your email",
                 subject: "Subject",
                 message: "Your message",
-                submit: "Send message"
+                submit: "Send message",
+                sending: "Sending...",
+                success: "Message sent successfully! I'll get back to you soon.",
+                error: "An error occurred. Please try again.",
+                close: "Close"
             }
         },
         footer: {
@@ -198,11 +219,17 @@ const translations = {
             projects: "Projects",
             certifications: "Certifications",
             experience: "Years exp."
+        },
+        cv: {
+            title: "Choose your language",
+            french: "French CV",
+            english: "English CV",
+            download: "Download"
         }
     }
 };
 
-// DÉFINIR LA FONCTION AVANT TOUT - EN GLOBAL
+// ===== FONCTION DE CHANGEMENT DE LANGUE =====
 window.switchLanguage = function(lang) {
     console.log('🔄 Changement de langue vers:', lang);
     
@@ -272,6 +299,41 @@ window.switchLanguage = function(lang) {
     console.log('✅ Langue changée avec succès');
 };
 
+// ===== FONCTION POUR TÉLÉCHARGER CV =====
+window.downloadCV = function() {
+    const currentLang = localStorage.getItem('preferred-language') || 'fr';
+    
+    // Créer une modale de choix de langue
+    const modal = document.createElement('div');
+    modal.className = 'fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm';
+    modal.innerHTML = `
+        <div class="bg-dark-200 p-8 rounded-2xl border border-blue-500/20 max-w-md w-full mx-4">
+            <h3 class="text-2xl font-bold text-white mb-6 text-center" data-i18n="cv.title">Choisissez votre langue</h3>
+            <div class="space-y-4">
+                <a href="Resume/Ange%20KOUMBA%20Resume%282025%29.pdf" 
+                   download="Ange_KOUMBA_CV_FR.pdf"
+                   class="block w-full py-4 px-6 bg-blue-600 hover:bg-blue-700 rounded-xl text-white font-medium text-center transition-all">
+                    🇫🇷 <span data-i18n="cv.french">CV Français</span>
+                </a>
+                <a href="Resume/Ange%20KOUMBA%20Resume%282025%29_EN.pdf" 
+                   download="Ange_KOUMBA_CV_EN.pdf"
+                   class="block w-full py-4 px-6 bg-blue-600 hover:bg-blue-700 rounded-xl text-white font-medium text-center transition-all">
+                    🇬🇧 <span data-i18n="cv.english">CV English</span>
+                </a>
+            </div>
+            <button onclick="this.parentElement.parentElement.remove()" 
+                    class="mt-6 w-full py-2 text-gray-400 hover:text-white transition-colors">
+                ✕ <span data-i18n="contact.form.close">Fermer</span>
+            </button>
+        </div>
+    `;
+    
+    document.body.appendChild(modal);
+    
+    // Traduire la modale selon la langue courante
+    window.switchLanguage(currentLang);
+};
+
 // ===== INITIALISATION AU CHARGEMENT =====
 document.addEventListener('DOMContentLoaded', function() {
     console.log('📦 DOM chargé, initialisation...');
@@ -288,7 +350,7 @@ document.addEventListener('DOMContentLoaded', function() {
         easing: 'ease-in-out'
     });
 
-    // Typed.js - Doit être initialisé APRÈS la langue
+    // Typed.js
     if (document.querySelector('.typed-text')) {
         new Typed('.typed-text', {
             strings: savedLang === 'fr' 
@@ -427,28 +489,44 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Contact form
+    // Contact form avec EmailJS
     const contactForm = document.getElementById('contactForm');
 
     if (contactForm) {
-        contactForm.addEventListener('submit', async (e) => {
-            e.preventDefault();
+        contactForm.addEventListener('submit', function(event) {
+            event.preventDefault();
             
             const submitBtn = contactForm.querySelector('button[type="submit"]');
             const originalText = submitBtn.innerHTML;
-            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Envoi...';
+            const currentLang = localStorage.getItem('preferred-language') || 'fr';
+            
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> ' + 
+                (currentLang === 'fr' ? 'Envoi...' : 'Sending...');
             submitBtn.disabled = true;
 
-            try {
-                await new Promise(resolve => setTimeout(resolve, 2000));
-                showNotification('Message envoyé avec succès ! Je vous répondrai bientôt.', 'success');
-                contactForm.reset();
-            } catch (error) {
-                showNotification('Une erreur est survenue. Veuillez réessayer.', 'error');
-            } finally {
-                submitBtn.innerHTML = originalText;
-                submitBtn.disabled = false;
-            }
+            // Envoi avec EmailJS
+            emailjs.sendForm('service_ou9f6zm', 'template_7w1lmkb', this)
+                .then(function() {
+                    showNotification(
+                        currentLang === 'fr' 
+                            ? translations.fr.contact.form.success
+                            : translations.en.contact.form.success,
+                        'success'
+                    );
+                    contactForm.reset();
+                }, function(error) {
+                    console.error('EmailJS error:', error);
+                    showNotification(
+                        currentLang === 'fr' 
+                            ? translations.fr.contact.form.error
+                            : translations.en.contact.form.error,
+                        'error'
+                    );
+                })
+                .finally(() => {
+                    submitBtn.innerHTML = originalText;
+                    submitBtn.disabled = false;
+                });
         });
     }
 
@@ -459,7 +537,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-// Notification system (doit être accessible)
+// ===== NOTIFICATION SYSTEM =====
 function showNotification(message, type = 'success') {
     const notification = document.createElement('div');
     notification.className = `fixed top-24 right-4 z-50 px-6 py-4 rounded-xl shadow-glow-lg animate-slide-left ${
@@ -479,7 +557,7 @@ function showNotification(message, type = 'success') {
     }, 4000);
 }
 
-// Parallax effect
+// ===== PARALLAX EFFECT =====
 document.addEventListener('mousemove', (e) => {
     const shapes = document.querySelectorAll('.floating-shape');
     const mouseX = e.clientX / window.innerWidth;
@@ -493,7 +571,7 @@ document.addEventListener('mousemove', (e) => {
     });
 });
 
-// Preloader
+// ===== PRELOADER =====
 window.addEventListener('load', () => {
     document.body.classList.add('loaded');
     document.querySelectorAll('[data-aos]').forEach(el => {

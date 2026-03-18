@@ -179,7 +179,7 @@
                         
                         <!-- Profile Image Container -->
                         <div class="absolute inset-12 rounded-2xl overflow-hidden border-2 border-blue-500/30 shadow-glow-lg group cursor-pointer">
-                            <img src="images/profile.jpg" alt="Ange KOUMBA" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                            <img src="images/pofil.jpeg" alt="Ange KOUMBA" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                             
                             <!-- Overlay -->
                             <div class="absolute inset-0 bg-gradient-to-t from-blue-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end justify-center pb-8">
@@ -593,274 +593,369 @@
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="py-32 relative bg-dark-400/50">
-        <div class="container-custom">
-            <div class="text-center mb-16" data-aos="fade-up">
-                <span class="section-subtitle" data-i18n="projects.subtitle">MES RÉALISATIONS</span>
-                <h2 class="section-title gradient-text" data-i18n="projects.title">Projets phares</h2>
-                <div class="w-24 h-1 bg-blue-500 mx-auto mt-4"></div>
+<!-- Projects Section -->
+<section id="projects" class="py-32 relative bg-dark-400/50">
+    <div class="container-custom">
+        <div class="text-center mb-16" data-aos="fade-up">
+            <span class="section-subtitle" data-i18n="projects.subtitle">MES RÉALISATIONS</span>
+            <h2 class="section-title gradient-text" data-i18n="projects.title">Projets phares</h2>
+            <div class="w-24 h-1 bg-blue-500 mx-auto mt-4"></div>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Project 1 - Library Management System -->
+            <div class="project-card group" data-aos="zoom-in" data-aos-duration="800">
+                <div class="relative overflow-hidden h-64">
+                    <img src="images/portfolio1.jpg" alt="Library Management System" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-dark-500 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div class="absolute inset-0 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-4 group-hover:translate-y-0">
+                        <!-- GitHub Icon - TOUJOURS présent -->
+                        <a href="https://github.com/kay1403/library-management-system-api" target="_blank" class="w-12 h-12 rounded-full bg-blue-600 flex items-center justify-center hover:bg-blue-700 transition-colors" title="Code source">
+                            <i class="fab fa-github text-white"></i>
+                        </a>
+                        <!-- Demo Icon - TOUJOURS présent -->
+                        <a href="https://libraryms-tfsy.onrender.com" target="_blank" class="w-12 h-12 rounded-full bg-blue-600 flex items-center justify-center hover:bg-blue-700 transition-colors" title="Voir la démo">
+                            <i class="fas fa-external-link-alt text-white"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-display font-bold text-white mb-2">Library Management System</h3>
+                    <p class="text-gray-400 mb-4" data-i18n="projects.desc1">Système de gestion de bibliothèque avec Django, API REST, et authentification JWT.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="tech-badge">Django</span>
+                        <span class="tech-badge">DRF</span>
+                        <span class="tech-badge">PostgreSQL</span>
+                        <span class="tech-badge">JWT</span>
+                    </div>
+                    <!-- Liens textuels - TOUJOURS présents -->
+                    <div class="flex flex-col gap-2">
+                        <a href="https://github.com/kay1403/library-management-system-api" target="_blank" class="text-sm text-blue-400 hover:text-blue-300 transition-colors inline-flex items-center gap-1">
+                            <i class="fab fa-github"></i>
+                            <span data-i18n="projects.source">Code source</span>
+                        </a>
+                        <a href="https://libraryms-tfsy.onrender.com" target="_blank" class="text-sm text-blue-400 hover:text-blue-300 transition-colors inline-flex items-center gap-1">
+                            <i class="fas fa-external-link-alt"></i>
+                            <span>libraryms-tfsy.onrender.com</span>
+                        </a>
+                    </div>
+                </div>
             </div>
 
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Project 1 - Library Management System -->
-                <div class="project-card group" data-aos="zoom-in" data-aos-duration="800">
-                    <div class="relative overflow-hidden h-64">
-                        <img src="images/portfolio1.jpg" alt="Library Management System" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                        <div class="absolute inset-0 bg-gradient-to-t from-dark-500 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                        <div class="absolute inset-0 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-4 group-hover:translate-y-0">
-                            <a href="https://github.com/kay1403/library-management-system-api" target="_blank" class="w-12 h-12 rounded-full bg-blue-600 flex items-center justify-center hover:bg-blue-700 transition-colors" title="Code source">
-                                <i class="fab fa-github text-white"></i>
-                            </a>
+            <!-- Project 2 - E-commerce Backend -->
+            <div class="project-card group" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="50">
+                <div class="relative overflow-hidden h-64">
+                    <img src="images/portfolio2.jpg" alt="E-commerce Backend" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-dark-500 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div class="absolute inset-0 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-4 group-hover:translate-y-0">
+                        <!-- GitHub Icon - ACTIF -->
+                        <a href="https://github.com/kay1403/ecommerce-backend-nexus" target="_blank" class="w-12 h-12 rounded-full bg-blue-600 flex items-center justify-center hover:bg-blue-700 transition-colors" title="Code source">
+                            <i class="fab fa-github text-white"></i>
+                        </a>
+                        <!-- Demo Icon - INACTIF (grisé) -->
+                        <div class="w-12 h-12 rounded-full bg-gray-600 flex items-center justify-center cursor-not-allowed opacity-50" title="Démo non disponible">
+                            <i class="fas fa-external-link-alt text-white"></i>
                         </div>
                     </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-display font-bold text-white mb-2">Library Management System</h3>
-                        <p class="text-gray-400 mb-4" data-i18n="projects.desc1">Système de gestion de bibliothèque avec Django, API REST, et authentification JWT.</p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="tech-badge">Django</span>
-                            <span class="tech-badge">DRF</span>
-                            <span class="tech-badge">PostgreSQL</span>
-                            <span class="tech-badge">JWT</span>
-                        </div>
-                        <a href="#" class="text-sm text-blue-400 hover:text-blue-300 transition-colors inline-flex items-center gap-1">
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-display font-bold text-white mb-2">E-commerce Backend</h3>
+                    <p class="text-gray-400 mb-4" data-i18n="projects.desc2">Backend complet pour plateforme e-commerce avec Django REST Framework.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="tech-badge">Django</span>
+                        <span class="tech-badge">DRF</span>
+                        <span class="tech-badge">MySQL</span>
+                        <span class="tech-badge">JWT</span>
+                    </div>
+                    <!-- Liens textuels -->
+                    <div class="flex flex-col gap-2">
+                        <a href="https://github.com/kay1403/ecommerce-backend-nexus" target="_blank" class="text-sm text-blue-400 hover:text-blue-300 transition-colors inline-flex items-center gap-1">
+                            <i class="fab fa-github"></i>
+                            <span data-i18n="projects.source">Code source</span>
+                        </a>
+                        <span class="text-sm text-gray-500 inline-flex items-center gap-1 cursor-not-allowed">
                             <i class="fas fa-external-link-alt"></i>
-                            <span>Lien de démo (à venir)</span>
+                            <span data-i18n="projects.comingSoon">Démo à venir</span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 3 - MoneyTransfer -->
+            <div class="project-card group" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="100">
+                <div class="relative overflow-hidden h-64">
+                    <img src="images/portfolio3.jpg" alt="MoneyTransfer" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-dark-500 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div class="absolute inset-0 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-4 group-hover:translate-y-0">
+                        <!-- GitHub Icon - ACTIF -->
+                        <a href="https://github.com/kay1403/MoneyTransfer" target="_blank" class="w-12 h-12 rounded-full bg-blue-600 flex items-center justify-center hover:bg-blue-700 transition-colors" title="Code source">
+                            <i class="fab fa-github text-white"></i>
+                        </a>
+                        <!-- Demo Icon - INACTIF -->
+                        <div class="w-12 h-12 rounded-full bg-gray-600 flex items-center justify-center cursor-not-allowed opacity-50" title="Démo non disponible">
+                            <i class="fas fa-external-link-alt text-white"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-display font-bold text-white mb-2">MoneyTransfer</h3>
+                    <p class="text-gray-400 mb-4" data-i18n="projects.desc3">Application de transfert d'argent avec authentification sécurisée.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="tech-badge">Django</span>
+                        <span class="tech-badge">JWT</span>
+                        <span class="tech-badge">PostgreSQL</span>
+                        <span class="tech-badge">API</span>
+                    </div>
+                    <!-- Liens textuels -->
+                    <div class="flex flex-col gap-2">
+                        <a href="https://github.com/kay1403/MoneyTransfer" target="_blank" class="text-sm text-blue-400 hover:text-blue-300 transition-colors inline-flex items-center gap-1">
+                            <i class="fab fa-github"></i>
+                            <span data-i18n="projects.source">Code source</span>
+                        </a>
+                        <span class="text-sm text-gray-500 inline-flex items-center gap-1 cursor-not-allowed">
+                            <i class="fas fa-external-link-alt"></i>
+                            <span data-i18n="projects.comingSoon">Démo à venir</span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 4 - Weather Dashboard -->
+            <div class="project-card group" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="150">
+                <div class="relative overflow-hidden h-64">
+                    <img src="images/portfolio4.jpg" alt="Weather Dashboard" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-dark-500 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div class="absolute inset-0 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-4 group-hover:translate-y-0">
+                        <!-- GitHub Icon - ACTIF -->
+                        <a href="https://github.com/kay1403/weather-dashboard" target="_blank" class="w-12 h-12 rounded-full bg-blue-600 flex items-center justify-center hover:bg-blue-700 transition-colors" title="Code source">
+                            <i class="fab fa-github text-white"></i>
+                        </a>
+                        <!-- Demo Icon - ACTIF -->
+                        <a href="https://weatherflowak.netlify.app" target="_blank" class="w-12 h-12 rounded-full bg-blue-600 flex items-center justify-center hover:bg-blue-700 transition-colors" title="Voir la démo">
+                            <i class="fas fa-external-link-alt text-white"></i>
                         </a>
                     </div>
                 </div>
-
-                <!-- Project 2 - E-commerce Backend -->
-                <div class="project-card group" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="50">
-                    <div class="relative overflow-hidden h-64">
-                        <img src="images/portfolio2.jpg" alt="E-commerce Backend" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                        <div class="absolute inset-0 bg-gradient-to-t from-dark-500 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                        <div class="absolute inset-0 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-4 group-hover:translate-y-0">
-                            <a href="https://github.com/kay1403/ecommerce-backend-nexus" target="_blank" class="w-12 h-12 rounded-full bg-blue-600 flex items-center justify-center hover:bg-blue-700 transition-colors" title="Code source">
-                                <i class="fab fa-github text-white"></i>
-                            </a>
-                        </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-display font-bold text-white mb-2">Weather Dashboard</h3>
+                    <p class="text-gray-400 mb-4" data-i18n="projects.desc4">Application météo interactive avec architecture responsive et système de favoris.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="tech-badge">JavaScript</span>
+                        <span class="tech-badge">HTML5</span>
+                        <span class="tech-badge">CSS3</span>
+                        <span class="tech-badge">API</span>
                     </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-display font-bold text-white mb-2">E-commerce Backend</h3>
-                        <p class="text-gray-400 mb-4" data-i18n="projects.desc2">Backend complet pour plateforme e-commerce avec Django REST Framework.</p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="tech-badge">Django</span>
-                            <span class="tech-badge">DRF</span>
-                            <span class="tech-badge">MySQL</span>
-                            <span class="tech-badge">JWT</span>
-                        </div>
-                        <a href="#" class="text-sm text-blue-400 hover:text-blue-300 transition-colors inline-flex items-center gap-1">
+                    <!-- Liens textuels -->
+                    <div class="flex flex-col gap-2">
+                        <a href="https://github.com/kay1403/weather-dashboard" target="_blank" class="text-sm text-blue-400 hover:text-blue-300 transition-colors inline-flex items-center gap-1">
+                            <i class="fab fa-github"></i>
+                            <span data-i18n="projects.source">Code source</span>
+                        </a>
+                        <a href="https://weatherflowak.netlify.app" target="_blank" class="text-sm text-blue-400 hover:text-blue-300 transition-colors inline-flex items-center gap-1">
                             <i class="fas fa-external-link-alt"></i>
-                            <span>Lien de démo (à venir)</span>
+                            <span>weatherflowak.netlify.app</span>
                         </a>
                     </div>
                 </div>
+            </div>
 
-                <!-- Project 3 - MoneyTransfer -->
-                <div class="project-card group" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="100">
-                    <div class="relative overflow-hidden h-64">
-                        <img src="images/portfolio3.jpg" alt="MoneyTransfer" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                        <div class="absolute inset-0 bg-gradient-to-t from-dark-500 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                        <div class="absolute inset-0 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-4 group-hover:translate-y-0">
-                            <a href="https://github.com/kay1403/MoneyTransfer" target="_blank" class="w-12 h-12 rounded-full bg-blue-600 flex items-center justify-center hover:bg-blue-700 transition-colors" title="Code source">
-                                <i class="fab fa-github text-white"></i>
-                            </a>
+            <!-- Project 5 - BornSafe -->
+            <div class="project-card group" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="200">
+                <div class="relative overflow-hidden h-64">
+                    <img src="images/portfolio5.jpg" alt="BornSafe" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-dark-500 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div class="absolute inset-0 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-4 group-hover:translate-y-0">
+                        <!-- GitHub Icon - ACTIF -->
+                        <a href="https://github.com/kay1403/BornSafe" target="_blank" class="w-12 h-12 rounded-full bg-blue-600 flex items-center justify-center hover:bg-blue-700 transition-colors" title="Code source">
+                            <i class="fab fa-github text-white"></i>
+                        </a>
+                        <!-- Demo Icon - INACTIF -->
+                        <div class="w-12 h-12 rounded-full bg-gray-600 flex items-center justify-center cursor-not-allowed opacity-50" title="Démo non disponible">
+                            <i class="fas fa-external-link-alt text-white"></i>
                         </div>
                     </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-display font-bold text-white mb-2">MoneyTransfer</h3>
-                        <p class="text-gray-400 mb-4" data-i18n="projects.desc3">Application de transfert d'argent avec authentification sécurisée.</p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="tech-badge">Django</span>
-                            <span class="tech-badge">JWT</span>
-                            <span class="tech-badge">PostgreSQL</span>
-                            <span class="tech-badge">API</span>
-                        </div>
-                        <a href="#" class="text-sm text-blue-400 hover:text-blue-300 transition-colors inline-flex items-center gap-1">
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-display font-bold text-white mb-2">BornSafe</h3>
+                    <p class="text-gray-400 mb-4" data-i18n="projects.desc5">Système de gestion d'actes de naissance avec génération de QR codes et PDF.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="tech-badge">Django</span>
+                        <span class="tech-badge">PostgreSQL</span>
+                        <span class="tech-badge">QR Code</span>
+                        <span class="tech-badge">PDF</span>
+                    </div>
+                    <!-- Liens textuels -->
+                    <div class="flex flex-col gap-2">
+                        <a href="https://github.com/kay1403/BornSafe" target="_blank" class="text-sm text-blue-400 hover:text-blue-300 transition-colors inline-flex items-center gap-1">
+                            <i class="fab fa-github"></i>
+                            <span data-i18n="projects.source">Code source</span>
+                        </a>
+                        <span class="text-sm text-gray-500 inline-flex items-center gap-1 cursor-not-allowed">
                             <i class="fas fa-external-link-alt"></i>
-                            <span>Lien de démo (à venir)</span>
+                            <span data-i18n="projects.comingSoon">Démo à venir</span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 6 - ENTRESAAS -->
+            <div class="project-card group" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="250">
+                <div class="relative overflow-hidden h-64">
+                    <img src="images/portfolio6.jpg" alt="ENTRESAAS" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-dark-500 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div class="absolute inset-0 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-4 group-hover:translate-y-0">
+                        <!-- GitHub Icon - ACTIF -->
+                        <a href="https://github.com/kay1403/ENTRESAAS" target="_blank" class="w-12 h-12 rounded-full bg-blue-600 flex items-center justify-center hover:bg-blue-700 transition-colors" title="Code source">
+                            <i class="fab fa-github text-white"></i>
+                        </a>
+                        <!-- Demo Icon - INACTIF -->
+                        <div class="w-12 h-12 rounded-full bg-gray-600 flex items-center justify-center cursor-not-allowed opacity-50" title="Démo non disponible">
+                            <i class="fas fa-external-link-alt text-white"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-display font-bold text-white mb-2">ENTRESAAS</h3>
+                    <p class="text-gray-400 mb-4" data-i18n="projects.desc6">Plateforme SaaS avec authentification 2FA, RBAC, et audit trail.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="tech-badge">NestJS</span>
+                        <span class="tech-badge">React</span>
+                        <span class="tech-badge">PostgreSQL</span>
+                        <span class="tech-badge">JWT</span>
+                    </div>
+                    <!-- Liens textuels -->
+                    <div class="flex flex-col gap-2">
+                        <a href="https://github.com/kay1403/ENTRESAAS" target="_blank" class="text-sm text-blue-400 hover:text-blue-300 transition-colors inline-flex items-center gap-1">
+                            <i class="fab fa-github"></i>
+                            <span data-i18n="projects.source">Code source</span>
+                        </a>
+                        <span class="text-sm text-gray-500 inline-flex items-center gap-1 cursor-not-allowed">
+                            <i class="fas fa-external-link-alt"></i>
+                            <span data-i18n="projects.comingSoon">Démo à venir</span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 7 - SAWAI -->
+            <div class="project-card group" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="300">
+                <div class="relative overflow-hidden h-64">
+                    <img src="images/portfolio3.jpg" alt="SAWAI" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-dark-500 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div class="absolute inset-0 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-4 group-hover:translate-y-0">
+                        <!-- GitHub Icon - ACTIF -->
+                        <a href="https://github.com/kay1403/SAWAI" target="_blank" class="w-12 h-12 rounded-full bg-blue-600 flex items-center justify-center hover:bg-blue-700 transition-colors" title="Code source">
+                            <i class="fab fa-github text-white"></i>
+                        </a>
+                        <!-- Demo Icon - ACTIF -->
+                        <a href="https://sawailmd.netlify.app" target="_blank" class="w-12 h-12 rounded-full bg-blue-600 flex items-center justify-center hover:bg-blue-700 transition-colors" title="Voir la démo">
+                            <i class="fas fa-external-link-alt text-white"></i>
                         </a>
                     </div>
                 </div>
-
-                <!-- Project 4 - Weather Dashboard -->
-                <div class="project-card group" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="150">
-                    <div class="relative overflow-hidden h-64">
-                        <img src="images/portfolio4.jpg" alt="Weather Dashboard" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                        <div class="absolute inset-0 bg-gradient-to-t from-dark-500 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                        <div class="absolute inset-0 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-4 group-hover:translate-y-0">
-                            <a href="https://github.com/kay1403/weather-dashboard" target="_blank" class="w-12 h-12 rounded-full bg-blue-600 flex items-center justify-center hover:bg-blue-700 transition-colors" title="Code source">
-                                <i class="fab fa-github text-white"></i>
-                            </a>
-                            <a href="https://weatherflowak.netlify.app" target="_blank" class="w-12 h-12 rounded-full bg-blue-600 flex items-center justify-center hover:bg-blue-700 transition-colors" title="Voir le site">
-                                <i class="fas fa-external-link-alt text-white"></i>
-                            </a>
-                        </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-display font-bold text-white mb-2">SAWAI</h3>
+                    <p class="text-gray-400 mb-4" data-i18n="projects.desc7">Système IoT de surveillance des sols avec analyse de données en temps réel.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="tech-badge">Python</span>
+                        <span class="tech-badge">IoT</span>
+                        <span class="tech-badge">Arduino</span>
+                        <span class="tech-badge">Data Viz</span>
                     </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-display font-bold text-white mb-2">Weather Dashboard</h3>
-                        <p class="text-gray-400 mb-4" data-i18n="projects.desc4">Application météo interactive avec architecture responsive et système de favoris.</p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="tech-badge">JavaScript</span>
-                            <span class="tech-badge">HTML5</span>
-                            <span class="tech-badge">CSS3</span>
-                            <span class="tech-badge">API</span>
-                        </div>
-                        <div class="flex gap-4">
-                            <a href="https://weatherflowak.netlify.app" target="_blank" class="text-sm text-blue-400 hover:text-blue-300 transition-colors inline-flex items-center gap-1">
-                                <i class="fas fa-external-link-alt"></i>
-                                <span>weatherflowak.netlify.app</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 5 - BornSafe -->
-                <div class="project-card group" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="200">
-                    <div class="relative overflow-hidden h-64">
-                        <img src="images/portfolio5.jpg" alt="BornSafe" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                        <div class="absolute inset-0 bg-gradient-to-t from-dark-500 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                        <div class="absolute inset-0 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-4 group-hover:translate-y-0">
-                            <a href="https://github.com/kay1403/BornSafe" target="_blank" class="w-12 h-12 rounded-full bg-blue-600 flex items-center justify-center hover:bg-blue-700 transition-colors" title="Code source">
-                                <i class="fab fa-github text-white"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-display font-bold text-white mb-2">BornSafe</h3>
-                        <p class="text-gray-400 mb-4" data-i18n="projects.desc5">Système de gestion d'actes de naissance avec génération de QR codes et PDF.</p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="tech-badge">Django</span>
-                            <span class="tech-badge">PostgreSQL</span>
-                            <span class="tech-badge">QR Code</span>
-                            <span class="tech-badge">PDF</span>
-                        </div>
-                        <a href="#" class="text-sm text-blue-400 hover:text-blue-300 transition-colors inline-flex items-center gap-1">
+                    <!-- Liens textuels -->
+                    <div class="flex flex-col gap-2">
+                        <a href="https://github.com/kay1403/SAWAI" target="_blank" class="text-sm text-blue-400 hover:text-blue-300 transition-colors inline-flex items-center gap-1">
+                            <i class="fab fa-github"></i>
+                            <span data-i18n="projects.source">Code source</span>
+                        </a>
+                        <a href="https://sawailmd.netlify.app" target="_blank" class="text-sm text-blue-400 hover:text-blue-300 transition-colors inline-flex items-center gap-1">
                             <i class="fas fa-external-link-alt"></i>
-                            <span>Lien de démo (à venir)</span>
+                            <span>sawailmd.netlify.app</span>
                         </a>
                     </div>
                 </div>
+            </div>
 
-                <!-- Project 6 - ENTRESAAS -->
-                <div class="project-card group" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="250">
-                    <div class="relative overflow-hidden h-64">
-                        <img src="images/portfolio6.jpg" alt="ENTRESAAS" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                        <div class="absolute inset-0 bg-gradient-to-t from-dark-500 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                        <div class="absolute inset-0 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-4 group-hover:translate-y-0">
-                            <a href="https://github.com/kay1403/ENTRESAAS" target="_blank" class="w-12 h-12 rounded-full bg-blue-600 flex items-center justify-center hover:bg-blue-700 transition-colors" title="Code source">
-                                <i class="fab fa-github text-white"></i>
-                            </a>
+            <!-- Project 8 - RSSB Clone -->
+            <div class="project-card group" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="350">
+                <div class="relative overflow-hidden h-64">
+                    <img src="images/portfolio5.jpg" alt="RSSB Clone" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-dark-500 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div class="absolute inset-0 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-4 group-hover:translate-y-0">
+                        <!-- GitHub Icon - INACTIF -->
+                        <div class="w-12 h-12 rounded-full bg-gray-600 flex items-center justify-center cursor-not-allowed opacity-50" title="Code source non disponible">
+                            <i class="fab fa-github text-white"></i>
                         </div>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-display font-bold text-white mb-2">ENTRESAAS</h3>
-                        <p class="text-gray-400 mb-4" data-i18n="projects.desc6">Plateforme SaaS avec authentification 2FA, RBAC, et audit trail.</p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="tech-badge">NestJS</span>
-                            <span class="tech-badge">React</span>
-                            <span class="tech-badge">PostgreSQL</span>
-                            <span class="tech-badge">JWT</span>
-                        </div>
-                        <a href="#" class="text-sm text-blue-400 hover:text-blue-300 transition-colors inline-flex items-center gap-1">
-                            <i class="fas fa-external-link-alt"></i>
-                            <span>Lien de démo (à venir)</span>
+                        <!-- Demo Icon - ACTIF -->
+                        <a href="https://tailwindcloninggate.netlify.app" target="_blank" class="w-12 h-12 rounded-full bg-blue-600 flex items-center justify-center hover:bg-blue-700 transition-colors" title="Voir la démo">
+                            <i class="fas fa-external-link-alt text-white"></i>
                         </a>
                     </div>
                 </div>
-
-                <!-- Project 7 - SAWAI -->
-                <div class="project-card group" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="300">
-                    <div class="relative overflow-hidden h-64">
-                        <img src="images/eagle_s.jpeg" alt="SAWAI" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                        <div class="absolute inset-0 bg-gradient-to-t from-dark-500 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                        <div class="absolute inset-0 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-4 group-hover:translate-y-0">
-                            <a href="https://github.com/kay1403/SAWAI" target="_blank" class="w-12 h-12 rounded-full bg-blue-600 flex items-center justify-center hover:bg-blue-700 transition-colors" title="Code source">
-                                <i class="fab fa-github text-white"></i>
-                            </a>
-                            <a href="https://sawailmd.netlify.app" target="_blank" class="w-12 h-12 rounded-full bg-blue-600 flex items-center justify-center hover:bg-blue-700 transition-colors" title="Voir le site">
-                                <i class="fas fa-external-link-alt text-white"></i>
-                            </a>
-                        </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-display font-bold text-white mb-2">RSSB Clone</h3>
+                    <p class="text-gray-400 mb-4">Clone du site du Rwanda Social Security Board - Optimistic and forward-looking agent of central government, working to achieve the financial security and health of all Rwandans.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="tech-badge">HTML5</span>
+                        <span class="tech-badge">CSS3</span>
+                        <span class="tech-badge">Tailwind</span>
+                        <span class="tech-badge">Responsive</span>
                     </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-display font-bold text-white mb-2">SAWAI</h3>
-                        <p class="text-gray-400 mb-4" data-i18n="projects.desc7">Système IoT de surveillance des sols avec analyse de données en temps réel.</p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="tech-badge">Python</span>
-                            <span class="tech-badge">IoT</span>
-                            <span class="tech-badge">Arduino</span>
-                            <span class="tech-badge">Data Viz</span>
-                        </div>
-                        <div class="flex gap-4">
-                            <a href="https://sawailmd.netlify.app" target="_blank" class="text-sm text-blue-400 hover:text-blue-300 transition-colors inline-flex items-center gap-1">
-                                <i class="fas fa-external-link-alt"></i>
-                                <span>sawailmd.netlify.app</span>
-                            </a>
-                        </div>
+                    <!-- Liens textuels -->
+                    <div class="flex flex-col gap-2">
+                        <span class="text-sm text-gray-500 inline-flex items-center gap-1 cursor-not-allowed">
+                            <i class="fab fa-github"></i>
+                            <span data-i18n="projects.comingSoon">Code source à venir</span>
+                        </span>
+                        <a href="https://tailwindcloninggate.netlify.app" target="_blank" class="text-sm text-blue-400 hover:text-blue-300 transition-colors inline-flex items-center gap-1">
+                            <i class="fas fa-external-link-alt"></i>
+                            <span>tailwindcloninggate.netlify.app</span>
+                        </a>
                     </div>
                 </div>
+            </div>
 
-                <!-- Project 8 - RSSB Clone -->
-                <div class="project-card group" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="350">
-                    <div class="relative overflow-hidden h-64">
-                        <img src="images/IMG-20230529-WA0004.jpg" alt="RSSB Clone" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                        <div class="absolute inset-0 bg-gradient-to-t from-dark-500 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                        <div class="absolute inset-0 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-4 group-hover:translate-y-0">
-                            <a href="https://tailwindcloninggate.netlify.app" target="_blank" class="w-12 h-12 rounded-full bg-blue-600 flex items-center justify-center hover:bg-blue-700 transition-colors" title="Voir le site">
-                                <i class="fas fa-external-link-alt text-white"></i>
-                            </a>
+            <!-- Project 9 - Baumeister -->
+            <div class="project-card group" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="400">
+                <div class="relative overflow-hidden h-64">
+                    <img src="images/portfolio3.jpg" alt="Baumeister" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-dark-500 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div class="absolute inset-0 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-4 group-hover:translate-y-0">
+                        <!-- GitHub Icon - INACTIF -->
+                        <div class="w-12 h-12 rounded-full bg-gray-600 flex items-center justify-center cursor-not-allowed opacity-50" title="Code source non disponible">
+                            <i class="fab fa-github text-white"></i>
                         </div>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-display font-bold text-white mb-2">RSSB Clone</h3>
-                        <p class="text-gray-400 mb-4">Clone du site du Rwanda Social Security Board - Optimistic and forward-looking agent of central government, working to achieve the financial security and health of all Rwandans.</p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="tech-badge">HTML5</span>
-                            <span class="tech-badge">CSS3</span>
-                            <span class="tech-badge">Tailwind</span>
-                            <span class="tech-badge">Responsive</span>
-                        </div>
-                        <div class="flex gap-4">
-                            <a href="https://tailwindcloninggate.netlify.app" target="_blank" class="text-sm text-blue-400 hover:text-blue-300 transition-colors inline-flex items-center gap-1">
-                                <i class="fas fa-external-link-alt"></i>
-                                <span>tailwindcloninggate.netlify.app</span>
-                            </a>
-                        </div>
+                        <!-- Demo Icon - ACTIF -->
+                        <a href="https://websiteprojectgroup3.netlify.app" target="_blank" class="w-12 h-12 rounded-full bg-blue-600 flex items-center justify-center hover:bg-blue-700 transition-colors" title="Voir la démo">
+                            <i class="fas fa-external-link-alt text-white"></i>
+                        </a>
                     </div>
                 </div>
-
-                <!-- Project 9 - Allmende Baumeister -->
-                <div class="project-card group" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="400">
-                    <div class="relative overflow-hidden h-64">
-                        <img src="images/IMG-20230529-WA0004.jpg" alt="Allmende Baumeister" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                        <div class="absolute inset-0 bg-gradient-to-t from-dark-500 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                        <div class="absolute inset-0 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-4 group-hover:translate-y-0">
-                            <a href="https://websiteprojectgroup3.netlify.app" target="_blank" class="w-12 h-12 rounded-full bg-blue-600 flex items-center justify-center hover:bg-blue-700 transition-colors" title="Voir le site">
-                                <i class="fas fa-external-link-alt text-white"></i>
-                            </a>
-                        </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-display font-bold text-white mb-2">Baumeister</h3>
+                    <p class="text-gray-400 mb-4">Clone du site  Baumeister - Projet de groupe avec design moderne et responsive.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="tech-badge">HTML5</span>
+                        <span class="tech-badge">CSS3</span>
+                        <span class="tech-badge">JavaScript</span>
+                        <span class="tech-badge">Responsive</span>
                     </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-display font-bold text-white mb-2">Allmende Baumeister</h3>
-                        <p class="text-gray-400 mb-4">Clone du site Allmende Baumeister - Projet de groupe avec design moderne et responsive.</p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="tech-badge">HTML5</span>
-                            <span class="tech-badge">CSS3</span>
-                            <span class="tech-badge">JavaScript</span>
-                            <span class="tech-badge">Responsive</span>
-                        </div>
-                        <div class="flex gap-4">
-                            <a href="https://websiteprojectgroup3.netlify.app" target="_blank" class="text-sm text-blue-400 hover:text-blue-300 transition-colors inline-flex items-center gap-1">
-                                <i class="fas fa-external-link-alt"></i>
-                                <span>websiteprojectgroup3.netlify.app</span>
-                            </a>
-                        </div>
+                    <!-- Liens textuels -->
+                    <div class="flex flex-col gap-2">
+                        <span class="text-sm text-gray-500 inline-flex items-center gap-1 cursor-not-allowed">
+                            <i class="fab fa-github"></i>
+                            <span data-i18n="projects.comingSoon">Code source à venir</span>
+                        </span>
+                        <a href="https://websiteprojectgroup3.netlify.app" target="_blank" class="text-sm text-blue-400 hover:text-blue-300 transition-colors inline-flex items-center gap-1">
+                            <i class="fas fa-external-link-alt"></i>
+                            <span>websiteprojectgroup3.netlify.app</span>
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
     <!-- Skills Section -->
     <section id="skills" class="py-32 relative">
@@ -2830,228 +2925,7 @@ module.exports = {
   },
 }
 -e \n--- FILE: ./src/js/main.js ---
-// Initialisation AOS
-AOS.init({
-    duration: 1000,
-    once: true,
-    offset: 100,
-    easing: 'ease-in-out'
-});
-
-// Typed.js
-const typed = new Typed('.typed-text', {
-    strings: [
-        'Data Scientist',
-        'Développeur Full-Stack',
-        'Passionné d\'IA',
-        'Résolveur de problèmes',
-        'Champion de football 🏆'
-    ],
-    typeSpeed: 50,
-    backSpeed: 30,
-    backDelay: 2000,
-    startDelay: 500,
-    loop: true,
-    showCursor: true,
-    cursorChar: '|'
-});
-
-// Mobile Menu
-const menuBtn = document.getElementById('menu-btn');
-const mobileMenu = document.getElementById('mobile-menu');
-
-if (menuBtn && mobileMenu) {
-    menuBtn.addEventListener('click', () => {
-        menuBtn.classList.toggle('open');
-        mobileMenu.classList.toggle('hidden');
-    });
-
-    document.querySelectorAll('#mobile-menu a').forEach(link => {
-        link.addEventListener('click', () => {
-            menuBtn.classList.remove('open');
-            mobileMenu.classList.add('hidden');
-        });
-    });
-}
-
-// Navbar scroll effect
-const navbar = document.getElementById('navbar');
-let lastScroll = 0;
-
-window.addEventListener('scroll', () => {
-    const currentScroll = window.pageYOffset;
-    
-    if (currentScroll <= 0) {
-        navbar.classList.remove('scroll-up');
-        return;
-    }
-    
-    if (currentScroll > lastScroll && !navbar.classList.contains('scroll-down')) {
-        navbar.classList.remove('scroll-up');
-        navbar.classList.add('scroll-down');
-    } else if (currentScroll < lastScroll && navbar.classList.contains('scroll-down')) {
-        navbar.classList.remove('scroll-down');
-        navbar.classList.add('scroll-up');
-    }
-    
-    lastScroll = currentScroll;
-});
-
-// Active navigation
-const sections = document.querySelectorAll('section[id]');
-const navLinks = document.querySelectorAll('.nav-link');
-
-window.addEventListener('scroll', () => {
-    let current = '';
-    const scrollY = window.pageYOffset;
-    const headerHeight = 100;
-
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop - headerHeight;
-        const sectionBottom = sectionTop + section.offsetHeight;
-
-        if (scrollY >= sectionTop && scrollY < sectionBottom) {
-            current = section.getAttribute('id');
-        }
-    });
-
-    navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href') === `#${current}`) {
-            link.classList.add('active');
-        }
-    });
-});
-
-// Counter animation
-const counters = document.querySelectorAll('.counter');
-const speed = 200;
-
-const animateCounter = (counter) => {
-    const target = parseInt(counter.getAttribute('data-target'));
-    let count = 0;
-    
-    const updateCount = () => {
-        const increment = target / speed;
-        
-        if (count < target) {
-            count += increment;
-            counter.innerText = Math.ceil(count);
-            setTimeout(updateCount, 1);
-        } else {
-            counter.innerText = target;
-        }
-    };
-    
-    updateCount();
-};
-
-const counterObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            const counter = entry.target;
-            animateCounter(counter);
-            counterObserver.unobserve(counter);
-        }
-    });
-}, { threshold: 0.5 });
-
-counters.forEach(counter => counterObserver.observe(counter));
-
-// Smooth scroll
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-        const href = this.getAttribute('href');
-        if (href === '#') return;
-        
-        const target = document.querySelector(href);
-        if (target) {
-            e.preventDefault();
-            const headerOffset = 100;
-            const elementPosition = target.getBoundingClientRect().top;
-            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
-            window.scrollTo({
-                top: offsetPosition,
-                behavior: 'smooth'
-            });
-        }
-    });
-});
-
-// Contact form
-const contactForm = document.getElementById('contactForm');
-
-if (contactForm) {
-    contactForm.addEventListener('submit', async (e) => {
-        e.preventDefault();
-        
-        const submitBtn = contactForm.querySelector('button[type="submit"]');
-        const originalText = submitBtn.innerHTML;
-        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Envoi...';
-        submitBtn.disabled = true;
-
-        try {
-            await new Promise(resolve => setTimeout(resolve, 2000));
-            showNotification('Message envoyé avec succès ! Je vous répondrai bientôt.', 'success');
-            contactForm.reset();
-        } catch (error) {
-            showNotification('Une erreur est survenue. Veuillez réessayer.', 'error');
-        } finally {
-            submitBtn.innerHTML = originalText;
-            submitBtn.disabled = false;
-        }
-    });
-}
-
-// Notification system
-function showNotification(message, type = 'success') {
-    const notification = document.createElement('div');
-    notification.className = `fixed top-24 right-4 z-50 px-6 py-4 rounded-xl shadow-glow-lg animate-slide-left ${
-        type === 'success' ? 'bg-green-500' : 'bg-red-500'
-    } text-white flex items-center gap-3`;
-    
-    notification.innerHTML = `
-        <i class="fas fa-${type === 'success' ? 'check-circle' : 'exclamation-circle'} text-xl"></i>
-        <span>${message}</span>
-    `;
-    
-    document.body.appendChild(notification);
-    
-    setTimeout(() => {
-        notification.style.animation = 'slideRight 0.5s ease-out forwards';
-        setTimeout(() => notification.remove(), 500);
-    }, 4000);
-}
-
-// Parallax effect
-document.addEventListener('mousemove', (e) => {
-    const shapes = document.querySelectorAll('.floating-shape');
-    const mouseX = e.clientX / window.innerWidth;
-    const mouseY = e.clientY / window.innerHeight;
-    
-    shapes.forEach((shape, index) => {
-        const speed = index + 1;
-        const x = (mouseX * speed * 20) - (speed * 10);
-        const y = (mouseY * speed * 20) - (speed * 10);
-        shape.style.transform = `translate(${x}px, ${y}px)`;
-    });
-});
-
-// Preloader
-window.addEventListener('load', () => {
-    document.body.classList.add('loaded');
-    
-    document.querySelectorAll('[data-aos]').forEach(el => {
-        el.classList.add('aos-animate');
-    });
-});
-
-// Dynamic year
-document.querySelector('.footer .text-gray-500').innerHTML = 
-    `© ${new Date().getFullYear()} Ange KOUMBA. Tous droits réservés.`;
-
-// ===== SYSTÈME DE CHANGEMENT DE LANGUE AMÉLIORÉ =====
+// ===== SYSTÈME DE CHANGEMENT DE LANGUE - DOIT ÊTRE EN PREMIER ET DÉFINI AVANT TOUT =====
 const translations = {
     fr: {
         nav: {
@@ -3068,7 +2942,7 @@ const translations = {
             description: "Étudiant en dernière année d'IT à l'University of Kigali, spécialisé en Data Science et Développement Full-Stack. Passionné par la fintech et l'IA.",
             contact: "Me contacter",
             cv: "CV",
-            scroll: "Scroll"
+            scroll: "Défiler"
         },
         about: {
             subtitle: "QUI SUIS-JE ?",
@@ -3111,7 +2985,10 @@ const translations = {
             desc4: "Application météo interactive avec architecture responsive et système de favoris.",
             desc5: "Système de gestion d'actes de naissance avec génération de QR codes et PDF.",
             desc6: "Plateforme SaaS avec authentification 2FA, RBAC, et audit trail.",
-            desc7: "Système IoT de surveillance des sols avec analyse de données en temps réel."
+            desc7: "Système IoT de surveillance des sols avec analyse de données en temps réel.",
+            demo: "Voir la démo",
+            source: "Code source",
+            comingSoon: "Démo à venir"
         },
         skills: {
             subtitle: "MON EXPERTISE",
@@ -3123,7 +3000,8 @@ const translations = {
         },
         certs: {
             subtitle: "MES CERTIFICATIONS",
-            title: "Parcours ALX Africa"
+            title: "Parcours ALX Africa",
+            click: "Cliquer pour voir"
         },
         contact: {
             subtitle: "RESTONS EN CONTACT",
@@ -3207,7 +3085,10 @@ const translations = {
             desc4: "Interactive weather app with responsive architecture and favorites system.",
             desc5: "Birth certificate management system with QR code and PDF generation.",
             desc6: "SaaS platform with 2FA authentication, RBAC, and audit trail.",
-            desc7: "IoT soil monitoring system with real-time data analysis."
+            desc7: "IoT soil monitoring system with real-time data analysis.",
+            demo: "Live demo",
+            source: "Source code",
+            comingSoon: "Demo coming soon"
         },
         skills: {
             subtitle: "MY EXPERTISE",
@@ -3219,7 +3100,8 @@ const translations = {
         },
         certs: {
             subtitle: "MY CERTIFICATIONS",
-            title: "ALX Africa Journey"
+            title: "ALX Africa Journey",
+            click: "Click to view"
         },
         contact: {
             subtitle: "LET'S CONNECT",
@@ -3247,24 +3129,60 @@ const translations = {
     }
 };
 
-// Fonction améliorée pour changer la langue
-function switchLanguage(lang) {
-    console.log('Changement de langue vers:', lang);
+// DÉFINIR LA FONCTION AVANT TOUT - EN GLOBAL
+window.switchLanguage = function(lang) {
+    console.log('🔄 Changement de langue vers:', lang);
     
-    // Mettre à jour les attributs data-i18n
+    if (!translations[lang]) {
+        console.error('❌ Langue non supportée:', lang);
+        return;
+    }
+    
+    // Traduire les textes (data-i18n)
     document.querySelectorAll('[data-i18n]').forEach(element => {
-        const keys = element.getAttribute('data-i18n').split('.');
+        const path = element.getAttribute('data-i18n');
+        const keys = path.split('.');
         let value = translations[lang];
         
         try {
-            keys.forEach(key => {
-                value = value[key];
-            });
+            for (let key of keys) {
+                if (value && value[key] !== undefined) {
+                    value = value[key];
+                } else {
+                    value = null;
+                    break;
+                }
+            }
             if (value) {
                 element.textContent = value;
+            } else {
+                console.warn('⚠️ Traduction manquante:', path);
             }
         } catch (e) {
-            console.warn('Traduction manquante pour:', element.getAttribute('data-i18n'));
+            console.warn('⚠️ Erreur pour:', path);
+        }
+    });
+
+    // Traduire les placeholders
+    document.querySelectorAll('[data-i18n-placeholder]').forEach(element => {
+        const path = element.getAttribute('data-i18n-placeholder');
+        const keys = path.split('.');
+        let value = translations[lang];
+        
+        try {
+            for (let key of keys) {
+                if (value && value[key] !== undefined) {
+                    value = value[key];
+                } else {
+                    value = null;
+                    break;
+                }
+            }
+            if (value) {
+                element.placeholder = value;
+            }
+        } catch (e) {
+            console.warn('⚠️ Placeholder manquant:', path);
         }
     });
 
@@ -3278,12 +3196,236 @@ function switchLanguage(lang) {
 
     // Sauvegarder la préférence
     localStorage.setItem('preferred-language', lang);
+    console.log('✅ Langue changée avec succès');
+};
+
+// ===== INITIALISATION AU CHARGEMENT =====
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('📦 DOM chargé, initialisation...');
+    
+    // Charger la langue préférée
+    const savedLang = localStorage.getItem('preferred-language') || 'fr';
+    window.switchLanguage(savedLang);
+
+    // Initialisation AOS
+    AOS.init({
+        duration: 1000,
+        once: true,
+        offset: 100,
+        easing: 'ease-in-out'
+    });
+
+    // Typed.js - Doit être initialisé APRÈS la langue
+    if (document.querySelector('.typed-text')) {
+        new Typed('.typed-text', {
+            strings: savedLang === 'fr' 
+                ? ['Data Scientist', 'Développeur Full-Stack', 'Passionné d\'IA', 'Résolveur de problèmes', 'Champion de football 🏆']
+                : ['Data Scientist', 'Full-Stack Developer', 'AI Enthusiast', 'Problem Solver', 'Football Champion 🏆'],
+            typeSpeed: 50,
+            backSpeed: 30,
+            backDelay: 2000,
+            startDelay: 500,
+            loop: true,
+            showCursor: true,
+            cursorChar: '|'
+        });
+    }
+
+    // Mobile Menu
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    if (menuBtn && mobileMenu) {
+        menuBtn.addEventListener('click', () => {
+            menuBtn.classList.toggle('open');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                menuBtn.classList.remove('open');
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    }
+
+    // Navbar scroll effect
+    const navbar = document.getElementById('navbar');
+    let lastScroll = 0;
+
+    window.addEventListener('scroll', () => {
+        const currentScroll = window.pageYOffset;
+        
+        if (currentScroll <= 0) {
+            navbar.classList.remove('scroll-up');
+            return;
+        }
+        
+        if (currentScroll > lastScroll && !navbar.classList.contains('scroll-down')) {
+            navbar.classList.remove('scroll-up');
+            navbar.classList.add('scroll-down');
+        } else if (currentScroll < lastScroll && navbar.classList.contains('scroll-down')) {
+            navbar.classList.remove('scroll-down');
+            navbar.classList.add('scroll-up');
+        }
+        
+        lastScroll = currentScroll;
+    });
+
+    // Active navigation
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    window.addEventListener('scroll', () => {
+        let current = '';
+        const scrollY = window.pageYOffset;
+        const headerHeight = 100;
+
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop - headerHeight;
+            const sectionBottom = sectionTop + section.offsetHeight;
+
+            if (scrollY >= sectionTop && scrollY < sectionBottom) {
+                current = section.getAttribute('id');
+            }
+        });
+
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === `#${current}`) {
+                link.classList.add('active');
+            }
+        });
+    });
+
+    // Counter animation
+    const counters = document.querySelectorAll('.counter');
+    const speed = 200;
+
+    const animateCounter = (counter) => {
+        const target = parseInt(counter.getAttribute('data-target'));
+        let count = 0;
+        
+        const updateCount = () => {
+            const increment = target / speed;
+            
+            if (count < target) {
+                count += increment;
+                counter.innerText = Math.ceil(count);
+                setTimeout(updateCount, 1);
+            } else {
+                counter.innerText = target;
+            }
+        };
+        
+        updateCount();
+    };
+
+    const counterObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const counter = entry.target;
+                animateCounter(counter);
+                counterObserver.unobserve(counter);
+            }
+        });
+    }, { threshold: 0.5 });
+
+    counters.forEach(counter => counterObserver.observe(counter));
+
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            if (href === '#') return;
+            
+            const target = document.querySelector(href);
+            if (target) {
+                e.preventDefault();
+                const headerOffset = 100;
+                const elementPosition = target.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+
+    // Contact form
+    const contactForm = document.getElementById('contactForm');
+
+    if (contactForm) {
+        contactForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const submitBtn = contactForm.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Envoi...';
+            submitBtn.disabled = true;
+
+            try {
+                await new Promise(resolve => setTimeout(resolve, 2000));
+                showNotification('Message envoyé avec succès ! Je vous répondrai bientôt.', 'success');
+                contactForm.reset();
+            } catch (error) {
+                showNotification('Une erreur est survenue. Veuillez réessayer.', 'error');
+            } finally {
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+            }
+        });
+    }
+
+    // Dynamic year
+    const yearElement = document.querySelector('.footer .text-gray-500');
+    if (yearElement) {
+        yearElement.innerHTML = `© ${new Date().getFullYear()} Ange KOUMBA. <span data-i18n="footer.rights">Tous droits réservés.</span>`;
+    }
+});
+
+// Notification system (doit être accessible)
+function showNotification(message, type = 'success') {
+    const notification = document.createElement('div');
+    notification.className = `fixed top-24 right-4 z-50 px-6 py-4 rounded-xl shadow-glow-lg animate-slide-left ${
+        type === 'success' ? 'bg-green-500' : 'bg-red-500'
+    } text-white flex items-center gap-3`;
+    
+    notification.innerHTML = `
+        <i class="fas fa-${type === 'success' ? 'check-circle' : 'exclamation-circle'} text-xl"></i>
+        <span>${message}</span>
+    `;
+    
+    document.body.appendChild(notification);
+    
+    setTimeout(() => {
+        notification.style.animation = 'slideRight 0.5s ease-out forwards';
+        setTimeout(() => notification.remove(), 500);
+    }, 4000);
 }
 
-// Charger la langue préférée au démarrage
-document.addEventListener('DOMContentLoaded', () => {
-    const savedLang = localStorage.getItem('preferred-language') || 'fr';
-    switchLanguage(savedLang);
+// Parallax effect
+document.addEventListener('mousemove', (e) => {
+    const shapes = document.querySelectorAll('.floating-shape');
+    const mouseX = e.clientX / window.innerWidth;
+    const mouseY = e.clientY / window.innerHeight;
+    
+    shapes.forEach((shape, index) => {
+        const speed = index + 1;
+        const x = (mouseX * speed * 20) - (speed * 10);
+        const y = (mouseY * speed * 20) - (speed * 10);
+        shape.style.transform = `translate(${x}px, ${y}px)`;
+    });
+});
+
+// Preloader
+window.addEventListener('load', () => {
+    document.body.classList.add('loaded');
+    document.querySelectorAll('[data-aos]').forEach(el => {
+        el.classList.add('aos-animate');
+    });
 });-e \n--- FILE: ./src/input.css ---
 @tailwind base;
 @tailwind components;

@@ -137,17 +137,17 @@
                         Passionné par la fintech et l'IA.
                     </p>
 
-                    <!-- CTA Buttons -->
-                    <div class="flex flex-wrap gap-4">
-                        <a href="#contact" class="btn-primary group">
-                            <span class="relative z-10" data-i18n="hero.contact">Me contacter</span>
-                            <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
-                        </a>
-                        <a href="Resume/Ange%20KOUMBA%20Resume%282025%29.pdf" class="btn-outline group" download>
-                            <i class="fas fa-download mr-2"></i>
-                            <span data-i18n="hero.cv">CV</span>
-                        </a>
-                    </div>
+                   <!-- CTA Buttons avec téléchargement CV intelligent -->
+            <div class="flex flex-wrap gap-4">
+                <a href="#contact" class="btn-primary group">
+                    <span class="relative z-10" data-i18n="hero.contact">Me contacter</span>
+                    <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                </a>
+                <button onclick="downloadCV()" class="btn-outline group cursor-pointer">
+                    <i class="fas fa-download mr-2"></i>
+                    <span data-i18n="hero.cv">CV</span>
+                </button>
+            </div>
 
                     <!-- Social Links -->
                     <div class="flex space-x-4 pt-4">
@@ -1325,9 +1325,16 @@
         </div>
     </footer>
 
-    <!-- Scripts -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-    <script src="dist/js/main.js"></script>
+<!-- Scripts -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
+<!-- EmailJS -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script type="text/javascript">
+    (function() {
+        emailjs.init("xPli5Qr1N_RE53QJ9");
+    })();
+</script>
+<script src="dist/js/main.js"></script>
 </body>
 </html>
