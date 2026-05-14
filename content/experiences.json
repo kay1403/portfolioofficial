@@ -1,0 +1,25 @@
+{
+  "experiences": [
+    {
+      "title": "Front-End Developer",
+      "company": "Saltel · Kigali, Rwanda",
+      "period": "Jan 2025 - Mar 2025",
+      "description": [
+        "Development of responsive interfaces with React, TypeScript and Tailwind CSS",
+        "User experience improvement through modern designs",
+        "Collaboration with technical team on complex problems"
+      ],
+      "tech": ["React", "TypeScript", "Tailwind"]
+    },
+    {
+      "title": "Class Representative",
+      "company": "University of Kigali",
+      "period": "2023 - Present",
+      "description": [
+        "Liaison between students and faculty for 50+ students",
+        "Communication facilitation and academic problem solving"
+      ],
+      "tech": ["Leadership", "Communication", "Mediation"]
+    }
+  ]
+}

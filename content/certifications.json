@@ -1,0 +1,70 @@
+{
+  "certifications": [
+    {
+      "title": "Back-End Web Development",
+      "file": "certificates/Transcript%20-%20backend-%20Ange%20Koumba.pdf",
+      "icon": "fas fa-server",
+      "status": "published"
+    },
+    {
+      "title": "Front-End Web Development",
+      "file": "certificates/Transcript%20-%20frontenddev-%20Ange%20Koumba-2.pdf",
+      "icon": "fas fa-code",
+      "status": "published"
+    },
+    {
+      "title": "Data Analytics",
+      "file": "certificates/51-data-analytics-certificate-ange-koumba.png",
+      "icon": "fas fa-chart-bar",
+      "status": "published"
+    },
+    {
+      "title": "Python Programming",
+      "file": "certificates/189-python-programming-certificate-ange-koumba.png",
+      "icon": "fab fa-python",
+      "status": "published"
+    },
+    {
+      "title": "ProDev Backend",
+      "file": "certificates/86-prodev-backend-certificate-ange-koumba.png",
+      "icon": "fas fa-laptop-code",
+      "status": "published"
+    },
+    {
+      "title": "Founder Academy",
+      "file": "certificates/118-founder-academy-4-week-certificate-ange-koumba.png",
+      "icon": "fas fa-rocket",
+      "status": "published"
+    },
+    {
+      "title": "Professional Foundations",
+      "file": "certificates/89-professional-foundations-certificate-ange-koumba.png",
+      "icon": "fas fa-briefcase",
+      "status": "published"
+    },
+    {
+      "title": "Freelancer Academy",
+      "file": "certificates/117-freelancer-academy-2-week-certificate-ange-koumba.png",
+      "icon": "fas fa-user-tie",
+      "status": "published"
+    },
+    {
+      "title": "Cybersecurity",
+      "file": "",
+      "icon": "fas fa-shield-alt",
+      "status": "inprogress"
+    },
+    {
+      "title": "Machine Learning",
+      "file": "",
+      "icon": "fas fa-brain",
+      "status": "inprogress"
+    },
+    {
+      "title": "Data Engineering",
+      "file": "",
+      "icon": "fas fa-database",
+      "status": "coming"
+    }
+  ]
+}

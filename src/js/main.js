@@ -4,10 +4,7 @@ emailjs.init("xPli5Qr1N_RE53QJ9");
 // ===== SYSTÈME DE CHANGEMENT DE LANGUE =====
 const translations = {
     fr: {
-        lang: {
-            fr: "FR",
-            en: "EN"
-        },
+        lang: { fr: "FR", en: "EN" },
         nav: {
             home: "Accueil",
             about: "À propos",
@@ -133,10 +130,7 @@ const translations = {
         }
     },
     en: {
-        lang: {
-            fr: "FR",
-            en: "EN"
-        },
+        lang: { fr: "FR", en: "EN" },
         nav: {
             home: "Home",
             about: "About",
@@ -266,78 +260,50 @@ const translations = {
 // ===== FONCTION DE CHANGEMENT DE LANGUE =====
 window.switchLanguage = function(lang) {
     console.log('🔄 Changement de langue vers:', lang);
-    
     if (!translations[lang]) {
         console.error('❌ Langue non supportée:', lang);
         return;
     }
     
-    // Traduire les textes (data-i18n) - avec innerHTML pour les sauts de ligne
     document.querySelectorAll('[data-i18n]').forEach(element => {
         const path = element.getAttribute('data-i18n');
         const keys = path.split('.');
         let value = translations[lang];
-        
         try {
             for (let key of keys) {
-                if (value && value[key] !== undefined) {
-                    value = value[key];
-                } else {
-                    value = null;
-                    break;
-                }
+                if (value && value[key] !== undefined) value = value[key];
+                else { value = null; break; }
             }
-            if (value !== undefined && value !== null) {
-                element.innerHTML = value;
-            } else {
-                console.warn('⚠️ Traduction manquante:', path);
-            }
-        } catch (e) {
-            console.warn('⚠️ Erreur pour:', path);
-        }
+            if (value !== undefined && value !== null) element.innerHTML = value;
+            else console.warn('⚠️ Traduction manquante:', path);
+        } catch(e) { console.warn('⚠️ Erreur pour:', path); }
     });
 
-    // Traduire les placeholders
     document.querySelectorAll('[data-i18n-placeholder]').forEach(element => {
         const path = element.getAttribute('data-i18n-placeholder');
         const keys = path.split('.');
         let value = translations[lang];
-        
         try {
             for (let key of keys) {
-                if (value && value[key] !== undefined) {
-                    value = value[key];
-                } else {
-                    value = null;
-                    break;
-                }
+                if (value && value[key] !== undefined) value = value[key];
+                else { value = null; break; }
             }
-            if (value) {
-                element.placeholder = value;
-            }
-        } catch (e) {
-            console.warn('⚠️ Placeholder manquant:', path);
-        }
+            if (value) element.placeholder = value;
+        } catch(e) { console.warn('⚠️ Placeholder manquant:', path); }
     });
 
-    // Mettre à jour les boutons de langue
     document.querySelectorAll('.lang-btn').forEach(btn => {
         btn.classList.remove('active', 'bg-blue-500/20');
-        if (btn.getAttribute('data-lang') === lang) {
-            btn.classList.add('active', 'bg-blue-500/20');
-        }
+        if (btn.getAttribute('data-lang') === lang) btn.classList.add('active', 'bg-blue-500/20');
     });
 
-    // Sauvegarder la préférence
     localStorage.setItem('preferred-language', lang);
     console.log('✅ Langue changée avec succès');
 };
 
-// ===== FONCTION POUR TÉLÉCHARGER CV =====
+// ===== TÉLÉCHARGEMENT CV =====
 window.downloadCV = function() {
     const currentLang = localStorage.getItem('preferred-language') || 'en';
-    
-    // Créer une modale de choix de langue
     const modal = document.createElement('div');
     modal.className = 'fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm';
     modal.innerHTML = `
@@ -361,22 +327,135 @@ window.downloadCV = function() {
             </button>
         </div>
     `;
-    
     document.body.appendChild(modal);
-    
-    // Traduire la modale selon la langue courante
     window.switchLanguage(currentLang);
 };
 
+// ===== CHARGEMENT DYNAMIQUE DEPUIS JSON =====
+async function loadJSON(url) {
+    try {
+        const response = await fetch(url);
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        return await response.json();
+    } catch (err) {
+        console.error(`Erreur chargement ${url}:`, err);
+        return null;
+    }
+}
+
+function renderProjects(projects) {
+    const container = document.getElementById('projects-container');
+    if (!container) return;
+    if (!projects || projects.length === 0) {
+        container.innerHTML = '<div class="col-span-full text-center text-gray-400">Aucun projet pour le moment.</div>';
+        return;
+    }
+    container.innerHTML = projects.map(proj => `
+        <div class="project-card group" data-aos="zoom-in">
+            <div class="relative overflow-hidden h-64">
+                <img src="${proj.image}" alt="${proj.title}" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                <div class="absolute inset-0 bg-gradient-to-t from-dark-500 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div class="absolute inset-0 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-4 group-hover:translate-y-0">
+                    ${proj.github ? `<a href="${proj.github}" target="_blank" class="w-12 h-12 rounded-full bg-blue-600 flex items-center justify-center hover:bg-blue-700 transition-colors"><i class="fab fa-github text-white"></i></a>` : ''}
+                    ${proj.demo ? `<a href="${proj.demo}" target="_blank" class="w-12 h-12 rounded-full bg-blue-600 flex items-center justify-center hover:bg-blue-700 transition-colors"><i class="fas fa-external-link-alt text-white"></i></a>` : '<div class="w-12 h-12 rounded-full bg-gray-600 flex items-center justify-center cursor-not-allowed opacity-50"><i class="fas fa-external-link-alt text-white"></i></div>'}
+                </div>
+            </div>
+            <div class="p-6">
+                <h3 class="text-xl font-display font-bold text-white mb-2">${proj.title}</h3>
+                <p class="text-gray-400 mb-4">${proj.description}</p>
+                <div class="flex flex-wrap gap-2 mb-4">
+                    ${proj.tech.map(t => `<span class="tech-badge">${t}</span>`).join('')}
+                </div>
+                <div class="flex flex-col gap-2">
+                    ${proj.github ? `<a href="${proj.github}" target="_blank" class="text-sm text-blue-400 hover:text-blue-300 transition-colors inline-flex items-center gap-1"><i class="fab fa-github"></i> <span data-i18n="projects.source">Source code</span></a>` : ''}
+                    ${proj.demo ? `<a href="${proj.demo}" target="_blank" class="text-sm text-blue-400 hover:text-blue-300 transition-colors inline-flex items-center gap-1"><i class="fas fa-external-link-alt"></i> <span>${proj.demo.replace('https://', '')}</span></a>` : `<span class="text-sm text-gray-500 inline-flex items-center gap-1"><i class="fas fa-external-link-alt"></i> <span data-i18n="projects.comingSoon">Demo coming soon</span></span>`}
+                </div>
+            </div>
+        </div>
+    `).join('');
+}
+
+function renderCertifications(certs) {
+    const container = document.getElementById('certifications-container');
+    if (!container) return;
+    if (!certs || certs.length === 0) {
+        container.innerHTML = '<div class="col-span-full text-center text-gray-400">Aucune certification.</div>';
+        return;
+    }
+    container.innerHTML = certs.map(cert => {
+        let statusBadge = '';
+        if (cert.status === 'inprogress') statusBadge = `<p class="text-sm text-yellow-400" data-i18n="stats.inProgress">In progress</p>`;
+        else if (cert.status === 'coming') statusBadge = `<p class="text-sm text-gray-400" data-i18n="stats.comingSoon">May 2026</p>`;
+        else statusBadge = `<p class="text-sm text-blue-400" data-i18n="certs.click">Click to view</p>`;
+
+        if (cert.file) {
+            return `
+                <a href="${cert.file}" target="_blank" class="stat-card hover:scale-105 transition-all duration-300 group">
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center group-hover:scale-110 transition-transform">
+                            <i class="${cert.icon} text-2xl text-blue-400"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-white">${cert.title}</h3>
+                            ${statusBadge}
+                        </div>
+                    </div>
+                </a>
+            `;
+        } else {
+            return `
+                <div class="stat-card opacity-75">
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center">
+                            <i class="${cert.icon} text-2xl text-blue-400"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-white">${cert.title}</h3>
+                            ${statusBadge}
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+    }).join('');
+}
+
+function renderExperiences(experiences) {
+    const container = document.getElementById('experiences-container');
+    if (!container) return;
+    if (!experiences || experiences.length === 0) {
+        container.innerHTML = '<div class="text-center text-gray-400">Aucune expérience.</div>';
+        return;
+    }
+    container.innerHTML = experiences.map((exp, idx) => `
+        <div class="relative pl-8 ${idx !== experiences.length-1 ? 'pb-12' : ''} border-l-2 border-blue-500/30 last:pb-0" data-aos="fade-left" data-aos-duration="800" data-aos-delay="${idx * 200}">
+            <div class="timeline-dot"></div>
+            <div class="mb-2">
+                <span class="inline-block px-4 py-2 glass-effect rounded-full text-blue-400 text-sm">${exp.period}</span>
+            </div>
+            <div class="glass-effect p-6 rounded-2xl hover:shadow-glow-lg transition-all duration-500">
+                <h3 class="text-2xl font-display font-bold text-white mb-2">${exp.title}</h3>
+                <h4 class="text-blue-400 mb-4">${exp.company}</h4>
+                <ul class="space-y-2 text-gray-300 mb-4">
+                    ${exp.description.map(d => `<li class="flex items-start gap-2"><i class="fas fa-chevron-right text-blue-400 mt-1"></i><span>${d}</span></li>`).join('')}
+                </ul>
+                <div class="flex flex-wrap gap-2">
+                    ${exp.tech.map(t => `<span class="tech-badge">${t}</span>`).join('')}
+                </div>
+            </div>
+        </div>
+    `).join('');
+}
+
 // ===== INITIALISATION AU CHARGEMENT =====
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', async function() {
     console.log('📦 DOM chargé, initialisation...');
     
-    // Charger la langue préférée (anglais par défaut)
+    // Langue préférée
     const savedLang = localStorage.getItem('preferred-language') || 'en';
     window.switchLanguage(savedLang);
 
-    // Initialisation AOS
+    // AOS
     AOS.init({
         duration: 1000,
         once: true,
@@ -403,13 +482,11 @@ document.addEventListener('DOMContentLoaded', function() {
     // Mobile Menu
     const menuBtn = document.getElementById('menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
-
     if (menuBtn && mobileMenu) {
         menuBtn.addEventListener('click', () => {
             menuBtn.classList.toggle('open');
             mobileMenu.classList.toggle('hidden');
         });
-
         document.querySelectorAll('#mobile-menu a').forEach(link => {
             link.addEventListener('click', () => {
                 menuBtn.classList.remove('open');
@@ -421,15 +498,12 @@ document.addEventListener('DOMContentLoaded', function() {
     // Navbar scroll effect
     const navbar = document.getElementById('navbar');
     let lastScroll = 0;
-
     window.addEventListener('scroll', () => {
         const currentScroll = window.pageYOffset;
-        
         if (currentScroll <= 0) {
             navbar.classList.remove('scroll-up');
             return;
         }
-        
         if (currentScroll > lastScroll && !navbar.classList.contains('scroll-down')) {
             navbar.classList.remove('scroll-up');
             navbar.classList.add('scroll-down');
@@ -437,28 +511,23 @@ document.addEventListener('DOMContentLoaded', function() {
             navbar.classList.remove('scroll-down');
             navbar.classList.add('scroll-up');
         }
-        
         lastScroll = currentScroll;
     });
 
-    // Active navigation
+    // Active navigation links
     const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('.nav-link');
-
     window.addEventListener('scroll', () => {
         let current = '';
         const scrollY = window.pageYOffset;
         const headerHeight = 100;
-
         sections.forEach(section => {
             const sectionTop = section.offsetTop - headerHeight;
             const sectionBottom = sectionTop + section.offsetHeight;
-
             if (scrollY >= sectionTop && scrollY < sectionBottom) {
                 current = section.getAttribute('id');
             }
         });
-
         navLinks.forEach(link => {
             link.classList.remove('active');
             if (link.getAttribute('href') === `#${current}`) {
@@ -470,14 +539,11 @@ document.addEventListener('DOMContentLoaded', function() {
     // Counter animation
     const counters = document.querySelectorAll('.counter');
     const speed = 200;
-
     const animateCounter = (counter) => {
         const target = parseInt(counter.getAttribute('data-target'));
         let count = 0;
-        
         const updateCount = () => {
             const increment = target / speed;
-            
             if (count < target) {
                 count += increment;
                 counter.innerText = Math.ceil(count);
@@ -486,20 +552,16 @@ document.addEventListener('DOMContentLoaded', function() {
                 counter.innerText = target;
             }
         };
-        
         updateCount();
     };
-
     const counterObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                const counter = entry.target;
-                animateCounter(counter);
-                counterObserver.unobserve(counter);
+                animateCounter(entry.target);
+                counterObserver.unobserve(entry.target);
             }
         });
     }, { threshold: 0.5 });
-
     counters.forEach(counter => counterObserver.observe(counter));
 
     // Smooth scroll
@@ -507,55 +569,35 @@ document.addEventListener('DOMContentLoaded', function() {
         anchor.addEventListener('click', function(e) {
             const href = this.getAttribute('href');
             if (href === '#') return;
-            
             const target = document.querySelector(href);
             if (target) {
                 e.preventDefault();
                 const headerOffset = 100;
                 const elementPosition = target.getBoundingClientRect().top;
                 const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
-                window.scrollTo({
-                    top: offsetPosition,
-                    behavior: 'smooth'
-                });
+                window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
             }
         });
     });
 
     // Contact form avec EmailJS
     const contactForm = document.getElementById('contactForm');
-
     if (contactForm) {
         contactForm.addEventListener('submit', function(event) {
             event.preventDefault();
-            
             const submitBtn = contactForm.querySelector('button[type="submit"]');
             const originalText = submitBtn.innerHTML;
             const currentLang = localStorage.getItem('preferred-language') || 'en';
-            
-            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> ' + 
-                (currentLang === 'fr' ? 'Envoi...' : 'Sending...');
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> ' + (currentLang === 'fr' ? 'Envoi...' : 'Sending...');
             submitBtn.disabled = true;
-
-            // Envoi avec EmailJS
             emailjs.sendForm('service_ou9f6zm', 'template_7w1lmkb', this)
-                .then(function() {
-                    showNotification(
-                        currentLang === 'fr' 
-                            ? translations.fr.contact.form.success
-                            : translations.en.contact.form.success,
-                        'success'
-                    );
+                .then(() => {
+                    showNotification(currentLang === 'fr' ? translations.fr.contact.form.success : translations.en.contact.form.success, 'success');
                     contactForm.reset();
-                }, function(error) {
+                })
+                .catch((error) => {
                     console.error('EmailJS error:', error);
-                    showNotification(
-                        currentLang === 'fr' 
-                            ? translations.fr.contact.form.error
-                            : translations.en.contact.form.error,
-                        'error'
-                    );
+                    showNotification(currentLang === 'fr' ? translations.fr.contact.form.error : translations.en.contact.form.error, 'error');
                 })
                 .finally(() => {
                     submitBtn.innerHTML = originalText;
@@ -569,6 +611,23 @@ document.addEventListener('DOMContentLoaded', function() {
     if (yearElement) {
         yearElement.innerHTML = `© ${new Date().getFullYear()} Ange KOUMBA. <span data-i18n="footer.rights">All rights reserved.</span>`;
     }
+
+    // ===== CHARGEMENT DES DONNÉES JSON =====
+    const projectsData = await loadJSON('/content/projects.json');
+    if (projectsData && projectsData.projects) {
+        const sorted = projectsData.projects.sort((a,b) => (a.order || 0) - (b.order || 0));
+        renderProjects(sorted);
+    }
+
+    const certsData = await loadJSON('/content/certifications.json');
+    if (certsData && certsData.certifications) {
+        renderCertifications(certsData.certifications);
+    }
+
+    const expData = await loadJSON('/content/experiences.json');
+    if (expData && expData.experiences) {
+        renderExperiences(expData.experiences);
+    }
 });
 
 // ===== NOTIFICATION SYSTEM =====
@@ -577,14 +636,11 @@ function showNotification(message, type = 'success') {
     notification.className = `fixed top-24 right-4 z-50 px-6 py-4 rounded-xl shadow-glow-lg animate-slide-left ${
         type === 'success' ? 'bg-green-500' : 'bg-red-500'
     } text-white flex items-center gap-3`;
-    
     notification.innerHTML = `
         <i class="fas fa-${type === 'success' ? 'check-circle' : 'exclamation-circle'} text-xl"></i>
         <span>${message}</span>
     `;
-    
     document.body.appendChild(notification);
-    
     setTimeout(() => {
         notification.style.animation = 'slideRight 0.5s ease-out forwards';
         setTimeout(() => notification.remove(), 500);
@@ -596,7 +652,6 @@ document.addEventListener('mousemove', (e) => {
     const shapes = document.querySelectorAll('.floating-shape');
     const mouseX = e.clientX / window.innerWidth;
     const mouseY = e.clientY / window.innerHeight;
-    
     shapes.forEach((shape, index) => {
         const speed = index + 1;
         const x = (mouseX * speed * 20) - (speed * 10);

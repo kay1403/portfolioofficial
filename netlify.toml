@@ -5,7 +5,19 @@
 [build.environment]
   NODE_VERSION = "18"
 
-# Headers pour les types MIME corrects
+# Redirection pour l’interface d’administration
+[[redirects]]
+  from = "/admin/*"
+  to = "/admin/index.html"
+  status = 200
+
+# Servir les fichiers JSON avec le bon type MIME
+[[headers]]
+  for = "/content/*.json"
+  [headers.values]
+    Content-Type = "application/json"
+
+# Headers pour JS/CSS (inchangé)
 [[headers]]
   for = "/dist/js/*"
   [headers.values]
@@ -17,8 +29,3 @@
   [headers.values]
     Content-Type = "text/css"
     X-Content-Type-Options = "nosniff"
-
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200

@@ -1,0 +1,65 @@
+backend:
+  name: git-gateway
+  branch: certification
+
+site_url: https://angekoumbaportfolio.netlify.app   # À remplacer par votre URL
+
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "projects"
+    label: "Projets"
+    files:
+      - name: "projects"
+        label: "Liste des projets"
+        file: "content/projects.json"
+        fields:
+          - name: projects
+            label: "Projets"
+            widget: "list"
+            summary: "{{fields.title}}"
+            fields:
+              - { label: "Titre", name: "title", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+              - { label: "Image", name: "image", widget: "image", default: "images/portfolio1.jpg" }
+              - { label: "Technologies", name: "tech", widget: "list", default: [] }
+              - { label: "Lien GitHub", name: "github", widget: "string", required: false }
+              - { label: "Lien Démo", name: "demo", widget: "string", required: false }
+              - { label: "Ordre", name: "order", widget: "number", default: 0 }
+
+  - name: "certifications"
+    label: "Certifications"
+    files:
+      - name: "certifications"
+        label: "Liste des certifications"
+        file: "content/certifications.json"
+        fields:
+          - name: certifications
+            label: "Certifications"
+            widget: "list"
+            summary: "{{fields.title}}"
+            fields:
+              - { label: "Titre", name: "title", widget: "string" }
+              - { label: "Fichier (PDF/PNG)", name: "file", widget: "file" }
+              - { label: "Icône FontAwesome", name: "icon", widget: "string", default: "fa-certificate" }
+              - { label: "Statut", name: "status", widget: "select", options: ["published", "inprogress", "coming"], default: "published" }
+              - { label: "Date", name: "date", widget: "date", required: false }
+
+  - name: "experiences"
+    label: "Expériences"
+    files:
+      - name: "experiences"
+        label: "Liste des expériences"
+        file: "content/experiences.json"
+        fields:
+          - name: experiences
+            label: "Expériences"
+            widget: "list"
+            summary: "{{fields.title}}"
+            fields:
+              - { label: "Poste", name: "title", widget: "string" }
+              - { label: "Entreprise", name: "company", widget: "string" }
+              - { label: "Période", name: "period", widget: "string" }
+              - { label: "Description", name: "description", widget: "list", field: { label: "Point", name: "point", widget: "text" } }
+              - { label: "Technologies", name: "tech", widget: "list", default: [] }

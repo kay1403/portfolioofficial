@@ -1,0 +1,85 @@
+{
+  "projects": [
+    {
+      "title": "Library Management System",
+      "description": "Système de gestion de bibliothèque avec <span class='text-blue-400'>Django</span>,<br>API REST, et authentification JWT.",
+      "image": "images/portfolio1.jpg",
+      "tech": ["Django", "DRF", "PostgreSQL", "JWT"],
+      "github": "https://github.com/kay1403/library-management-system-api",
+      "demo": "https://libraryms-tfsy.onrender.com",
+      "order": 1
+    },
+    {
+      "title": "E-commerce Backend",
+      "description": "Backend complet pour plateforme e-commerce<br>avec <span class='text-blue-400'>Django REST Framework</span>.",
+      "image": "images/portfolio2.jpg",
+      "tech": ["Django", "DRF", "MySQL", "JWT"],
+      "github": "https://github.com/kay1403/ecommerce-backend-nexus",
+      "demo": "",
+      "order": 2
+    },
+    {
+      "title": "MoneyTransfer",
+      "description": "Application de transfert d'argent<br>avec authentification sécurisée.",
+      "image": "images/portfolio3.jpg",
+      "tech": ["Django", "JWT", "PostgreSQL", "API"],
+      "github": "https://github.com/kay1403/MoneyTransfer",
+      "demo": "",
+      "order": 3
+    },
+    {
+      "title": "Weather Dashboard",
+      "description": "Application météo interactive<br>avec architecture responsive et système de favoris.",
+      "image": "images/portfolio4.jpg",
+      "tech": ["JavaScript", "HTML5", "CSS3", "API"],
+      "github": "https://github.com/kay1403/weather-dashboard",
+      "demo": "https://weatherflowak.netlify.app",
+      "order": 4
+    },
+    {
+      "title": "BornSafe",
+      "description": "Système de gestion d'actes de naissance<br>avec génération de QR codes et PDF.",
+      "image": "images/portfolio5.jpg",
+      "tech": ["Django", "PostgreSQL", "QR Code", "PDF"],
+      "github": "https://github.com/kay1403/BornSafe",
+      "demo": "",
+      "order": 5
+    },
+    {
+      "title": "ENTRESAAS",
+      "description": "Plateforme SaaS avec authentification 2FA,<br>RBAC, et audit trail.",
+      "image": "images/portfolio6.jpg",
+      "tech": ["NestJS", "React", "PostgreSQL", "JWT"],
+      "github": "https://github.com/kay1403/ENTRESAAS",
+      "demo": "",
+      "order": 6
+    },
+    {
+      "title": "SAWAI",
+      "description": "Système IoT de surveillance des sols<br>avec analyse de données en temps réel.",
+      "image": "images/portfolio5.jpg",
+      "tech": ["Python", "IoT", "Arduino", "Data Viz"],
+      "github": "https://github.com/kay1403/SAWAI",
+      "demo": "https://sawailmd.netlify.app",
+      "order": 7
+    },
+    {
+      "title": "RSSB Clone",
+      "description": "Clone of the Rwanda Social Security Board website - Optimistic and forward-looking agent of central government, working to achieve the financial security and health of all Rwandans.",
+      "image": "images/portfolio2.jpg",
+      "tech": ["HTML5", "CSS3", "Tailwind", "Responsive"],
+      "github": "",
+      "demo": "https://tailwindcloninggate.netlify.app",
+      "order": 8
+    },
+    {
+      "title": "Baumeister",
+      "description": "Clone of the Baumeister website - Group project with modern and responsive design.",
+      "image": "images/portfolio2.jpg",
+      "tech": ["HTML5", "CSS3", "JavaScript", "Responsive"],
+      "github": "",
+      "demo": "https://websiteprojectgroup3.netlify.app",
+      "order": 9
+    }
+  ]
+}
