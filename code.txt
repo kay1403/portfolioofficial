@@ -960,13 +960,22 @@ module.exports = {
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Admin - Ange KOUMBA Portfolio</title>
-  <script src="https://unpkg.com/netlify-cms@^2.10.0/dist/netlify-cms.js"></script>
+  <!-- Charger Decap CMS (successeur de Netlify CMS) -->
+  <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
 </head>
 <body>
   <script>
-    // Configuration optionnelle (langue, etc.)
-    CMS.registerPreviewTemplate("projects", (data) => {
-      return `<h1>${data.title}</h1><p>${data.description}</p>`;
+    // Attendre que le CMS soit chargé avant d'enregistrer les prévisualisations
+    window.CMS = window.CMS || (window, document, () => {});
+    // Alternative : attendre l'événement "cms:load" (selon la version)
+    window.addEventListener('load', function() {
+      if (window.CMS && window.CMS.registerPreviewTemplate) {
+        window.CMS.registerPreviewTemplate("projects", (data) => {
+          return `<h1>${data.title}</h1><p>${data.description}</p>`;
+        });
+      } else {
+        console.warn("CMS non disponible au chargement");
+      }
     });
   </script>
 </body>

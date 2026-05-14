@@ -4,23 +4,23 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Admin - Ange KOUMBA Portfolio</title>
-  <!-- Charger Decap CMS (successeur de Netlify CMS) -->
-  <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
 </head>
 <body>
   <script>
-    // Attendre que le CMS soit chargé avant d'enregistrer les prévisualisations
-    window.CMS = window.CMS || (window, document, () => {});
-    // Alternative : attendre l'événement "cms:load" (selon la version)
-    window.addEventListener('load', function() {
-      if (window.CMS && window.CMS.registerPreviewTemplate) {
-        window.CMS.registerPreviewTemplate("projects", (data) => {
-          return `<h1>${data.title}</h1><p>${data.description}</p>`;
-        });
-      } else {
-        console.warn("CMS non disponible au chargement");
-      }
-    });
+    // Charger Decap CMS uniquement après que le DOM soit prêt
+    (function() {
+      var script = document.createElement('script');
+      script.src = 'https://unpkg.com/decap-cms@3.0.0/dist/decap-cms.js';
+      script.onload = function() {
+        // Enregistrement des prévisualisations (optionnel)
+        if (window.CMS && window.CMS.registerPreviewTemplate) {
+          window.CMS.registerPreviewTemplate("projects", (data) => {
+            return `<h1>${data.title}</h1><p>${data.description}</p>`;
+          });
+        }
+      };
+      document.head.appendChild(script);
+    })();
   </script>
 </body>
 </html>
