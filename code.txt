@@ -1,0 +1,3479 @@
+--- FILE: ./index.html ---
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ange KOUMBA | Data Scientist & Full-Stack Developer</title>
+    
+    <!-- Meta tags optimisés -->
+    <meta name="description" content="Portfolio d'Ange KOUMBA - Data Scientist et Développeur Full-Stack spécialisé en fintech et IA. Découvrez mes projets et compétences.">
+    <meta name="keywords" content="Data Scientist, Full-Stack Developer, Python, Django, React, Machine Learning, AI, Kigali, Rwanda">
+    <meta name="author" content="Ange KOUMBA">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Ange KOUMBA - Data Scientist & Full-Stack Developer">
+    <meta property="og:description" content="Portfolio professionnel d'Ange KOUMBA">
+    <meta property="og:image" content="images/og-image.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Tailwind CSS (compilé) -->
+    <link rel="stylesheet" href="dist/css/style.css">
+    
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <script>
+  // Redirection automatique vers /admin après acceptation d'invitation
+  (function() {
+    if (window.location.hash && window.location.hash.indexOf('invite_token') !== -1) {
+      // On garde le hash (jeton) et on va vers /admin
+      window.location.href = '/admin' + window.location.hash;
+    }
+  })();
+</script>
+</head>
+<body class="relative">
+    <!-- Floating Background Elements -->
+    <div class="fixed inset-0 pointer-events-none overflow-hidden">
+        <div class="floating-shape w-96 h-96 top-0 -left-48 bg-blue-600"></div>
+        <div class="floating-shape w-96 h-96 bottom-0 -right-48 bg-blue-800 animation-delay-2000"></div>
+        <div class="floating-shape w-64 h-64 top-1/2 left-1/4 bg-blue-700 animation-delay-4000"></div>
+        
+        <!-- Cyber Grid Effect -->
+        <div class="absolute inset-0 bg-cyber-grid bg-grid opacity-20"></div>
+        
+        <!-- Animated Lines -->
+        <svg class="absolute top-0 left-0 w-full h-full pointer-events-none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+                <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stop-color="#2563eb" stop-opacity="0"/>
+                    <stop offset="50%" stop-color="#3b82f6" stop-opacity="0.3"/>
+                    <stop offset="100%" stop-color="#2563eb" stop-opacity="0"/>
+                </linearGradient>
+            </defs>
+            <path d="M0,200 Q400,100 800,200 T1600,200" stroke="url(#grad)" stroke-width="2" fill="none" class="animate-pulse-slow"/>
+            <path d="M0,400 Q400,300 800,400 T1600,400" stroke="url(#grad)" stroke-width="2" fill="none" class="animate-pulse-slow animation-delay-2000"/>
+        </svg>
+    </div>
+
+    <!-- Language Switcher -->
+    <div class="fixed top-24 right-4 z-50 flex gap-2">
+        <button onclick="switchLanguage('fr')" class="px-3 py-1 rounded-full glass-effect text-sm font-medium text-white hover:bg-blue-500/20 transition-all lang-btn" data-lang="fr" data-i18n="lang.fr">FR</button>
+        <button onclick="switchLanguage('en')" class="px-3 py-1 rounded-full glass-effect text-sm font-medium text-white hover:bg-blue-500/20 transition-all lang-btn active" data-lang="en" data-i18n="lang.en">EN</button>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 glass-effect border-b border-blue-500/20" id="navbar">
+        <div class="container-custom">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <a href="#home" class="text-3xl font-display font-bold relative group">
+                    <span class="text-white">Ange</span>
+                    <span class="gradient-text"> KOUMBA</span>
+                    <span class="absolute -inset-1 bg-blue-500/20 blur-lg group-hover:blur-xl transition-all duration-300"></span>
+                </a>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-1">
+                    <a href="#home" class="nav-link active" data-i18n="nav.home">Home</a>
+                    <a href="#about" class="nav-link" data-i18n="nav.about">About</a>
+                    <a href="#experience" class="nav-link" data-i18n="nav.experience">Experience</a>
+                    <a href="#projects" class="nav-link" data-i18n="nav.projects">Projects</a>
+                    <a href="#skills" class="nav-link" data-i18n="nav.skills">Skills</a>
+                    <a href="#certifications" class="nav-link" data-i18n="nav.certifications">Certifications</a>
+                    <a href="#contact" class="nav-link" data-i18n="nav.contact">Contact</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden relative w-10 h-10 flex items-center justify-center group" id="menu-btn">
+                    <span class="absolute w-6 h-0.5 bg-white transform transition-all duration-300 -translate-y-2 group-[.open]:translate-y-0 group-[.open]:rotate-45"></span>
+                    <span class="absolute w-6 h-0.5 bg-white transform transition-all duration-300 opacity-100 group-[.open]:opacity-0"></span>
+                    <span class="absolute w-6 h-0.5 bg-white transform transition-all duration-300 translate-y-2 group-[.open]:translate-y-0 group-[.open]:-rotate-45"></span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="md:hidden absolute w-full bg-dark-200/95 backdrop-blur-xl border-b border-blue-500/20 hidden" id="mobile-menu">
+            <div class="container-custom py-6 flex flex-col space-y-4">
+                <a href="#home" class="nav-link text-lg" data-i18n="nav.home">Home</a>
+                <a href="#about" class="nav-link text-lg" data-i18n="nav.about">About</a>
+                <a href="#experience" class="nav-link text-lg" data-i18n="nav.experience">Experience</a>
+                <a href="#projects" class="nav-link text-lg" data-i18n="nav.projects">Projects</a>
+                <a href="#skills" class="nav-link text-lg" data-i18n="nav.skills">Skills</a>
+                <a href="#certifications" class="nav-link text-lg" data-i18n="nav.certifications">Certifications</a>
+                <a href="#contact" class="nav-link text-lg" data-i18n="nav.contact">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative min-h-screen flex items-center pt-20 overflow-hidden">
+        <div class="container-custom relative z-10">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Content -->
+                <div class="space-y-8" data-aos="fade-right" data-aos-duration="1000">
+                    <div class="inline-flex items-center space-x-2 px-4 py-2 glass-effect rounded-full">
+                        <span class="relative flex h-3 w-3">
+                            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-3 w-3 bg-blue-500"></span>
+                        </span>
+                        <span class="text-sm text-blue-400" data-i18n="hero.available">Available for opportunities</span>
+                    </div>
+
+                    <h1 class="text-5xl md:text-7xl font-display font-bold">
+                        <span class="block text-white">Ange</span>
+                        <span class="gradient-text">KOUMBA</span>
+                    </h1>
+
+                    <div class="text-2xl md:text-3xl text-gray-300 font-light">
+                        <span class="typed-text"></span>
+                        <span class="typed-cursor"></span>
+                    </div>
+
+                    <p class="text-xl text-gray-400 max-w-2xl leading-relaxed" data-i18n="hero.description">
+                        IT Graduate from the University of Kigali, specializing in Data Science and Full-Stack Development. Passionate about fintech and AI.
+                    </p>
+
+                    <!-- CTA Buttons avec téléchargement CV intelligent -->
+                    <div class="flex flex-wrap gap-4">
+                        <a href="#contact" class="btn-primary group">
+                            <span class="relative z-10" data-i18n="hero.contact">Contact me</span>
+                            <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                        </a>
+                        <button onclick="downloadCV()" class="btn-outline group cursor-pointer">
+                            <i class="fas fa-download mr-2"></i>
+                            <span data-i18n="hero.cv">Resume</span>
+                        </button>
+                    </div>
+
+                    <!-- Social Links -->
+                    <div class="flex space-x-4 pt-4">
+                        <a href="https://www.linkedin.com/in/ange-koumba-64a634343/" target="_blank" class="w-12 h-12 rounded-full glass-effect flex items-center justify-center text-blue-400 hover:text-blue-300 hover:border-blue-500 transition-all duration-300 hover:scale-110 hover:shadow-glow">
+                            <i class="fab fa-linkedin-in text-xl"></i>
+                        </a>
+                        <a href="https://github.com/kay1403" target="_blank" class="w-12 h-12 rounded-full glass-effect flex items-center justify-center text-blue-400 hover:text-blue-300 hover:border-blue-500 transition-all duration-300 hover:scale-110 hover:shadow-glow">
+                            <i class="fab fa-github text-xl"></i>
+                        </a>
+                        <a href="https://twitter.com/angekoumba" target="_blank" class="w-12 h-12 rounded-full glass-effect flex items-center justify-center text-blue-400 hover:text-blue-300 hover:border-blue-500 transition-all duration-300 hover:scale-110 hover:shadow-glow">
+                            <i class="fab fa-twitter text-xl"></i>
+                        </a>
+                        <a href="mailto:Angekoumba754@gmail.com" class="w-12 h-12 rounded-full glass-effect flex items-center justify-center text-blue-400 hover:text-blue-300 hover:border-blue-500 transition-all duration-300 hover:scale-110 hover:shadow-glow">
+                            <i class="far fa-envelope text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Image with 3D Effect -->
+                <div class="relative" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
+                    <div class="relative w-96 h-96 mx-auto">
+                        <!-- Animated Rings -->
+                        <div class="absolute inset-0 animate-spin-slow">
+                            <div class="absolute inset-0 border-2 border-blue-500/30 rounded-full"></div>
+                            <div class="absolute inset-4 border-2 border-blue-400/20 rounded-full"></div>
+                            <div class="absolute inset-8 border-2 border-blue-300/10 rounded-full"></div>
+                        </div>
+                        
+                        <!-- Profile Image Container -->
+                        <div class="absolute inset-12 rounded-2xl overflow-hidden border-2 border-blue-500/30 shadow-glow-lg group cursor-pointer">
+                            <img src="images/pofil.jpeg" alt="Ange KOUMBA" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                            
+                            <!-- Overlay -->
+                            <div class="absolute inset-0 bg-gradient-to-t from-blue-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end justify-center pb-8">
+                                <span class="text-white font-display text-xl">Ange KOUMBA</span>
+                            </div>
+                        </div>
+
+                        <!-- Floating Tech Icons -->
+                        <i class="fab fa-python absolute -top-4 -right-4 text-4xl text-blue-400 animate-bounce-slow"></i>
+                        <i class="fab fa-react absolute -bottom-4 -left-4 text-4xl text-blue-400 animate-bounce-slow animation-delay-2000"></i>
+                        <i class="fab fa-js absolute top-1/2 -right-8 text-4xl text-blue-400 animate-bounce-slow animation-delay-4000"></i>
+                        <i class="fas fa-database absolute top-1/4 -left-8 text-3xl text-blue-400 animate-bounce-slow"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2">
+            <a href="#about" class="flex flex-col items-center space-y-2 group">
+                <span class="text-sm text-gray-400 group-hover:text-blue-400 transition-colors" data-i18n="hero.scroll">Scroll</span>
+                <div class="w-6 h-10 border-2 border-gray-400 rounded-full flex justify-center group-hover:border-blue-400 transition-colors">
+                    <div class="w-1 h-2 bg-gray-400 rounded-full mt-2 animate-bounce group-hover:bg-blue-400"></div>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-32 relative">
+        <div class="container-custom">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <span class="section-subtitle" data-i18n="about.subtitle">WHO AM I?</span>
+                <h2 class="section-title gradient-text" data-i18n="about.title">About me</h2>
+                <div class="w-24 h-1 bg-blue-500 mx-auto mt-4"></div>
+            </div>
+
+            <div class="grid lg:grid-cols-3 gap-8 mb-16">
+                <!-- Education Card -->
+                <div class="stat-card group" data-aos="fade-up" data-aos-delay="100">
+                    <div class="relative">
+                        <div class="absolute -inset-1 bg-gradient-to-r from-blue-600 to-blue-800 rounded-2xl blur-xl opacity-0 group-hover:opacity-50 transition-opacity duration-500"></div>
+                        <div class="relative">
+                            <div class="w-16 h-16 rounded-full bg-blue-500/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                                <i class="fas fa-graduation-cap text-3xl text-blue-400"></i>
+                            </div>
+                            <h3 class="text-2xl font-display font-bold text-white mb-4" data-i18n="about.education.title">Education</h3>
+                            <div class="space-y-4">
+                                <div>
+                                    <p class="text-blue-400 font-semibold" data-i18n="about.education.degree1">BSc in Information Technology</p>
+                                    <p class="text-gray-400" data-i18n="about.education.school1">University of Kigali (2022-2025)</p>
+                                </div>
+                                <div>
+                                    <p class="text-blue-400 font-semibold" data-i18n="about.education.degree2">Industrial Technology</p>
+                                    <p class="text-gray-400" data-i18n="about.education.school2">Lycée Technique Jean Fidèle Otando</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ALX Achievements Card -->
+                <div class="stat-card group" data-aos="fade-up" data-aos-delay="200">
+                    <div class="relative">
+                        <div class="absolute -inset-1 bg-gradient-to-r from-blue-600 to-blue-800 rounded-2xl blur-xl opacity-0 group-hover:opacity-50 transition-opacity duration-500"></div>
+                        <div class="relative">
+                            <div class="w-16 h-16 rounded-full bg-blue-500/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                                <i class="fas fa-certificate text-3xl text-blue-400"></i>
+                            </div>
+                            <h3 class="text-2xl font-display font-bold text-white mb-4">ALX Certifications</h3>
+                            <div class="space-y-2">
+                                <a href="https://github.com/kay1403/Ange_Koumba_PortFolio/files/certificates/backend.pdf" target="_blank" class="flex items-center gap-2 text-gray-300 hover:text-blue-400 transition-colors group/link">
+                                    <i class="fas fa-check-circle text-blue-400"></i>
+                                    <span data-i18n="certs.backend">Back-End Web Development</span>
+                                    <i class="fas fa-external-link-alt text-xs opacity-0 group-hover/link:opacity-100 transition-opacity"></i>
+                                </a>
+                                <a href="https://github.com/kay1403/Ange_Koumba_PortFolio/files/certificates/frontend.pdf" target="_blank" class="flex items-center gap-2 text-gray-300 hover:text-blue-400 transition-colors group/link">
+                                    <i class="fas fa-check-circle text-blue-400"></i>
+                                    <span data-i18n="certs.frontend">Front-End Web Development</span>
+                                    <i class="fas fa-external-link-alt text-xs opacity-0 group-hover/link:opacity-100 transition-opacity"></i>
+                                </a>
+                                <a href="https://github.com/kay1403/Ange_Koumba_PortFolio/files/certificates/data-analytics.pdf" target="_blank" class="flex items-center gap-2 text-gray-300 hover:text-blue-400 transition-colors group/link">
+                                    <i class="fas fa-check-circle text-blue-400"></i>
+                                    <span data-i18n="certs.dataAnalytics">Data Analytics</span>
+                                    <i class="fas fa-external-link-alt text-xs opacity-0 group-hover/link:opacity-100 transition-opacity"></i>
+                                </a>
+                                <a href="https://github.com/kay1403/Ange_Koumba_PortFolio/files/certificates/python.pdf" target="_blank" class="flex items-center gap-2 text-gray-300 hover:text-blue-400 transition-colors group/link">
+                                    <i class="fas fa-check-circle text-blue-400"></i>
+                                    <span data-i18n="certs.python">Python Programming</span>
+                                    <i class="fas fa-external-link-alt text-xs opacity-0 group-hover/link:opacity-100 transition-opacity"></i>
+                                </a>
+                                <a href="https://github.com/kay1403/Ange_Koumba_PortFolio/files/certificates/prodev.pdf" target="_blank" class="flex items-center gap-2 text-gray-300 hover:text-blue-400 transition-colors group/link">
+                                    <i class="fas fa-check-circle text-blue-400"></i>
+                                    <span data-i18n="certs.prodev">ProDev Backend</span>
+                                    <i class="fas fa-external-link-alt text-xs opacity-0 group-hover/link:opacity-100 transition-opacity"></i>
+                                </a>
+                                <a href="https://github.com/kay1403/Ange_Koumba_PortFolio/files/certificates/founder.pdf" target="_blank" class="flex items-center gap-2 text-gray-300 hover:text-blue-400 transition-colors group/link">
+                                    <i class="fas fa-check-circle text-blue-400"></i>
+                                    <span data-i18n="certs.founder">Founder Academy</span>
+                                    <i class="fas fa-external-link-alt text-xs opacity-0 group-hover/link:opacity-100 transition-opacity"></i>
+                                </a>
+                                <a href="https://github.com/kay1403/Ange_Koumba_PortFolio/files/certificates/professional.pdf" target="_blank" class="flex items-center gap-2 text-gray-300 hover:text-blue-400 transition-colors group/link">
+                                    <i class="fas fa-check-circle text-blue-400"></i>
+                                    <span data-i18n="certs.professional">Professional Foundations</span>
+                                    <i class="fas fa-external-link-alt text-xs opacity-0 group-hover/link:opacity-100 transition-opacity"></i>
+                                </a>
+                                <a href="https://github.com/kay1403/Ange_Koumba_PortFolio/files/certificates/freelancer.pdf" target="_blank" class="flex items-center gap-2 text-gray-300 hover:text-blue-400 transition-colors group/link">
+                                    <i class="fas fa-check-circle text-blue-400"></i>
+                                    <span data-i18n="certs.freelancer">Freelancer Academy</span>
+                                    <i class="fas fa-external-link-alt text-xs opacity-0 group-hover/link:opacity-100 transition-opacity"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Achievements Card -->
+                <div class="stat-card group" data-aos="fade-up" data-aos-delay="300">
+                    <div class="relative">
+                        <div class="absolute -inset-1 bg-gradient-to-r from-blue-600 to-blue-800 rounded-2xl blur-xl opacity-0 group-hover:opacity-50 transition-opacity duration-500"></div>
+                        <div class="relative">
+                            <div class="w-16 h-16 rounded-full bg-blue-500/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                                <i class="fas fa-trophy text-3xl text-blue-400"></i>
+                            </div>
+                            <h3 class="text-2xl font-display font-bold text-white mb-4" data-i18n="about.achievements.title">Achievements</h3>
+                            <ul class="space-y-3">
+                                <li class="flex items-center gap-2">
+                                    <i class="fas fa-medal text-yellow-400"></i>
+                                    <span class="text-gray-300" data-i18n="about.achievements.item1">Interdepartmental Champion 2025</span>
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <i class="fas fa-medal text-yellow-400"></i>
+                                    <span class="text-gray-300" data-i18n="about.achievements.item2">WorldQuant AI Lab Selection</span>
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <i class="fas fa-medal text-yellow-400"></i>
+                                    <span class="text-gray-300" data-i18n="about.achievements.item3">The Gym Rwanda - Intensive Program</span>
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <span class="text-gray-300">3,370 Legacy Points - ALX</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stats -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6" data-aos="fade-up" data-aos-delay="400">
+                <div class="stat-card text-center">
+                    <div class="text-4xl font-display font-bold text-blue-400 mb-2 counter" data-target="15">0</div>
+                    <div class="text-gray-400" data-i18n="stats.projects">Projects</div>
+                </div>
+                <div class="stat-card text-center">
+                    <div class="text-4xl font-display font-bold text-blue-400 mb-2 counter" data-target="12">0</div>
+                    <div class="text-gray-400" data-i18n="stats.certifications">Certifications</div>
+                </div>
+                <div class="stat-card text-center">
+                    <div class="text-4xl font-display font-bold text-blue-400 mb-2 counter" data-target="3">0</div>
+                    <div class="text-gray-400" data-i18n="stats.experience">Years exp.</div>
+                </div>
+                <div class="stat-card text-center">
+                    <div class="text-4xl font-display font-bold text-blue-400 mb-2 counter" data-target="3370">0</div>
+                    <div class="text-gray-400">Legacy Points</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section (dynamique) -->
+    <section id="certifications" class="py-32 relative bg-dark-400/50">
+        <div class="container-custom">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <span class="section-subtitle" data-i18n="certs.subtitle">MY CERTIFICATIONS</span>
+                <h2 class="section-title gradient-text" data-i18n="certs.title">ALX Africa Journey</h2>
+                <div class="w-24 h-1 bg-blue-500 mx-auto mt-4"></div>
+            </div>
+            <div id="certifications-container" class="grid md:grid-cols-3 gap-6"></div>
+            <!-- Legacy Points Badge -->
+            <div class="mt-12 flex justify-center" data-aos="fade-up">
+                <div class="inline-flex items-center gap-4 px-6 py-3 glass-effect rounded-full hover:shadow-glow transition-all duration-300">
+                    <i class="fas fa-star text-yellow-400 text-2xl"></i>
+                    <div>
+                        <span class="block text-2xl font-bold text-white">3,370</span>
+                        <span class="text-xs text-gray-400">Legacy Points ALX</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section (dynamique) -->
+    <section id="experience" class="py-32 relative">
+        <div class="container-custom">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <span class="section-subtitle" data-i18n="experience.subtitle">MY JOURNEY</span>
+                <h2 class="section-title gradient-text" data-i18n="experience.title">Professional Experience</h2>
+                <div class="w-24 h-1 bg-blue-500 mx-auto mt-4"></div>
+            </div>
+            <div id="experiences-container" class="max-w-3xl mx-auto"></div>
+        </div>
+    </section>
+
+    <!-- Projects Section (dynamique) -->
+    <section id="projects" class="py-32 relative bg-dark-400/50">
+        <div class="container-custom">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <span class="section-subtitle" data-i18n="projects.subtitle">MY WORK</span>
+                <h2 class="section-title gradient-text" data-i18n="projects.title">Featured Projects</h2>
+                <div class="w-24 h-1 bg-blue-500 mx-auto mt-4"></div>
+            </div>
+            <div id="projects-container" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-32 relative">
+        <div class="container-custom">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <span class="section-subtitle" data-i18n="skills.subtitle">MY EXPERTISE</span>
+                <h2 class="section-title gradient-text" data-i18n="skills.title">Technical Skills</h2>
+                <div class="w-24 h-1 bg-blue-500 mx-auto mt-4"></div>
+            </div>
+
+            <!-- 3D Skills Globe -->
+            <div class="relative h-96 mb-16 perspective" data-aos="fade-up">
+                <div class="absolute inset-0 flex items-center justify-center animate-rotate-3d">
+                    <div class="relative w-64 h-64">
+                        <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2">
+                            <div class="w-16 h-16 rounded-full bg-blue-500/20 border-2 border-blue-500 flex items-center justify-center animate-pulse">
+                                <i class="fab fa-python text-3xl text-blue-400"></i>
+                            </div>
+                        </div>
+                        <div class="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2">
+                            <div class="w-16 h-16 rounded-full bg-blue-500/20 border-2 border-blue-500 flex items-center justify-center animate-pulse animation-delay-2000">
+                                <i class="fab fa-react text-3xl text-blue-400"></i>
+                            </div>
+                        </div>
+                        <div class="absolute left-0 top-1/2 -translate-x-1/2 -translate-y-1/2">
+                            <div class="w-16 h-16 rounded-full bg-blue-500/20 border-2 border-blue-500 flex items-center justify-center animate-pulse animation-delay-4000">
+                                <i class="fab fa-js text-3xl text-blue-400"></i>
+                            </div>
+                        </div>
+                        <div class="absolute right-0 top-1/2 translate-x-1/2 -translate-y-1/2">
+                            <div class="w-16 h-16 rounded-full bg-blue-500/20 border-2 border-blue-500 flex items-center justify-center animate-pulse animation-delay-1000">
+                                <i class="fab fa-django text-3xl text-blue-400"></i>
+                            </div>
+                        </div>
+                        <div class="absolute top-1/4 right-1/4">
+                            <div class="w-12 h-12 rounded-full bg-blue-500/20 border border-blue-500 flex items-center justify-center">
+                                <i class="fas fa-database text-xl text-blue-400"></i>
+                            </div>
+                        </div>
+                        <div class="absolute bottom-1/4 left-1/4">
+                            <div class="w-12 h-12 rounded-full bg-blue-500/20 border border-blue-500 flex items-center justify-center">
+                                <i class="fab fa-docker text-xl text-blue-400"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tech Stack Grid -->
+            <div class="grid md:grid-cols-2 gap-8 mb-16">
+                <!-- Frontend -->
+                <div class="stat-card" data-aos="fade-right">
+                    <h3 class="text-2xl font-display font-bold text-white mb-6 flex items-center gap-2">
+                        <i class="fas fa-code text-blue-400"></i>
+                        Frontend Development
+                    </h3>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="text-gray-300">React</span>
+                                <span class="text-blue-400">85%</span>
+                            </div>
+                            <div class="w-full h-2 bg-dark-300 rounded-full overflow-hidden">
+                                <div class="h-full bg-gradient-to-r from-blue-500 to-blue-600 rounded-full" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="text-gray-300">JavaScript/TypeScript</span>
+                                <span class="text-blue-400">90%</span>
+                            </div>
+                            <div class="w-full h-2 bg-dark-300 rounded-full overflow-hidden">
+                                <div class="h-full bg-gradient-to-r from-blue-500 to-blue-600 rounded-full" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="text-gray-300">HTML5/CSS3/Tailwind</span>
+                                <span class="text-blue-400">95%</span>
+                            </div>
+                            <div class="w-full h-2 bg-dark-300 rounded-full overflow-hidden">
+                                <div class="h-full bg-gradient-to-r from-blue-500 to-blue-600 rounded-full" style="width: 95%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex flex-wrap gap-2 mt-6">
+                        <span class="tech-badge">React</span>
+                        <span class="tech-badge">TypeScript</span>
+                        <span class="tech-badge">Tailwind</span>
+                        <span class="tech-badge">Redux</span>
+                        <span class="tech-badge">Next.js (App Router)</span>
+                        <span class="tech-badge">Zustand</span>
+
+                        
+
+                    </div>
+                </div>
+
+                <!-- Backend -->
+                <div class="stat-card" data-aos="fade-left">
+                    <h3 class="text-2xl font-display font-bold text-white mb-6 flex items-center gap-2">
+                        <i class="fas fa-server text-blue-400"></i>
+                        Backend & Database
+                    </h3>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="text-gray-300">Python/Django & JavaScript/Node.JS/NestJS</span>
+                                <span class="text-blue-400">90%</span>
+                            </div>
+                            <div class="w-full h-2 bg-dark-300 rounded-full overflow-hidden">
+                                <div class="h-full bg-gradient-to-r from-blue-500 to-blue-600 rounded-full" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="text-gray-300">MySQL/PostgreSQL/MongoDB</span>
+                                <span class="text-blue-400">85%</span>
+                            </div>
+                            <div class="w-full h-2 bg-dark-300 rounded-full overflow-hidden">
+                                <div class="h-full bg-gradient-to-r from-blue-500 to-blue-600 rounded-full" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="text-gray-300">REST APIs</span>
+                                <span class="text-blue-400">90%</span>
+                            </div>
+                            <div class="w-full h-2 bg-dark-300 rounded-full overflow-hidden">
+                                <div class="h-full bg-gradient-to-r from-blue-500 to-blue-600 rounded-full" style="width: 90%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex flex-wrap gap-2 mt-6">
+                        <span class="tech-badge">Django</span>
+                        <span class="tech-badge">NestJS</span>
+                        <span class="tech-badge">DRF</span>
+                        <span class="tech-badge">MySQL</span>
+                        <span class="tech-badge">PostgreSQL</span>
+                         <span class="tech-badge">MongoDB</span>
+
+                    </div>
+                </div>
+
+                <!-- Data Science -->
+                <div class="stat-card" data-aos="fade-right" data-aos-delay="100">
+                    <h3 class="text-2xl font-display font-bold text-white mb-6 flex items-center gap-2">
+                        <i class="fas fa-brain text-blue-400"></i>
+                        Data Science & ML
+                    </h3>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="text-gray-300">Pandas/NumPy</span>
+                                <span class="text-blue-400">85%</span>
+                            </div>
+                            <div class="w-full h-2 bg-dark-300 rounded-full overflow-hidden">
+                                <div class="h-full bg-gradient-to-r from-blue-500 to-blue-600 rounded-full" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="text-gray-300">Scikit-learn</span>
+                                <span class="text-blue-400">75%</span>
+                            </div>
+                            <div class="w-full h-2 bg-dark-300 rounded-full overflow-hidden">
+                                <div class="h-full bg-gradient-to-r from-blue-500 to-blue-600 rounded-full" style="width: 75%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="text-gray-300">TensorFlow</span>
+                                <span class="text-blue-400">60%</span>
+                            </div>
+                            <div class="w-full h-2 bg-dark-300 rounded-full overflow-hidden">
+                                <div class="h-full bg-gradient-to-r from-blue-500 to-blue-600 rounded-full" style="width: 60%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex flex-wrap gap-2 mt-6">
+                        <span class="tech-badge">Pandas</span>
+                        <span class="tech-badge">Scikit-learn</span>
+                        <span class="tech-badge">TensorFlow</span>
+                        <span class="tech-badge">Data Viz</span>
+                    </div>
+                </div>
+
+                <!-- Tools -->
+                <div class="stat-card" data-aos="fade-left" data-aos-delay="100">
+                    <h3 class="text-2xl font-display font-bold text-white mb-6 flex items-center gap-2">
+                        <i class="fas fa-tools text-blue-400"></i>
+                        Tools & DevOps
+                    </h3>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="text-gray-300">Git/GitHub</span>
+                                <span class="text-blue-400">90%</span>
+                            </div>
+                            <div class="w-full h-2 bg-dark-300 rounded-full overflow-hidden">
+                                <div class="h-full bg-gradient-to-r from-blue-500 to-blue-600 rounded-full" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="text-gray-300">Docker</span>
+                                <span class="text-blue-400">65%</span>
+                            </div>
+                            <div class="w-full h-2 bg-dark-300 rounded-full overflow-hidden">
+                                <div class="h-full bg-gradient-to-r from-blue-500 to-blue-600 rounded-full" style="width: 65%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="text-gray-300">Linux/VS Code</span>
+                                <span class="text-blue-400">85%</span>
+                            </div>
+                            <div class="w-full h-2 bg-dark-300 rounded-full overflow-hidden">
+                                <div class="h-full bg-gradient-to-r from-blue-500 to-blue-600 rounded-full" style="width: 85%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex flex-wrap gap-2 mt-6">
+                        <span class="tech-badge">Git</span>
+                        <span class="tech-badge">Docker</span>
+                        <span class="tech-badge">Linux</span>
+                        <span class="tech-badge">VS Code</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Languages -->
+            <div class="max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="200">
+                <h3 class="text-2xl font-display font-bold text-white mb-8 text-center">
+                    <i class="fas fa-globe text-blue-400 mr-2"></i>
+                    <span data-i18n="skills.languages">Languages</span>
+                </h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div class="stat-card text-center group hover:scale-105">
+                        <span class="block text-2xl mb-2 animate-wave">🇫🇷</span>
+                        <span class="block text-white font-bold">Français</span>
+                        <span class="text-sm text-blue-400" data-i18n="skills.native">Native</span>
+                    </div>
+                    <div class="stat-card text-center group hover:scale-105">
+                        <span class="block text-2xl mb-2 animate-wave animation-delay-200">🇬🇧</span>
+                        <span class="block text-white font-bold">English</span>
+                        <span class="text-sm text-blue-400" data-i18n="skills.fluent">Fluent</span>
+                    </div>
+                    <div class="stat-card text-center group hover:scale-105">
+                        <span class="block text-2xl mb-2 animate-wave animation-delay-400">🇷🇼</span>
+                        <span class="block text-white font-bold">Kinyarwanda</span>
+                        <span class="text-sm text-blue-400" data-i18n="skills.beginner">Beginner</span>
+                    </div>
+                    <div class="stat-card text-center group hover:scale-105">
+                        <span class="block text-2xl mb-2 animate-wave animation-delay-600">🇪🇸</span>
+                        <span class="block text-white font-bold">Spanish</span>
+                        <span class="text-sm text-blue-400" data-i18n="skills.beginner">Beginner</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-32 relative bg-dark-400/50">
+        <div class="container-custom">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <span class="section-subtitle" data-i18n="contact.subtitle">LET'S CONNECT</span>
+                <h2 class="section-title gradient-text" data-i18n="contact.title">Contact me</h2>
+                <div class="w-24 h-1 bg-blue-500 mx-auto mt-4"></div>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-12">
+                <!-- Contact Info -->
+                <div class="space-y-6" data-aos="fade-right">
+                    <div class="stat-card flex items-center gap-4 group hover:scale-105">
+                        <div class="w-14 h-14 rounded-full bg-blue-500/20 flex items-center justify-center group-hover:scale-110 transition-transform">
+                            <i class="fas fa-phone-alt text-2xl text-blue-400"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg text-gray-400" data-i18n="contact.phone">Phone</h3>
+                            <a href="tel:+250737680403" class="text-white hover:text-blue-400 transition-colors">+250 737 680 403</a><br>
+                            <a href="tel:+250790363578" class="text-white hover:text-blue-400 transition-colors">+250 790 363 578</a>
+                        </div>
+                    </div>
+
+                    <div class="stat-card flex items-center gap-4 group hover:scale-105">
+                        <div class="w-14 h-14 rounded-full bg-blue-500/20 flex items-center justify-center group-hover:scale-110 transition-transform">
+                            <i class="fas fa-envelope text-2xl text-blue-400"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg text-gray-400" data-i18n="contact.email">Email</h3>
+                            <a href="mailto:Angekoumba754@gmail.com" class="text-white hover:text-blue-400 transition-colors">Angekoumba754@gmail.com</a>
+                        </div>
+                    </div>
+
+                    <div class="stat-card flex items-center gap-4 group hover:scale-105">
+                        <div class="w-14 h-14 rounded-full bg-blue-500/20 flex items-center justify-center group-hover:scale-110 transition-transform">
+                            <i class="fas fa-map-marker-alt text-2xl text-blue-400"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg text-gray-400" data-i18n="contact.location">Location</h3>
+                            <p class="text-white">8 KG Avenue, Kigali, Rwanda</p>
+                        </div>
+                    </div>
+
+                    <div class="stat-card flex items-center gap-4 group hover:scale-105">
+                        <div class="w-14 h-14 rounded-full bg-blue-500/20 flex items-center justify-center group-hover:scale-110 transition-transform">
+                            <i class="fab fa-linkedin text-2xl text-blue-400"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg text-gray-400">LinkedIn</h3>
+                            <a href="https://www.linkedin.com/in/ange-koumba-64a634343/" target="_blank" class="text-white hover:text-blue-400 transition-colors">/in/ange-koumba</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <form class="space-y-6" data-aos="fade-left" id="contactForm">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="relative group">
+                            <input type="text" name="name" placeholder=" " required class="w-full px-4 py-4 bg-dark-200/50 border border-blue-500/20 rounded-xl text-white placeholder-transparent focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 peer">
+                            <label class="absolute left-4 -top-2.5 bg-dark-500 px-2 text-sm text-gray-400 transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-placeholder-shown:top-4 peer-placeholder-shown:bg-transparent peer-focus:-top-2.5 peer-focus:text-sm peer-focus:text-blue-400 peer-focus:bg-dark-500" data-i18n="contact.form.name">Your name</label>
+                        </div>
+                        <div class="relative group">
+                            <input type="email" name="email" placeholder=" " required class="w-full px-4 py-4 bg-dark-200/50 border border-blue-500/20 rounded-xl text-white placeholder-transparent focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 peer">
+                            <label class="absolute left-4 -top-2.5 bg-dark-500 px-2 text-sm text-gray-400 transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-placeholder-shown:top-4 peer-placeholder-shown:bg-transparent peer-focus:-top-2.5 peer-focus:text-sm peer-focus:text-blue-400 peer-focus:bg-dark-500" data-i18n="contact.form.email">Your email</label>
+                        </div>
+                    </div>
+
+                    <div class="relative group">
+                        <input type="text" name="subject" placeholder=" " required class="w-full px-4 py-4 bg-dark-200/50 border border-blue-500/20 rounded-xl text-white placeholder-transparent focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 peer">
+                        <label class="absolute left-4 -top-2.5 bg-dark-500 px-2 text-sm text-gray-400 transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-placeholder-shown:top-4 peer-placeholder-shown:bg-transparent peer-focus:-top-2.5 peer-focus:text-sm peer-focus:text-blue-400 peer-focus:bg-dark-500" data-i18n="contact.form.subject">Subject</label>
+                    </div>
+
+                    <div class="relative group">
+                        <textarea name="message" rows="5" placeholder=" " required class="w-full px-4 py-4 bg-dark-200/50 border border-blue-500/20 rounded-xl text-white placeholder-transparent focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 peer resize-none"></textarea>
+                        <label class="absolute left-4 -top-2.5 bg-dark-500 px-2 text-sm text-gray-400 transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-placeholder-shown:top-4 peer-placeholder-shown:bg-transparent peer-focus:-top-2.5 peer-focus:text-sm peer-focus:text-blue-400 peer-focus:bg-dark-500" data-i18n="contact.form.message">Your message</label>
+                    </div>
+
+                    <button type="submit" class="btn-primary w-full group">
+                        <span class="relative z-10" data-i18n="contact.form.submit">Send message</span>
+                        <i class="fas fa-paper-plane ml-2 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="relative py-12 border-t border-blue-500/20">
+        <div class="container-custom">
+            <div class="flex flex-col items-center text-center">
+                <div class="text-3xl font-display font-bold mb-4">
+                    <span class="text-white">Ange</span>
+                    <span class="gradient-text"> KOUMBA</span>
+                </div>
+                <p class="text-gray-400 max-w-md mb-6" data-i18n="footer.description">
+                    Creator of innovative solutions at the intersection of data and software development.
+                </p>
+                <div class="flex space-x-4 mb-6">
+                    <a href="https://www.linkedin.com/in/ange-koumba-64a634343/" target="_blank" class="w-10 h-10 rounded-full glass-effect flex items-center justify-center text-blue-400 hover:text-blue-300 hover:border-blue-500 transition-all duration-300 hover:scale-110">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://github.com/kay1403" target="_blank" class="w-10 h-10 rounded-full glass-effect flex items-center justify-center text-blue-400 hover:text-blue-300 hover:border-blue-500 transition-all duration-300 hover:scale-110">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://twitter.com/angekoumba" target="_blank" class="w-10 h-10 rounded-full glass-effect flex items-center justify-center text-blue-400 hover:text-blue-300 hover:border-blue-500 transition-all duration-300 hover:scale-110">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                </div>
+                <div class="text-gray-500 text-sm">
+                    © 2025 Ange KOUMBA. <span data-i18n="footer.rights">All rights reserved.</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
+    <!-- EmailJS -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            emailjs.init("xPli5Qr1N_RE53QJ9");
+        })();
+    </script>
+    <script src="dist/js/main.js"></script>
+</body>
+</html>
+--- FILE: ./tailwind.config.js ---
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: ["./*.html", "./src/**/*.js"],
+  theme: {
+    extend: {
+      colors: {
+        'blue': {
+          50: '#eff6ff',
+          100: '#dbeafe',
+          200: '#bfdbfe',
+          300: '#93c5fd',
+          400: '#60a5fa',
+          500: '#3b82f6',
+          600: '#2563eb',
+          700: '#1d4ed8',
+          800: '#1e40af',
+          900: '#1e3a8a',
+          950: '#172554',
+        },
+        'dark': {
+          100: '#1e293b',
+          200: '#0f172a',
+          300: '#0a0f1f',
+          400: '#070b14',
+          500: '#03050a',
+        }
+      },
+      fontFamily: {
+        'sans': ['Inter', 'system-ui', 'sans-serif'],
+        'display': ['Space Grotesk', 'sans-serif'],
+        'mono': ['JetBrains Mono', 'monospace'],
+      },
+      animation: {
+        'float': 'float 6s ease-in-out infinite',
+        'glow': 'glow 3s ease-in-out infinite',
+        'gradient': 'gradient 8s linear infinite',
+        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+        'bounce-slow': 'bounce 3s infinite',
+        'spin-slow': 'spin 8s linear infinite',
+        'slide-up': 'slideUp 0.5s ease-out',
+        'slide-down': 'slideDown 0.5s ease-out',
+        'slide-left': 'slideLeft 0.5s ease-out',
+        'slide-right': 'slideRight 0.5s ease-out',
+        'fade-in': 'fadeIn 0.5s ease-out',
+        'scale-up': 'scaleUp 0.3s ease-out',
+        'rotate-3d': 'rotate3D 10s linear infinite',
+        'blob': 'blob 7s infinite',
+        'wave': 'wave 2.5s infinite',
+      },
+      keyframes: {
+        float: {
+          '0%, 100%': { transform: 'translateY(0px)' },
+          '50%': { transform: 'translateY(-20px)' },
+        },
+        glow: {
+          '0%, 100%': { opacity: 1 },
+          '50%': { opacity: 0.6 },
+        },
+        gradient: {
+          '0%, 100%': { backgroundPosition: '0% 50%' },
+          '50%': { backgroundPosition: '100% 50%' },
+        },
+        slideUp: {
+          '0%': { transform: 'translateY(100px)', opacity: '0' },
+          '100%': { transform: 'translateY(0)', opacity: '1' },
+        },
+        slideDown: {
+          '0%': { transform: 'translateY(-100px)', opacity: '0' },
+          '100%': { transform: 'translateY(0)', opacity: '1' },
+        },
+        slideLeft: {
+          '0%': { transform: 'translateX(100px)', opacity: '0' },
+          '100%': { transform: 'translateX(0)', opacity: '1' },
+        },
+        slideRight: {
+          '0%': { transform: 'translateX(-100px)', opacity: '0' },
+          '100%': { transform: 'translateX(0)', opacity: '1' },
+        },
+        fadeIn: {
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' },
+        },
+        scaleUp: {
+          '0%': { transform: 'scale(0.9)', opacity: '0' },
+          '100%': { transform: 'scale(1)', opacity: '1' },
+        },
+        rotate3D: {
+          '0%': { transform: 'rotateY(0deg)' },
+          '100%': { transform: 'rotateY(360deg)' },
+        },
+        blob: {
+          '0%': { transform: 'translate(0px, 0px) scale(1)' },
+          '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
+          '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
+          '100%': { transform: 'translate(0px, 0px) scale(1)' },
+        },
+        wave: {
+          '0%': { transform: 'rotate(0.0deg)' },
+          '10%': { transform: 'rotate(14deg)' },
+          '20%': { transform: 'rotate(-8deg)' },
+          '30%': { transform: 'rotate(14deg)' },
+          '40%': { transform: 'rotate(-4deg)' },
+          '50%': { transform: 'rotate(10.0deg)' },
+          '60%': { transform: 'rotate(0.0deg)' },
+          '100%': { transform: 'rotate(0.0deg)' },
+        },
+      },
+      backgroundImage: {
+        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+        'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+        'cyber-grid': 'linear-gradient(rgba(59, 130, 246, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(59, 130, 246, 0.1) 1px, transparent 1px)',
+      },
+      backgroundSize: {
+        'grid': '50px 50px',
+      },
+      boxShadow: {
+        'glow': '0 0 20px rgba(59, 130, 246, 0.5)',
+        'glow-lg': '0 0 40px rgba(59, 130, 246, 0.5)',
+        'neon': '0 0 5px #3b82f6, 0 0 20px #3b82f6, 0 0 40px #3b82f6',
+        'inner-glow': 'inset 0 0 20px rgba(59, 130, 246, 0.3)',
+      },
+      blur: {
+        'xs': '2px',
+      },
+    },
+  },
+  plugins: [],
+}
+--- FILE: ./netlify.toml ---
+[build]
+  command = "npm run netlify"
+  publish = "."
+
+[build.environment]
+  NODE_VERSION = "18"
+
+# Redirection pour l’interface d’administration
+[[redirects]]
+  from = "/admin/*"
+  to = "/admin/index.html"
+  status = 200
+
+# Servir les fichiers JSON avec le bon type MIME
+[[headers]]
+  for = "/content/*.json"
+  [headers.values]
+    Content-Type = "application/json"
+
+# Headers pour JS/CSS (inchangé)
+[[headers]]
+  for = "/dist/js/*"
+  [headers.values]
+    Content-Type = "application/javascript"
+    X-Content-Type-Options = "nosniff"
+
+[[headers]]
+  for = "/dist/css/*"
+  [headers.values]
+    Content-Type = "text/css"
+    X-Content-Type-Options = "nosniff"--- FILE: ./admin/index.html ---
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin - Ange KOUMBA Portfolio</title>
+  <script src="https://unpkg.com/netlify-cms@^2.10.0/dist/netlify-cms.js"></script>
+</head>
+<body>
+  <script>
+    // Configuration optionnelle (langue, etc.)
+    CMS.registerPreviewTemplate("projects", (data) => {
+      return `<h1>${data.title}</h1><p>${data.description}</p>`;
+    });
+  </script>
+</body>
+</html>--- FILE: ./admin/config.yml ---
+backend:
+  name: git-gateway
+  branch: certification
+
+site_url: https://angekoumbaportfolio.netlify.app   # À remplacer par votre URL
+
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "projects"
+    label: "Projets"
+    files:
+      - name: "projects"
+        label: "Liste des projets"
+        file: "content/projects.json"
+        fields:
+          - name: projects
+            label: "Projets"
+            widget: "list"
+            summary: "{{fields.title}}"
+            fields:
+              - { label: "Titre", name: "title", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+              - { label: "Image", name: "image", widget: "image", default: "images/portfolio1.jpg" }
+              - { label: "Technologies", name: "tech", widget: "list", default: [] }
+              - { label: "Lien GitHub", name: "github", widget: "string", required: false }
+              - { label: "Lien Démo", name: "demo", widget: "string", required: false }
+              - { label: "Ordre", name: "order", widget: "number", default: 0 }
+
+  - name: "certifications"
+    label: "Certifications"
+    files:
+      - name: "certifications"
+        label: "Liste des certifications"
+        file: "content/certifications.json"
+        fields:
+          - name: certifications
+            label: "Certifications"
+            widget: "list"
+            summary: "{{fields.title}}"
+            fields:
+              - { label: "Titre", name: "title", widget: "string" }
+              - { label: "Fichier (PDF/PNG)", name: "file", widget: "file" }
+              - { label: "Icône FontAwesome", name: "icon", widget: "string", default: "fa-certificate" }
+              - { label: "Statut", name: "status", widget: "select", options: ["published", "inprogress", "coming"], default: "published" }
+              - { label: "Date", name: "date", widget: "date", required: false }
+
+  - name: "experiences"
+    label: "Expériences"
+    files:
+      - name: "experiences"
+        label: "Liste des expériences"
+        file: "content/experiences.json"
+        fields:
+          - name: experiences
+            label: "Expériences"
+            widget: "list"
+            summary: "{{fields.title}}"
+            fields:
+              - { label: "Poste", name: "title", widget: "string" }
+              - { label: "Entreprise", name: "company", widget: "string" }
+              - { label: "Période", name: "period", widget: "string" }
+              - { label: "Description", name: "description", widget: "list", field: { label: "Point", name: "point", widget: "text" } }
+              - { label: "Technologies", name: "tech", widget: "list", default: [] }--- FILE: ./content/experiences.json ---
+{
+  "experiences": [
+    {
+      "title": "Front-End Developer",
+      "company": "Saltel · Kigali, Rwanda",
+      "period": "Jan 2025 - Mar 2025",
+      "description": [
+        "Development of responsive interfaces with React, TypeScript and Tailwind CSS",
+        "User experience improvement through modern designs",
+        "Collaboration with technical team on complex problems"
+      ],
+      "tech": ["React", "TypeScript", "Tailwind"]
+    },
+    {
+      "title": "Class Representative",
+      "company": "University of Kigali",
+      "period": "2023 - Present",
+      "description": [
+        "Liaison between students and faculty for 50+ students",
+        "Communication facilitation and academic problem solving"
+      ],
+      "tech": ["Leadership", "Communication", "Mediation"]
+    }
+  ]
+}--- FILE: ./content/certifications.json ---
+{
+  "certifications": [
+    {
+      "title": "Back-End Web Development",
+      "file": "certificates/Transcript%20-%20backend-%20Ange%20Koumba.pdf",
+      "icon": "fas fa-server",
+      "status": "published"
+    },
+    {
+      "title": "Front-End Web Development",
+      "file": "certificates/Transcript%20-%20frontenddev-%20Ange%20Koumba-2.pdf",
+      "icon": "fas fa-code",
+      "status": "published"
+    },
+    {
+      "title": "Data Analytics",
+      "file": "certificates/51-data-analytics-certificate-ange-koumba.png",
+      "icon": "fas fa-chart-bar",
+      "status": "published"
+    },
+    {
+      "title": "Python Programming",
+      "file": "certificates/189-python-programming-certificate-ange-koumba.png",
+      "icon": "fab fa-python",
+      "status": "published"
+    },
+    {
+      "title": "ProDev Backend",
+      "file": "certificates/86-prodev-backend-certificate-ange-koumba.png",
+      "icon": "fas fa-laptop-code",
+      "status": "published"
+    },
+    {
+      "title": "Founder Academy",
+      "file": "certificates/118-founder-academy-4-week-certificate-ange-koumba.png",
+      "icon": "fas fa-rocket",
+      "status": "published"
+    },
+    {
+      "title": "Professional Foundations",
+      "file": "certificates/89-professional-foundations-certificate-ange-koumba.png",
+      "icon": "fas fa-briefcase",
+      "status": "published"
+    },
+    {
+      "title": "Freelancer Academy",
+      "file": "certificates/117-freelancer-academy-2-week-certificate-ange-koumba.png",
+      "icon": "fas fa-user-tie",
+      "status": "published"
+    },
+    {
+      "title": "Cybersecurity",
+      "file": "",
+      "icon": "fas fa-shield-alt",
+      "status": "inprogress"
+    },
+    {
+      "title": "Machine Learning",
+      "file": "",
+      "icon": "fas fa-brain",
+      "status": "inprogress"
+    },
+    {
+      "title": "Data Engineering",
+      "file": "",
+      "icon": "fas fa-database",
+      "status": "coming"
+    }
+  ]
+}--- FILE: ./content/projects.json ---
+{
+  "projects": [
+    {
+      "title": "Library Management System",
+      "description": "Système de gestion de bibliothèque avec <span class='text-blue-400'>Django</span>,<br>API REST, et authentification JWT.",
+      "image": "images/portfolio1.jpg",
+      "tech": ["Django", "DRF", "PostgreSQL", "JWT"],
+      "github": "https://github.com/kay1403/library-management-system-api",
+      "demo": "https://libraryms-tfsy.onrender.com",
+      "order": 1
+    },
+    {
+      "title": "E-commerce Backend",
+      "description": "Backend complet pour plateforme e-commerce<br>avec <span class='text-blue-400'>Django REST Framework</span>.",
+      "image": "images/portfolio2.jpg",
+      "tech": ["Django", "DRF", "MySQL", "JWT"],
+      "github": "https://github.com/kay1403/ecommerce-backend-nexus",
+      "demo": "",
+      "order": 2
+    },
+    {
+      "title": "MoneyTransfer",
+      "description": "Application de transfert d'argent<br>avec authentification sécurisée.",
+      "image": "images/portfolio3.jpg",
+      "tech": ["Django", "JWT", "PostgreSQL", "API"],
+      "github": "https://github.com/kay1403/MoneyTransfer",
+      "demo": "",
+      "order": 3
+    },
+    {
+      "title": "Weather Dashboard",
+      "description": "Application météo interactive<br>avec architecture responsive et système de favoris.",
+      "image": "images/portfolio4.jpg",
+      "tech": ["JavaScript", "HTML5", "CSS3", "API"],
+      "github": "https://github.com/kay1403/weather-dashboard",
+      "demo": "https://weatherflowak.netlify.app",
+      "order": 4
+    },
+    {
+      "title": "BornSafe",
+      "description": "Système de gestion d'actes de naissance<br>avec génération de QR codes et PDF.",
+      "image": "images/portfolio5.jpg",
+      "tech": ["Django", "PostgreSQL", "QR Code", "PDF"],
+      "github": "https://github.com/kay1403/BornSafe",
+      "demo": "",
+      "order": 5
+    },
+    {
+      "title": "ENTRESAAS",
+      "description": "Plateforme SaaS avec authentification 2FA,<br>RBAC, et audit trail.",
+      "image": "images/portfolio6.jpg",
+      "tech": ["NestJS", "React", "PostgreSQL", "JWT"],
+      "github": "https://github.com/kay1403/ENTRESAAS",
+      "demo": "",
+      "order": 6
+    },
+    {
+      "title": "SAWAI",
+      "description": "Système IoT de surveillance des sols<br>avec analyse de données en temps réel.",
+      "image": "images/portfolio5.jpg",
+      "tech": ["Python", "IoT", "Arduino", "Data Viz"],
+      "github": "https://github.com/kay1403/SAWAI",
+      "demo": "https://sawailmd.netlify.app",
+      "order": 7
+    },
+    {
+      "title": "RSSB Clone",
+      "description": "Clone of the Rwanda Social Security Board website - Optimistic and forward-looking agent of central government, working to achieve the financial security and health of all Rwandans.",
+      "image": "images/portfolio2.jpg",
+      "tech": ["HTML5", "CSS3", "Tailwind", "Responsive"],
+      "github": "",
+      "demo": "https://tailwindcloninggate.netlify.app",
+      "order": 8
+    },
+    {
+      "title": "Baumeister",
+      "description": "Clone of the Baumeister website - Group project with modern and responsive design.",
+      "image": "images/portfolio2.jpg",
+      "tech": ["HTML5", "CSS3", "JavaScript", "Responsive"],
+      "github": "",
+      "demo": "https://websiteprojectgroup3.netlify.app",
+      "order": 9
+    }
+  ]
+}--- FILE: ./README.md ---
+# Portfolio - Ange KOUMBA
+
+Portfolio professionnel d'Ange KOUMBA, Data Scientist et Développeur Full-Stack.
+
+## 🚀 Technologies utilisées
+
+- HTML5 / Tailwind CSS
+- JavaScript (ES6+)
+- EmailJS pour le formulaire de contact
+- AOS pour les animations
+- Typed.js pour l'effet de texte dynamique
+
+## 🌐 Fonctionnalités
+
+- Design responsive
+- Changement de langue (FR/EN)
+- Téléchargement CV bilingue
+- Formulaire de contact fonctionnel
+- Animations fluides
+
+## 📦 Installation locale
+
+```bash
+# Cloner le repository
+git clone https://github.com/kay1403/Ange_Koumba_PortFolio.git
+
+# Installer les dépendances
+npm install
+
+# Lancer en développement
+npm run dev
+
+# Builder pour la production
+npm run build:all--- FILE: ./build.sh ---
+#!/bin/bash
+echo "🚀 Construction du portfolio..."
+
+# Nettoyage
+rm -rf dist/
+mkdir -p dist/css dist/js
+
+# Compilation Tailwind
+echo "📦 Compilation Tailwind CSS..."
+npm run build
+
+# Copie des fichiers JS
+echo "📋 Copie des fichiers JavaScript..."
+cp src/js/main.js dist/js/
+
+# Copie des autres assets (si nécessaire)
+# cp -r images dist/
+
+echo "✅ Construction terminée !"
+ls -la dist/
+--- FILE: ./package-lock.json ---
+{
+  "name": "ange_koumba_portfolio",
+  "version": "1.0.0",
+  "lockfileVersion": 3,
+  "requires": true,
+  "packages": {
+    "": {
+      "name": "ange_koumba_portfolio",
+      "version": "1.0.0",
+      "license": "ISC",
+      "devDependencies": {
+        "autoprefixer": "^10.4.27",
+        "nodemon": "^3.1.14",
+        "postcss": "^8.5.8",
+        "tailwindcss": "^3.4.0"
+      }
+    },
+    "node_modules/@alloc/quick-lru": {
+      "version": "5.2.0",
+      "resolved": "https://registry.npmjs.org/@alloc/quick-lru/-/quick-lru-5.2.0.tgz",
+      "integrity": "sha512-UrcABB+4bUrFABwbluTIBErXwvbsU/V7TZWfmbgJfbkwiBuziS9gxdODUyuiecfdGQ85jglMW6juS3+z5TsKLw==",
+      "dev": true,
+      "license": "MIT",
+      "engines": {
+        "node": ">=10"
+      },
+      "funding": {
+        "url": "https://github.com/sponsors/sindresorhus"
+      }
+    },
+    "node_modules/@jridgewell/gen-mapping": {
+      "version": "0.3.13",
+      "resolved": "https://registry.npmjs.org/@jridgewell/gen-mapping/-/gen-mapping-0.3.13.tgz",
+      "integrity": "sha512-2kkt/7niJ6MgEPxF0bYdQ6etZaA+fQvDcLKckhy1yIQOzaoKjBBjSj63/aLVjYE3qhRt5dvM+uUyfCg6UKCBbA==",
+      "dev": true,
+      "license": "MIT",
+      "dependencies": {
+        "@jridgewell/sourcemap-codec": "^1.5.0",
+        "@jridgewell/trace-mapping": "^0.3.24"
+      }
+    },
+    "node_modules/@jridgewell/resolve-uri": {
+      "version": "3.1.2",
+      "resolved": "https://registry.npmjs.org/@jridgewell/resolve-uri/-/resolve-uri-3.1.2.tgz",
+      "integrity": "sha512-bRISgCIjP20/tbWSPWMEi54QVPRZExkuD9lJL+UIxUKtwVJA8wW1Trb1jMs1RFXo1CBTNZ/5hpC9QvmKWdopKw==",
+      "dev": true,
+      "license": "MIT",
+      "engines": {
+        "node": ">=6.0.0"
+      }
+    },
+    "node_modules/@jridgewell/sourcemap-codec": {
+      "version": "1.5.5",
+      "resolved": "https://registry.npmjs.org/@jridgewell/sourcemap-codec/-/sourcemap-codec-1.5.5.tgz",
+      "integrity": "sha512-cYQ9310grqxueWbl+WuIUIaiUaDcj7WOq5fVhEljNVgRfOUhY9fy2zTvfoqWsnebh8Sl70VScFbICvJnLKB0Og==",
+      "dev": true,
+      "license": "MIT"
+    },
+    "node_modules/@jridgewell/trace-mapping": {
+      "version": "0.3.31",
+      "resolved": "https://registry.npmjs.org/@jridgewell/trace-mapping/-/trace-mapping-0.3.31.tgz",
+      "integrity": "sha512-zzNR+SdQSDJzc8joaeP8QQoCQr8NuYx2dIIytl1QeBEZHJ9uW6hebsrYgbz8hJwUQao3TWCMtmfV8Nu1twOLAw==",
+      "dev": true,
+      "license": "MIT",
+      "dependencies": {
+        "@jridgewell/resolve-uri": "^3.1.0",
+        "@jridgewell/sourcemap-codec": "^1.4.14"
+      }
+    },
+    "node_modules/@nodelib/fs.scandir": {
+      "version": "2.1.5",
+      "resolved": "https://registry.npmjs.org/@nodelib/fs.scandir/-/fs.scandir-2.1.5.tgz",
+      "integrity": "sha512-vq24Bq3ym5HEQm2NKCr3yXDwjc7vTsEThRDnkp2DK9p1uqLR+DHurm/NOTo0KG7HYHU7eppKZj3MyqYuMBf62g==",
+      "dev": true,
+      "license": "MIT",
+      "dependencies": {
+        "@nodelib/fs.stat": "2.0.5",
+        "run-parallel": "^1.1.9"
+      },
+      "engines": {
+        "node": ">= 8"
+      }
+    },
+    "node_modules/@nodelib/fs.stat": {
+      "version": "2.0.5",
+      "resolved": "https://registry.npmjs.org/@nodelib/fs.stat/-/fs.stat-2.0.5.tgz",
+      "integrity": "sha512-RkhPPp2zrqDAQA/2jNhnztcPAlv64XdhIp7a7454A5ovI7Bukxgt7MX7udwAu3zg1DcpPU0rz3VV1SeaqvY4+A==",
+      "dev": true,
+      "license": "MIT",
+      "engines": {
+        "node": ">= 8"
+      }
+    },
+    "node_modules/@nodelib/fs.walk": {
+      "version": "1.2.8",
+      "resolved": "https://registry.npmjs.org/@nodelib/fs.walk/-/fs.walk-1.2.8.tgz",
+      "integrity": "sha512-oGB+UxlgWcgQkgwo8GcEGwemoTFt3FIO9ababBmaGwXIoBKZ+GTy0pP185beGg7Llih/NSHSV2XAs1lnznocSg==",
+      "dev": true,
+      "license": "MIT",
+      "dependencies": {
+        "@nodelib/fs.scandir": "2.1.5",
+        "fastq": "^1.6.0"
+      },
+      "engines": {
+        "node": ">= 8"
+      }
+    },
+    "node_modules/any-promise": {
+      "version": "1.3.0",
+      "resolved": "https://registry.npmjs.org/any-promise/-/any-promise-1.3.0.tgz",
+      "integrity": "sha512-7UvmKalWRt1wgjL1RrGxoSJW/0QZFIegpeGvZG9kjp8vrRu55XTHbwnqq2GpXm9uLbcuhxm3IqX9OB4MZR1b2A==",
+      "dev": true,
+      "license": "MIT"
+    },
+    "node_modules/anymatch": {
+      "version": "3.1.3",
+      "resolved": "https://registry.npmjs.org/anymatch/-/anymatch-3.1.3.tgz",
+      "integrity": "sha512-KMReFUr0B4t+D+OBkjR3KYqvocp2XaSzO55UcB6mgQMd3KbcE+mWTyvVV7D/zsdEbNnV6acZUutkiHQXvTr1Rw==",
+      "dev": true,
+      "license": "ISC",
+      "dependencies": {
+        "normalize-path": "^3.0.0",
+        "picomatch": "^2.0.4"
+      },
+      "engines": {
+        "node": ">= 8"
+      }
+    },
+    "node_modules/arg": {
+      "version": "5.0.2",
+      "resolved": "https://registry.npmjs.org/arg/-/arg-5.0.2.tgz",
+      "integrity": "sha512-PYjyFOLKQ9y57JvQ6QLo8dAgNqswh8M1RMJYdQduT6xbWSgK36P/Z/v+p888pM69jMMfS8Xd8F6I1kQ/I9HUGg==",
+      "dev": true,
+      "license": "MIT"
+    },
+    "node_modules/autoprefixer": {
+      "version": "10.4.27",
+      "resolved": "https://registry.npmjs.org/autoprefixer/-/autoprefixer-10.4.27.tgz",
+      "integrity": "sha512-NP9APE+tO+LuJGn7/9+cohklunJsXWiaWEfV3si4Gi/XHDwVNgkwr1J3RQYFIvPy76GmJ9/bW8vyoU1LcxwKHA==",
+      "dev": true,
+      "funding": [
+        {
+          "type": "opencollective",
+          "url": "https://opencollective.com/postcss/"
+        },
+        {
+          "type": "tidelift",
+          "url": "https://tidelift.com/funding/github/npm/autoprefixer"
+        },
+        {
+          "type": "github",
+          "url": "https://github.com/sponsors/ai"
+        }
+      ],
+      "license": "MIT",
+      "dependencies": {
+        "browserslist": "^4.28.1",
+        "caniuse-lite": "^1.0.30001774",
+        "fraction.js": "^5.3.4",
+        "picocolors": "^1.1.1",
+        "postcss-value-parser": "^4.2.0"
+      },
+      "bin": {
+        "autoprefixer": "bin/autoprefixer"
+      },
+      "engines": {
+        "node": "^10 || ^12 || >=14"
+      },
+      "peerDependencies": {
+        "postcss": "^8.1.0"
+      }
+    },
+    "node_modules/balanced-match": {
+      "version": "4.0.4",
+      "resolved": "https://registry.npmjs.org/balanced-match/-/balanced-match-4.0.4.tgz",
+      "integrity": "sha512-BLrgEcRTwX2o6gGxGOCNyMvGSp35YofuYzw9h1IMTRmKqttAZZVU67bdb9Pr2vUHA8+j3i2tJfjO6C6+4myGTA==",
+      "dev": true,
+      "license": "MIT",
+      "engines": {
+        "node": "18 || 20 || >=22"
+      }
+    },
+    "node_modules/baseline-browser-mapping": {
+      "version": "2.10.8",
+      "resolved": "https://registry.npmjs.org/baseline-browser-mapping/-/baseline-browser-mapping-2.10.8.tgz",
+      "integrity": "sha512-PCLz/LXGBsNTErbtB6i5u4eLpHeMfi93aUv5duMmj6caNu6IphS4q6UevDnL36sZQv9lrP11dbPKGMaXPwMKfQ==",
+      "dev": true,
+      "license": "Apache-2.0",
+      "bin": {
+        "baseline-browser-mapping": "dist/cli.cjs"
+      },
+      "engines": {
+        "node": ">=6.0.0"
+      }
+    },
+    "node_modules/binary-extensions": {
+      "version": "2.3.0",
+      "resolved": "https://registry.npmjs.org/binary-extensions/-/binary-extensions-2.3.0.tgz",
+      "integrity": "sha512-Ceh+7ox5qe7LJuLHoY0feh3pHuUDHAcRUeyL2VYghZwfpkNIy/+8Ocg0a3UuSoYzavmylwuLWQOf3hl0jjMMIw==",
+      "dev": true,
+      "license": "MIT",
+      "engines": {
+        "node": ">=8"
+      },
+      "funding": {
+        "url": "https://github.com/sponsors/sindresorhus"
+      }
+    },
+    "node_modules/brace-expansion": {
+      "version": "5.0.4",
+      "resolved": "https://registry.npmjs.org/brace-expansion/-/brace-expansion-5.0.4.tgz",
+      "integrity": "sha512-h+DEnpVvxmfVefa4jFbCf5HdH5YMDXRsmKflpf1pILZWRFlTbJpxeU55nJl4Smt5HQaGzg1o6RHFPJaOqnmBDg==",
+      "dev": true,
+      "license": "MIT",
+      "dependencies": {
+        "balanced-match": "^4.0.2"
+      },
+      "engines": {
+        "node": "18 || 20 || >=22"
+      }
+    },
+    "node_modules/braces": {
+      "version": "3.0.3",
+      "resolved": "https://registry.npmjs.org/braces/-/braces-3.0.3.tgz",
+      "integrity": "sha512-yQbXgO/OSZVD2IsiLlro+7Hf6Q18EJrKSEsdoMzKePKXct3gvD8oLcOQdIzGupr5Fj+EDe8gO/lxc1BzfMpxvA==",
+      "dev": true,
+      "license": "MIT",
+      "dependencies": {
+        "fill-range": "^7.1.1"
+      },
+      "engines": {
+        "node": ">=8"
+      }
+    },
+    "node_modules/browserslist": {
+      "version": "4.28.1",
+      "resolved": "https://registry.npmjs.org/browserslist/-/browserslist-4.28.1.tgz",
+      "integrity": "sha512-ZC5Bd0LgJXgwGqUknZY/vkUQ04r8NXnJZ3yYi4vDmSiZmC/pdSN0NbNRPxZpbtO4uAfDUAFffO8IZoM3Gj8IkA==",
+      "dev": true,
+      "funding": [
+        {
+          "type": "opencollective",
+          "url": "https://opencollective.com/browserslist"
+        },
+        {
+          "type": "tidelift",
+          "url": "https://tidelift.com/funding/github/npm/browserslist"
+        },
+        {
+          "type": "github",
+          "url": "https://github.com/sponsors/ai"
+        }
+      ],
+      "license": "MIT",
+      "dependencies": {
+        "baseline-browser-mapping": "^2.9.0",
+        "caniuse-lite": "^1.0.30001759",
+        "electron-to-chromium": "^1.5.263",
+        "node-releases": "^2.0.27",
+        "update-browserslist-db": "^1.2.0"
+      },
+      "bin": {
+        "browserslist": "cli.js"
+      },
+      "engines": {
+        "node": "^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7"
+      }
+    },
+    "node_modules/camelcase-css": {
+      "version": "2.0.1",
+      "resolved": "https://registry.npmjs.org/camelcase-css/-/camelcase-css-2.0.1.tgz",
+      "integrity": "sha512-QOSvevhslijgYwRx6Rv7zKdMF8lbRmx+uQGx2+vDc+KI/eBnsy9kit5aj23AgGu3pa4t9AgwbnXWqS+iOY+2aA==",
+      "dev": true,
+      "license": "MIT",
+      "engines": {
+        "node": ">= 6"
+      }
+    },
+    "node_modules/caniuse-lite": {
+      "version": "1.0.30001780",
+      "resolved": "https://registry.npmjs.org/caniuse-lite/-/caniuse-lite-1.0.30001780.tgz",
+      "integrity": "sha512-llngX0E7nQci5BPJDqoZSbuZ5Bcs9F5db7EtgfwBerX9XGtkkiO4NwfDDIRzHTTwcYC8vC7bmeUEPGrKlR/TkQ==",
+      "dev": true,
+      "funding": [
+        {
+          "type": "opencollective",
+          "url": "https://opencollective.com/browserslist"
+        },
+        {
+          "type": "tidelift",
+          "url": "https://tidelift.com/funding/github/npm/caniuse-lite"
+        },
+        {
+          "type": "github",
+          "url": "https://github.com/sponsors/ai"
+        }
+      ],
+      "license": "CC-BY-4.0"
+    },
+    "node_modules/chokidar": {
+      "version": "3.6.0",
+      "resolved": "https://registry.npmjs.org/chokidar/-/chokidar-3.6.0.tgz",
+      "integrity": "sha512-7VT13fmjotKpGipCW9JEQAusEPE+Ei8nl6/g4FBAmIm0GOOLMua9NDDo/DWp0ZAxCr3cPq5ZpBqmPAQgDda2Pw==",
+      "dev": true,
+      "license": "MIT",
+      "dependencies": {
+        "anymatch": "~3.1.2",
+        "braces": "~3.0.2",
+        "glob-parent": "~5.1.2",
+        "is-binary-path": "~2.1.0",
+        "is-glob": "~4.0.1",
+        "normalize-path": "~3.0.0",
+        "readdirp": "~3.6.0"
+      },
+      "engines": {
+        "node": ">= 8.10.0"
+      },
+      "funding": {
+        "url": "https://paulmillr.com/funding/"
+      },
+      "optionalDependencies": {
+        "fsevents": "~2.3.2"
+      }
+    },
+    "node_modules/chokidar/node_modules/glob-parent": {
+      "version": "5.1.2",
+      "resolved": "https://registry.npmjs.org/glob-parent/-/glob-parent-5.1.2.tgz",
+      "integrity": "sha512-AOIgSQCepiJYwP3ARnGx+5VnTu2HBYdzbGP45eLw1vr3zB3vZLeyed1sC9hnbcOc9/SrMyM5RPQrkGz4aS9Zow==",
+      "dev": true,
+      "license": "ISC",
+      "dependencies": {
+        "is-glob": "^4.0.1"
+      },
+      "engines": {
+        "node": ">= 6"
+      }
+    },
+    "node_modules/commander": {
+      "version": "4.1.1",
+      "resolved": "https://registry.npmjs.org/commander/-/commander-4.1.1.tgz",
+      "integrity": "sha512-NOKm8xhkzAjzFx8B2v5OAHT+u5pRQc2UCa2Vq9jYL/31o2wi9mxBA7LIFs3sV5VSC49z6pEhfbMULvShKj26WA==",
+      "dev": true,
+      "license": "MIT",
+      "engines": {
+        "node": ">= 6"
+      }
+    },
+    "node_modules/cssesc": {
+      "version": "3.0.0",
+      "resolved": "https://registry.npmjs.org/cssesc/-/cssesc-3.0.0.tgz",
+      "integrity": "sha512-/Tb/JcjK111nNScGob5MNtsntNM1aCNUDipB/TkwZFhyDrrE47SOx/18wF2bbjgc3ZzCSKW1T5nt5EbFoAz/Vg==",
+      "dev": true,
+      "license": "MIT",
+      "bin": {
+        "cssesc": "bin/cssesc"
+      },
+      "engines": {
+        "node": ">=4"
+      }
+    },
+    "node_modules/debug": {
+      "version": "4.4.3",
+      "resolved": "https://registry.npmjs.org/debug/-/debug-4.4.3.tgz",
+      "integrity": "sha512-RGwwWnwQvkVfavKVt22FGLw+xYSdzARwm0ru6DhTVA3umU5hZc28V3kO4stgYryrTlLpuvgI9GiijltAjNbcqA==",
+      "dev": true,
+      "license": "MIT",
+      "dependencies": {
+        "ms": "^2.1.3"
+      },
+      "engines": {
+        "node": ">=6.0"
+      },
+      "peerDependenciesMeta": {
+        "supports-color": {
+          "optional": true
+        }
+      }
+    },
+    "node_modules/didyoumean": {
+      "version": "1.2.2",
+      "resolved": "https://registry.npmjs.org/didyoumean/-/didyoumean-1.2.2.tgz",
+      "integrity": "sha512-gxtyfqMg7GKyhQmb056K7M3xszy/myH8w+B4RT+QXBQsvAOdc3XymqDDPHx1BgPgsdAA5SIifona89YtRATDzw==",
+      "dev": true,
+      "license": "Apache-2.0"
+    },
+    "node_modules/dlv": {
+      "version": "1.1.3",
+      "resolved": "https://registry.npmjs.org/dlv/-/dlv-1.1.3.tgz",
+      "integrity": "sha512-+HlytyjlPKnIG8XuRG8WvmBP8xs8P71y+SKKS6ZXWoEgLuePxtDoUEiH7WkdePWrQ5JBpE6aoVqfZfJUQkjXwA==",
+      "dev": true,
+      "license": "MIT"
+    },
+    "node_modules/electron-to-chromium": {
+      "version": "1.5.313",
+      "resolved": "https://registry.npmjs.org/electron-to-chromium/-/electron-to-chromium-1.5.313.tgz",
+      "integrity": "sha512-QBMrTWEf00GXZmJyx2lbYD45jpI3TUFnNIzJ5BBc8piGUDwMPa1GV6HJWTZVvY/eiN3fSopl7NRbgGp9sZ9LTA==",
+      "dev": true,
+      "license": "ISC"
+    },
+    "node_modules/escalade": {
+      "version": "3.2.0",
+      "resolved": "https://registry.npmjs.org/escalade/-/escalade-3.2.0.tgz",
+      "integrity": "sha512-WUj2qlxaQtO4g6Pq5c29GTcWGDyd8itL8zTlipgECz3JesAiiOKotd8JU6otB3PACgG6xkJUyVhboMS+bje/jA==",
+      "dev": true,
+      "license": "MIT",
+      "engines": {
+        "node": ">=6"
+      }
+    },
+    "node_modules/fast-glob": {
+      "version": "3.3.3",
+      "resolved": "https://registry.npmjs.org/fast-glob/-/fast-glob-3.3.3.tgz",
+      "integrity": "sha512-7MptL8U0cqcFdzIzwOTHoilX9x5BrNqye7Z/LuC7kCMRio1EMSyqRK3BEAUD7sXRq4iT4AzTVuZdhgQ2TCvYLg==",
+      "dev": true,
+      "license": "MIT",
+      "dependencies": {
+        "@nodelib/fs.stat": "^2.0.2",
+        "@nodelib/fs.walk": "^1.2.3",
+        "glob-parent": "^5.1.2",
+        "merge2": "^1.3.0",
+        "micromatch": "^4.0.8"
+      },
+      "engines": {
+        "node": ">=8.6.0"
+      }
+    },
+    "node_modules/fast-glob/node_modules/glob-parent": {
+      "version": "5.1.2",
+      "resolved": "https://registry.npmjs.org/glob-parent/-/glob-parent-5.1.2.tgz",
+      "integrity": "sha512-AOIgSQCepiJYwP3ARnGx+5VnTu2HBYdzbGP45eLw1vr3zB3vZLeyed1sC9hnbcOc9/SrMyM5RPQrkGz4aS9Zow==",
+      "dev": true,
+      "license": "ISC",
+      "dependencies": {
+        "is-glob": "^4.0.1"
+      },
+      "engines": {
+        "node": ">= 6"
+      }
+    },
+    "node_modules/fastq": {
+      "version": "1.20.1",
+      "resolved": "https://registry.npmjs.org/fastq/-/fastq-1.20.1.tgz",
+      "integrity": "sha512-GGToxJ/w1x32s/D2EKND7kTil4n8OVk/9mycTc4VDza13lOvpUZTGX3mFSCtV9ksdGBVzvsyAVLM6mHFThxXxw==",
+      "dev": true,
+      "license": "ISC",
+      "dependencies": {
+        "reusify": "^1.0.4"
+      }
+    },
+    "node_modules/fill-range": {
+      "version": "7.1.1",
+      "resolved": "https://registry.npmjs.org/fill-range/-/fill-range-7.1.1.tgz",
+      "integrity": "sha512-YsGpe3WHLK8ZYi4tWDg2Jy3ebRz2rXowDxnld4bkQB00cc/1Zw9AWnC0i9ztDJitivtQvaI9KaLyKrc+hBW0yg==",
+      "dev": true,
+      "license": "MIT",
+      "dependencies": {
+        "to-regex-range": "^5.0.1"
+      },
+      "engines": {
+        "node": ">=8"
+      }
+    },
+    "node_modules/fraction.js": {
+      "version": "5.3.4",
+      "resolved": "https://registry.npmjs.org/fraction.js/-/fraction.js-5.3.4.tgz",
+      "integrity": "sha512-1X1NTtiJphryn/uLQz3whtY6jK3fTqoE3ohKs0tT+Ujr1W59oopxmoEh7Lu5p6vBaPbgoM0bzveAW4Qi5RyWDQ==",
+      "dev": true,
+      "license": "MIT",
+      "engines": {
+        "node": "*"
+      },
+      "funding": {
+        "type": "github",
+        "url": "https://github.com/sponsors/rawify"
+      }
+    },
+    "node_modules/fsevents": {
+      "version": "2.3.3",
+      "resolved": "https://registry.npmjs.org/fsevents/-/fsevents-2.3.3.tgz",
+      "integrity": "sha512-5xoDfX+fL7faATnagmWPpbFtwh/R77WmMMqqHGS65C3vvB0YHrgF+B1YmZ3441tMj5n63k0212XNoJwzlhffQw==",
+      "dev": true,
+      "hasInstallScript": true,
+      "license": "MIT",
+      "optional": true,
+      "os": [
+        "darwin"
+      ],
+      "engines": {
+        "node": "^8.16.0 || ^10.6.0 || >=11.0.0"
+      }
+    },
+    "node_modules/function-bind": {
+      "version": "1.1.2",
+      "resolved": "https://registry.npmjs.org/function-bind/-/function-bind-1.1.2.tgz",
+      "integrity": "sha512-7XHNxH7qX9xG5mIwxkhumTox/MIRNcOgDrxWsMt2pAr23WHp6MrRlN7FBSFpCpr+oVO0F744iUgR82nJMfG2SA==",
+      "dev": true,
+      "license": "MIT",
+      "funding": {
+        "url": "https://github.com/sponsors/ljharb"
+      }
+    },
+    "node_modules/glob-parent": {
+      "version": "6.0.2",
+      "resolved": "https://registry.npmjs.org/glob-parent/-/glob-parent-6.0.2.tgz",
+      "integrity": "sha512-XxwI8EOhVQgWp6iDL+3b0r86f4d6AX6zSU55HfB4ydCEuXLXc5FcYeOu+nnGftS4TEju/11rt4KJPTMgbfmv4A==",
+      "dev": true,
+      "license": "ISC",
+      "dependencies": {
+        "is-glob": "^4.0.3"
+      },
+      "engines": {
+        "node": ">=10.13.0"
+      }
+    },
+    "node_modules/has-flag": {
+      "version": "3.0.0",
+      "resolved": "https://registry.npmjs.org/has-flag/-/has-flag-3.0.0.tgz",
+      "integrity": "sha512-sKJf1+ceQBr4SMkvQnBDNDtf4TXpVhVGateu0t918bl30FnbE2m4vNLX+VWe/dpjlb+HugGYzW7uQXH98HPEYw==",
+      "dev": true,
+      "license": "MIT",
+      "engines": {
+        "node": ">=4"
+      }
+    },
+    "node_modules/hasown": {
+      "version": "2.0.2",
+      "resolved": "https://registry.npmjs.org/hasown/-/hasown-2.0.2.tgz",
+      "integrity": "sha512-0hJU9SCPvmMzIBdZFqNPXWa6dqh7WdH0cII9y+CyS8rG3nL48Bclra9HmKhVVUHyPWNH5Y7xDwAB7bfgSjkUMQ==",
+      "dev": true,
+      "license": "MIT",
+      "dependencies": {
+        "function-bind": "^1.1.2"
+      },
+      "engines": {
+        "node": ">= 0.4"
+      }
+    },
+    "node_modules/ignore-by-default": {
+      "version": "1.0.1",
+      "resolved": "https://registry.npmjs.org/ignore-by-default/-/ignore-by-default-1.0.1.tgz",
+      "integrity": "sha512-Ius2VYcGNk7T90CppJqcIkS5ooHUZyIQK+ClZfMfMNFEF9VSE73Fq+906u/CWu92x4gzZMWOwfFYckPObzdEbA==",
+      "dev": true,
+      "license": "ISC"
+    },
+    "node_modules/is-binary-path": {
+      "version": "2.1.0",
+      "resolved": "https://registry.npmjs.org/is-binary-path/-/is-binary-path-2.1.0.tgz",
+      "integrity": "sha512-ZMERYes6pDydyuGidse7OsHxtbI7WVeUEozgR/g7rd0xUimYNlvZRE/K2MgZTjWy725IfelLeVcEM97mmtRGXw==",
+      "dev": true,
+      "license": "MIT",
+      "dependencies": {
+        "binary-extensions": "^2.0.0"
+      },
+      "engines": {
+        "node": ">=8"
+      }
+    },
+    "node_modules/is-core-module": {
+      "version": "2.16.1",
+      "resolved": "https://registry.npmjs.org/is-core-module/-/is-core-module-2.16.1.tgz",
+      "integrity": "sha512-UfoeMA6fIJ8wTYFEUjelnaGI67v6+N7qXJEvQuIGa99l4xsCruSYOVSQ0uPANn4dAzm8lkYPaKLrrijLq7x23w==",
+      "dev": true,
+      "license": "MIT",
+      "dependencies": {
+        "hasown": "^2.0.2"
+      },
+      "engines": {
+        "node": ">= 0.4"
+      },
+      "funding": {
+        "url": "https://github.com/sponsors/ljharb"
+      }
+    },
+    "node_modules/is-extglob": {
+      "version": "2.1.1",
+      "resolved": "https://registry.npmjs.org/is-extglob/-/is-extglob-2.1.1.tgz",
+      "integrity": "sha512-SbKbANkN603Vi4jEZv49LeVJMn4yGwsbzZworEoyEiutsN3nJYdbO36zfhGJ6QEDpOZIFkDtnq5JRxmvl3jsoQ==",
+      "dev": true,
+      "license": "MIT",
+      "engines": {
+        "node": ">=0.10.0"
+      }
+    },
+    "node_modules/is-glob": {
+      "version": "4.0.3",
+      "resolved": "https://registry.npmjs.org/is-glob/-/is-glob-4.0.3.tgz",
+      "integrity": "sha512-xelSayHH36ZgE7ZWhli7pW34hNbNl8Ojv5KVmkJD4hBdD3th8Tfk9vYasLM+mXWOZhFkgZfxhLSnrwRr4elSSg==",
+      "dev": true,
+      "license": "MIT",
+      "dependencies": {
+        "is-extglob": "^2.1.1"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      }
+    },
+    "node_modules/is-number": {
+      "version": "7.0.0",
+      "resolved": "https://registry.npmjs.org/is-number/-/is-number-7.0.0.tgz",
+      "integrity": "sha512-41Cifkg6e8TylSpdtTpeLVMqvSBEVzTttHvERD741+pnZ8ANv0004MRL43QKPDlK9cGvNp6NZWZUBlbGXYxxng==",
+      "dev": true,
+      "license": "MIT",
+      "engines": {
+        "node": ">=0.12.0"
+      }
+    },
+    "node_modules/jiti": {
+      "version": "1.21.7",
+      "resolved": "https://registry.npmjs.org/jiti/-/jiti-1.21.7.tgz",
+      "integrity": "sha512-/imKNG4EbWNrVjoNC/1H5/9GFy+tqjGBHCaSsN+P2RnPqjsLmv6UD3Ej+Kj8nBWaRAwyk7kK5ZUc+OEatnTR3A==",
+      "dev": true,
+      "license": "MIT",
+      "bin": {
+        "jiti": "bin/jiti.js"
+      }
+    },
+    "node_modules/lilconfig": {
+      "version": "2.1.0",
+      "resolved": "https://registry.npmjs.org/lilconfig/-/lilconfig-2.1.0.tgz",
+      "integrity": "sha512-utWOt/GHzuUxnLKxB6dk81RoOeoNeHgbrXiuGk4yyF5qlRz+iIVWu56E2fqGHFrXz0QNUhLB/8nKqvRH66JKGQ==",
+      "dev": true,
+      "license": "MIT",
+      "engines": {
+        "node": ">=10"
+      }
+    },
+    "node_modules/lines-and-columns": {
+      "version": "1.2.4",
+      "resolved": "https://registry.npmjs.org/lines-and-columns/-/lines-and-columns-1.2.4.tgz",
+      "integrity": "sha512-7ylylesZQ/PV29jhEDl3Ufjo6ZX7gCqJr5F7PKrqc93v7fzSymt1BpwEU8nAUXs8qzzvqhbjhK5QZg6Mt/HkBg==",
+      "dev": true,
+      "license": "MIT"
+    },
+    "node_modules/merge2": {
+      "version": "1.4.1",
+      "resolved": "https://registry.npmjs.org/merge2/-/merge2-1.4.1.tgz",
+      "integrity": "sha512-8q7VEgMJW4J8tcfVPy8g09NcQwZdbwFEqhe/WZkoIzjn/3TGDwtOCYtXGxA3O8tPzpczCCDgv+P2P5y00ZJOOg==",
+      "dev": true,
+      "license": "MIT",
+      "engines": {
+        "node": ">= 8"
+      }
+    },
+    "node_modules/micromatch": {
+      "version": "4.0.8",
+      "resolved": "https://registry.npmjs.org/micromatch/-/micromatch-4.0.8.tgz",
+      "integrity": "sha512-PXwfBhYu0hBCPw8Dn0E+WDYb7af3dSLVWKi3HGv84IdF4TyFoC0ysxFd0Goxw7nSv4T/PzEJQxsYsEiFCKo2BA==",
+      "dev": true,
+      "license": "MIT",
+      "dependencies": {
+        "braces": "^3.0.3",
+        "picomatch": "^2.3.1"
+      },
+      "engines": {
+        "node": ">=8.6"
+      }
+    },
+    "node_modules/minimatch": {
+      "version": "10.2.4",
+      "resolved": "https://registry.npmjs.org/minimatch/-/minimatch-10.2.4.tgz",
+      "integrity": "sha512-oRjTw/97aTBN0RHbYCdtF1MQfvusSIBQM0IZEgzl6426+8jSC0nF1a/GmnVLpfB9yyr6g6FTqWqiZVbxrtaCIg==",
+      "dev": true,
+      "license": "BlueOak-1.0.0",
+      "dependencies": {
+        "brace-expansion": "^5.0.2"
+      },
+      "engines": {
+        "node": "18 || 20 || >=22"
+      },
+      "funding": {
+        "url": "https://github.com/sponsors/isaacs"
+      }
+    },
+    "node_modules/ms": {
+      "version": "2.1.3",
+      "resolved": "https://registry.npmjs.org/ms/-/ms-2.1.3.tgz",
+      "integrity": "sha512-6FlzubTLZG3J2a/NVCAleEhjzq5oxgHyaCU9yYXvcLsvoVaHJq/s5xXI6/XXP6tz7R9xAOtHnSO/tXtF3WRTlA==",
+      "dev": true,
+      "license": "MIT"
+    },
+    "node_modules/mz": {
+      "version": "2.7.0",
+      "resolved": "https://registry.npmjs.org/mz/-/mz-2.7.0.tgz",
+      "integrity": "sha512-z81GNO7nnYMEhrGh9LeymoE4+Yr0Wn5McHIZMK5cfQCl+NDX08sCZgUc9/6MHni9IWuFLm1Z3HTCXu2z9fN62Q==",
+      "dev": true,
+      "license": "MIT",
+      "dependencies": {
+        "any-promise": "^1.0.0",
+        "object-assign": "^4.0.1",
+        "thenify-all": "^1.0.0"
+      }
+    },
+    "node_modules/nanoid": {
+      "version": "3.3.11",
+      "resolved": "https://registry.npmjs.org/nanoid/-/nanoid-3.3.11.tgz",
+      "integrity": "sha512-N8SpfPUnUp1bK+PMYW8qSWdl9U+wwNWI4QKxOYDy9JAro3WMX7p2OeVRF9v+347pnakNevPmiHhNmZ2HbFA76w==",
+      "dev": true,
+      "funding": [
+        {
+          "type": "github",
+          "url": "https://github.com/sponsors/ai"
+        }
+      ],
+      "license": "MIT",
+      "bin": {
+        "nanoid": "bin/nanoid.cjs"
+      },
+      "engines": {
+        "node": "^10 || ^12 || ^13.7 || ^14 || >=15.0.1"
+      }
+    },
+    "node_modules/node-releases": {
+      "version": "2.0.36",
+      "resolved": "https://registry.npmjs.org/node-releases/-/node-releases-2.0.36.tgz",
+      "integrity": "sha512-TdC8FSgHz8Mwtw9g5L4gR/Sh9XhSP/0DEkQxfEFXOpiul5IiHgHan2VhYYb6agDSfp4KuvltmGApc8HMgUrIkA==",
+      "dev": true,
+      "license": "MIT"
+    },
+    "node_modules/nodemon": {
+      "version": "3.1.14",
+      "resolved": "https://registry.npmjs.org/nodemon/-/nodemon-3.1.14.tgz",
+      "integrity": "sha512-jakjZi93UtB3jHMWsXL68FXSAosbLfY0In5gtKq3niLSkrWznrVBzXFNOEMJUfc9+Ke7SHWoAZsiMkNP3vq6Jw==",
+      "dev": true,
+      "license": "MIT",
+      "dependencies": {
+        "chokidar": "^3.5.2",
+        "debug": "^4",
+        "ignore-by-default": "^1.0.1",
+        "minimatch": "^10.2.1",
+        "pstree.remy": "^1.1.8",
+        "semver": "^7.5.3",
+        "simple-update-notifier": "^2.0.0",
+        "supports-color": "^5.5.0",
+        "touch": "^3.1.0",
+        "undefsafe": "^2.0.5"
+      },
+      "bin": {
+        "nodemon": "bin/nodemon.js"
+      },
+      "engines": {
+        "node": ">=10"
+      },
+      "funding": {
+        "type": "opencollective",
+        "url": "https://opencollective.com/nodemon"
+      }
+    },
+    "node_modules/normalize-path": {
+      "version": "3.0.0",
+      "resolved": "https://registry.npmjs.org/normalize-path/-/normalize-path-3.0.0.tgz",
+      "integrity": "sha512-6eZs5Ls3WtCisHWp9S2GUy8dqkpGi4BVSz3GaqiE6ezub0512ESztXUwUB6C6IKbQkY2Pnb/mD4WYojCRwcwLA==",
+      "dev": true,
+      "license": "MIT",
+      "engines": {
+        "node": ">=0.10.0"
+      }
+    },
+    "node_modules/object-assign": {
+      "version": "4.1.1",
+      "resolved": "https://registry.npmjs.org/object-assign/-/object-assign-4.1.1.tgz",
+      "integrity": "sha512-rJgTQnkUnH1sFw8yT6VSU3zD3sWmu6sZhIseY8VX+GRu3P6F7Fu+JNDoXfklElbLJSnc3FUQHVe4cU5hj+BcUg==",
+      "dev": true,
+      "license": "MIT",
+      "engines": {
+        "node": ">=0.10.0"
+      }
+    },
+    "node_modules/object-hash": {
+      "version": "3.0.0",
+      "resolved": "https://registry.npmjs.org/object-hash/-/object-hash-3.0.0.tgz",
+      "integrity": "sha512-RSn9F68PjH9HqtltsSnqYC1XXoWe9Bju5+213R98cNGttag9q9yAOTzdbsqvIa7aNm5WffBZFpWYr2aWrklWAw==",
+      "dev": true,
+      "license": "MIT",
+      "engines": {
+        "node": ">= 6"
+      }
+    },
+    "node_modules/path-parse": {
+      "version": "1.0.7",
+      "resolved": "https://registry.npmjs.org/path-parse/-/path-parse-1.0.7.tgz",
+      "integrity": "sha512-LDJzPVEEEPR+y48z93A0Ed0yXb8pAByGWo/k5YYdYgpY2/2EsOsksJrq7lOHxryrVOn1ejG6oAp8ahvOIQD8sw==",
+      "dev": true,
+      "license": "MIT"
+    },
+    "node_modules/picocolors": {
+      "version": "1.1.1",
+      "resolved": "https://registry.npmjs.org/picocolors/-/picocolors-1.1.1.tgz",
+      "integrity": "sha512-xceH2snhtb5M9liqDsmEw56le376mTZkEX/jEb/RxNFyegNul7eNslCXP9FDj/Lcu0X8KEyMceP2ntpaHrDEVA==",
+      "dev": true,
+      "license": "ISC"
+    },
+    "node_modules/picomatch": {
+      "version": "2.3.1",
+      "resolved": "https://registry.npmjs.org/picomatch/-/picomatch-2.3.1.tgz",
+      "integrity": "sha512-JU3teHTNjmE2VCGFzuY8EXzCDVwEqB2a8fsIvwaStHhAWJEeVd1o1QD80CU6+ZdEXXSLbSsuLwJjkCBWqRQUVA==",
+      "dev": true,
+      "license": "MIT",
+      "engines": {
+        "node": ">=8.6"
+      },
+      "funding": {
+        "url": "https://github.com/sponsors/jonschlinkert"
+      }
+    },
+    "node_modules/pify": {
+      "version": "2.3.0",
+      "resolved": "https://registry.npmjs.org/pify/-/pify-2.3.0.tgz",
+      "integrity": "sha512-udgsAY+fTnvv7kI7aaxbqwWNb0AHiB0qBO89PZKPkoTmGOgdbrHDKD+0B2X4uTfJ/FT1R09r9gTsjUjNJotuog==",
+      "dev": true,
+      "license": "MIT",
+      "engines": {
+        "node": ">=0.10.0"
+      }
+    },
+    "node_modules/pirates": {
+      "version": "4.0.7",
+      "resolved": "https://registry.npmjs.org/pirates/-/pirates-4.0.7.tgz",
+      "integrity": "sha512-TfySrs/5nm8fQJDcBDuUng3VOUKsd7S+zqvbOTiGXHfxX4wK31ard+hoNuvkicM/2YFzlpDgABOevKSsB4G/FA==",
+      "dev": true,
+      "license": "MIT",
+      "engines": {
+        "node": ">= 6"
+      }
+    },
+    "node_modules/postcss": {
+      "version": "8.5.8",
+      "resolved": "https://registry.npmjs.org/postcss/-/postcss-8.5.8.tgz",
+      "integrity": "sha512-OW/rX8O/jXnm82Ey1k44pObPtdblfiuWnrd8X7GJ7emImCOstunGbXUpp7HdBrFQX6rJzn3sPT397Wp5aCwCHg==",
+      "dev": true,
+      "funding": [
+        {
+          "type": "opencollective",
+          "url": "https://opencollective.com/postcss/"
+        },
+        {
+          "type": "tidelift",
+          "url": "https://tidelift.com/funding/github/npm/postcss"
+        },
+        {
+          "type": "github",
+          "url": "https://github.com/sponsors/ai"
+        }
+      ],
+      "license": "MIT",
+      "dependencies": {
+        "nanoid": "^3.3.11",
+        "picocolors": "^1.1.1",
+        "source-map-js": "^1.2.1"
+      },
+      "engines": {
+        "node": "^10 || ^12 || >=14"
+      }
+    },
+    "node_modules/postcss-import": {
+      "version": "15.1.0",
+      "resolved": "https://registry.npmjs.org/postcss-import/-/postcss-import-15.1.0.tgz",
+      "integrity": "sha512-hpr+J05B2FVYUAXHeK1YyI267J/dDDhMU6B6civm8hSY1jYJnBXxzKDKDswzJmtLHryrjhnDjqqp/49t8FALew==",
+      "dev": true,
+      "license": "MIT",
+      "dependencies": {
+        "postcss-value-parser": "^4.0.0",
+        "read-cache": "^1.0.0",
+        "resolve": "^1.1.7"
+      },
+      "engines": {
+        "node": ">=14.0.0"
+      },
+      "peerDependencies": {
+        "postcss": "^8.0.0"
+      }
+    },
+    "node_modules/postcss-js": {
+      "version": "4.1.0",
+      "resolved": "https://registry.npmjs.org/postcss-js/-/postcss-js-4.1.0.tgz",
+      "integrity": "sha512-oIAOTqgIo7q2EOwbhb8UalYePMvYoIeRY2YKntdpFQXNosSu3vLrniGgmH9OKs/qAkfoj5oB3le/7mINW1LCfw==",
+      "dev": true,
+      "funding": [
+        {
+          "type": "opencollective",
+          "url": "https://opencollective.com/postcss/"
+        },
+        {
+          "type": "github",
+          "url": "https://github.com/sponsors/ai"
+        }
+      ],
+      "license": "MIT",
+      "dependencies": {
+        "camelcase-css": "^2.0.1"
+      },
+      "engines": {
+        "node": "^12 || ^14 || >= 16"
+      },
+      "peerDependencies": {
+        "postcss": "^8.4.21"
+      }
+    },
+    "node_modules/postcss-load-config": {
+      "version": "4.0.2",
+      "resolved": "https://registry.npmjs.org/postcss-load-config/-/postcss-load-config-4.0.2.tgz",
+      "integrity": "sha512-bSVhyJGL00wMVoPUzAVAnbEoWyqRxkjv64tUl427SKnPrENtq6hJwUojroMz2VB+Q1edmi4IfrAPpami5VVgMQ==",
+      "dev": true,
+      "funding": [
+        {
+          "type": "opencollective",
+          "url": "https://opencollective.com/postcss/"
+        },
+        {
+          "type": "github",
+          "url": "https://github.com/sponsors/ai"
+        }
+      ],
+      "license": "MIT",
+      "dependencies": {
+        "lilconfig": "^3.0.0",
+        "yaml": "^2.3.4"
+      },
+      "engines": {
+        "node": ">= 14"
+      },
+      "peerDependencies": {
+        "postcss": ">=8.0.9",
+        "ts-node": ">=9.0.0"
+      },
+      "peerDependenciesMeta": {
+        "postcss": {
+          "optional": true
+        },
+        "ts-node": {
+          "optional": true
+        }
+      }
+    },
+    "node_modules/postcss-load-config/node_modules/lilconfig": {
+      "version": "3.1.3",
+      "resolved": "https://registry.npmjs.org/lilconfig/-/lilconfig-3.1.3.tgz",
+      "integrity": "sha512-/vlFKAoH5Cgt3Ie+JLhRbwOsCQePABiU3tJ1egGvyQ+33R/vcwM2Zl2QR/LzjsBeItPt3oSVXapn+m4nQDvpzw==",
+      "dev": true,
+      "license": "MIT",
+      "engines": {
+        "node": ">=14"
+      },
+      "funding": {
+        "url": "https://github.com/sponsors/antonk52"
+      }
+    },
+    "node_modules/postcss-nested": {
+      "version": "6.2.0",
+      "resolved": "https://registry.npmjs.org/postcss-nested/-/postcss-nested-6.2.0.tgz",
+      "integrity": "sha512-HQbt28KulC5AJzG+cZtj9kvKB93CFCdLvog1WFLf1D+xmMvPGlBstkpTEZfK5+AN9hfJocyBFCNiqyS48bpgzQ==",
+      "dev": true,
+      "funding": [
+        {
+          "type": "opencollective",
+          "url": "https://opencollective.com/postcss/"
+        },
+        {
+          "type": "github",
+          "url": "https://github.com/sponsors/ai"
+        }
+      ],
+      "license": "MIT",
+      "dependencies": {
+        "postcss-selector-parser": "^6.1.1"
+      },
+      "engines": {
+        "node": ">=12.0"
+      },
+      "peerDependencies": {
+        "postcss": "^8.2.14"
+      }
+    },
+    "node_modules/postcss-selector-parser": {
+      "version": "6.1.2",
+      "resolved": "https://registry.npmjs.org/postcss-selector-parser/-/postcss-selector-parser-6.1.2.tgz",
+      "integrity": "sha512-Q8qQfPiZ+THO/3ZrOrO0cJJKfpYCagtMUkXbnEfmgUjwXg6z/WBeOyS9APBBPCTSiDV+s4SwQGu8yFsiMRIudg==",
+      "dev": true,
+      "license": "MIT",
+      "dependencies": {
+        "cssesc": "^3.0.0",
+        "util-deprecate": "^1.0.2"
+      },
+      "engines": {
+        "node": ">=4"
+      }
+    },
+    "node_modules/postcss-value-parser": {
+      "version": "4.2.0",
+      "resolved": "https://registry.npmjs.org/postcss-value-parser/-/postcss-value-parser-4.2.0.tgz",
+      "integrity": "sha512-1NNCs6uurfkVbeXG4S8JFT9t19m45ICnif8zWLd5oPSZ50QnwMfK+H3jv408d4jw/7Bttv5axS5IiHoLaVNHeQ==",
+      "dev": true,
+      "license": "MIT"
+    },
+    "node_modules/pstree.remy": {
+      "version": "1.1.8",
+      "resolved": "https://registry.npmjs.org/pstree.remy/-/pstree.remy-1.1.8.tgz",
+      "integrity": "sha512-77DZwxQmxKnu3aR542U+X8FypNzbfJ+C5XQDk3uWjWxn6151aIMGthWYRXTqT1E5oJvg+ljaa2OJi+VfvCOQ8w==",
+      "dev": true,
+      "license": "MIT"
+    },
+    "node_modules/queue-microtask": {
+      "version": "1.2.3",
+      "resolved": "https://registry.npmjs.org/queue-microtask/-/queue-microtask-1.2.3.tgz",
+      "integrity": "sha512-NuaNSa6flKT5JaSYQzJok04JzTL1CA6aGhv5rfLW3PgqA+M2ChpZQnAC8h8i4ZFkBS8X5RqkDBHA7r4hej3K9A==",
+      "dev": true,
+      "funding": [
+        {
+          "type": "github",
+          "url": "https://github.com/sponsors/feross"
+        },
+        {
+          "type": "patreon",
+          "url": "https://www.patreon.com/feross"
+        },
+        {
+          "type": "consulting",
+          "url": "https://feross.org/support"
+        }
+      ],
+      "license": "MIT"
+    },
+    "node_modules/read-cache": {
+      "version": "1.0.0",
+      "resolved": "https://registry.npmjs.org/read-cache/-/read-cache-1.0.0.tgz",
+      "integrity": "sha512-Owdv/Ft7IjOgm/i0xvNDZ1LrRANRfew4b2prF3OWMQLxLfu3bS8FVhCsrSCMK4lR56Y9ya+AThoTpDCTxCmpRA==",
+      "dev": true,
+      "license": "MIT",
+      "dependencies": {
+        "pify": "^2.3.0"
+      }
+    },
+    "node_modules/readdirp": {
+      "version": "3.6.0",
+      "resolved": "https://registry.npmjs.org/readdirp/-/readdirp-3.6.0.tgz",
+      "integrity": "sha512-hOS089on8RduqdbhvQ5Z37A0ESjsqz6qnRcffsMU3495FuTdqSm+7bhJ29JvIOsBDEEnan5DPu9t3To9VRlMzA==",
+      "dev": true,
+      "license": "MIT",
+      "dependencies": {
+        "picomatch": "^2.2.1"
+      },
+      "engines": {
+        "node": ">=8.10.0"
+      }
+    },
+    "node_modules/resolve": {
+      "version": "1.22.11",
+      "resolved": "https://registry.npmjs.org/resolve/-/resolve-1.22.11.tgz",
+      "integrity": "sha512-RfqAvLnMl313r7c9oclB1HhUEAezcpLjz95wFH4LVuhk9JF/r22qmVP9AMmOU4vMX7Q8pN8jwNg/CSpdFnMjTQ==",
+      "dev": true,
+      "license": "MIT",
+      "dependencies": {
+        "is-core-module": "^2.16.1",
+        "path-parse": "^1.0.7",
+        "supports-preserve-symlinks-flag": "^1.0.0"
+      },
+      "bin": {
+        "resolve": "bin/resolve"
+      },
+      "engines": {
+        "node": ">= 0.4"
+      },
+      "funding": {
+        "url": "https://github.com/sponsors/ljharb"
+      }
+    },
+    "node_modules/reusify": {
+      "version": "1.1.0",
+      "resolved": "https://registry.npmjs.org/reusify/-/reusify-1.1.0.tgz",
+      "integrity": "sha512-g6QUff04oZpHs0eG5p83rFLhHeV00ug/Yf9nZM6fLeUrPguBTkTQOdpAWWspMh55TZfVQDPaN3NQJfbVRAxdIw==",
+      "dev": true,
+      "license": "MIT",
+      "engines": {
+        "iojs": ">=1.0.0",
+        "node": ">=0.10.0"
+      }
+    },
+    "node_modules/run-parallel": {
+      "version": "1.2.0",
+      "resolved": "https://registry.npmjs.org/run-parallel/-/run-parallel-1.2.0.tgz",
+      "integrity": "sha512-5l4VyZR86LZ/lDxZTR6jqL8AFE2S0IFLMP26AbjsLVADxHdhB/c0GUsH+y39UfCi3dzz8OlQuPmnaJOMoDHQBA==",
+      "dev": true,
+      "funding": [
+        {
+          "type": "github",
+          "url": "https://github.com/sponsors/feross"
+        },
+        {
+          "type": "patreon",
+          "url": "https://www.patreon.com/feross"
+        },
+        {
+          "type": "consulting",
+          "url": "https://feross.org/support"
+        }
+      ],
+      "license": "MIT",
+      "dependencies": {
+        "queue-microtask": "^1.2.2"
+      }
+    },
+    "node_modules/semver": {
+      "version": "7.7.4",
+      "resolved": "https://registry.npmjs.org/semver/-/semver-7.7.4.tgz",
+      "integrity": "sha512-vFKC2IEtQnVhpT78h1Yp8wzwrf8CM+MzKMHGJZfBtzhZNycRFnXsHk6E5TxIkkMsgNS7mdX3AGB7x2QM2di4lA==",
+      "dev": true,
+      "license": "ISC",
+      "bin": {
+        "semver": "bin/semver.js"
+      },
+      "engines": {
+        "node": ">=10"
+      }
+    },
+    "node_modules/simple-update-notifier": {
+      "version": "2.0.0",
+      "resolved": "https://registry.npmjs.org/simple-update-notifier/-/simple-update-notifier-2.0.0.tgz",
+      "integrity": "sha512-a2B9Y0KlNXl9u/vsW6sTIu9vGEpfKu2wRV6l1H3XEas/0gUIzGzBoP/IouTcUQbm9JWZLH3COxyn03TYlFax6w==",
+      "dev": true,
+      "license": "MIT",
+      "dependencies": {
+        "semver": "^7.5.3"
+      },
+      "engines": {
+        "node": ">=10"
+      }
+    },
+    "node_modules/source-map-js": {
+      "version": "1.2.1",
+      "resolved": "https://registry.npmjs.org/source-map-js/-/source-map-js-1.2.1.tgz",
+      "integrity": "sha512-UXWMKhLOwVKb728IUtQPXxfYU+usdybtUrK/8uGE8CQMvrhOpwvzDBwj0QhSL7MQc7vIsISBG8VQ8+IDQxpfQA==",
+      "dev": true,
+      "license": "BSD-3-Clause",
+      "engines": {
+        "node": ">=0.10.0"
+      }
+    },
+    "node_modules/sucrase": {
+      "version": "3.35.1",
+      "resolved": "https://registry.npmjs.org/sucrase/-/sucrase-3.35.1.tgz",
+      "integrity": "sha512-DhuTmvZWux4H1UOnWMB3sk0sbaCVOoQZjv8u1rDoTV0HTdGem9hkAZtl4JZy8P2z4Bg0nT+YMeOFyVr4zcG5Tw==",
+      "dev": true,
+      "license": "MIT",
+      "dependencies": {
+        "@jridgewell/gen-mapping": "^0.3.2",
+        "commander": "^4.0.0",
+        "lines-and-columns": "^1.1.6",
+        "mz": "^2.7.0",
+        "pirates": "^4.0.1",
+        "tinyglobby": "^0.2.11",
+        "ts-interface-checker": "^0.1.9"
+      },
+      "bin": {
+        "sucrase": "bin/sucrase",
+        "sucrase-node": "bin/sucrase-node"
+      },
+      "engines": {
+        "node": ">=16 || 14 >=14.17"
+      }
+    },
+    "node_modules/supports-color": {
+      "version": "5.5.0",
+      "resolved": "https://registry.npmjs.org/supports-color/-/supports-color-5.5.0.tgz",
+      "integrity": "sha512-QjVjwdXIt408MIiAqCX4oUKsgU2EqAGzs2Ppkm4aQYbjm+ZEWEcW4SfFNTr4uMNZma0ey4f5lgLrkB0aX0QMow==",
+      "dev": true,
+      "license": "MIT",
+      "dependencies": {
+        "has-flag": "^3.0.0"
+      },
+      "engines": {
+        "node": ">=4"
+      }
+    },
+    "node_modules/supports-preserve-symlinks-flag": {
+      "version": "1.0.0",
+      "resolved": "https://registry.npmjs.org/supports-preserve-symlinks-flag/-/supports-preserve-symlinks-flag-1.0.0.tgz",
+      "integrity": "sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==",
+      "dev": true,
+      "license": "MIT",
+      "engines": {
+        "node": ">= 0.4"
+      },
+      "funding": {
+        "url": "https://github.com/sponsors/ljharb"
+      }
+    },
+    "node_modules/tailwindcss": {
+      "version": "3.4.0",
+      "resolved": "https://registry.npmjs.org/tailwindcss/-/tailwindcss-3.4.0.tgz",
+      "integrity": "sha512-VigzymniH77knD1dryXbyxR+ePHihHociZbXnLZHUyzf2MMs2ZVqlUrZ3FvpXP8pno9JzmILt1sZPD19M3IxtA==",
+      "dev": true,
+      "license": "MIT",
+      "dependencies": {
+        "@alloc/quick-lru": "^5.2.0",
+        "arg": "^5.0.2",
+        "chokidar": "^3.5.3",
+        "didyoumean": "^1.2.2",
+        "dlv": "^1.1.3",
+        "fast-glob": "^3.3.0",
+        "glob-parent": "^6.0.2",
+        "is-glob": "^4.0.3",
+        "jiti": "^1.19.1",
+        "lilconfig": "^2.1.0",
+        "micromatch": "^4.0.5",
+        "normalize-path": "^3.0.0",
+        "object-hash": "^3.0.0",
+        "picocolors": "^1.0.0",
+        "postcss": "^8.4.23",
+        "postcss-import": "^15.1.0",
+        "postcss-js": "^4.0.1",
+        "postcss-load-config": "^4.0.1",
+        "postcss-nested": "^6.0.1",
+        "postcss-selector-parser": "^6.0.11",
+        "resolve": "^1.22.2",
+        "sucrase": "^3.32.0"
+      },
+      "bin": {
+        "tailwind": "lib/cli.js",
+        "tailwindcss": "lib/cli.js"
+      },
+      "engines": {
+        "node": ">=14.0.0"
+      }
+    },
+    "node_modules/thenify": {
+      "version": "3.3.1",
+      "resolved": "https://registry.npmjs.org/thenify/-/thenify-3.3.1.tgz",
+      "integrity": "sha512-RVZSIV5IG10Hk3enotrhvz0T9em6cyHBLkH/YAZuKqd8hRkKhSfCGIcP2KUY0EPxndzANBmNllzWPwak+bheSw==",
+      "dev": true,
+      "license": "MIT",
+      "dependencies": {
+        "any-promise": "^1.0.0"
+      }
+    },
+    "node_modules/thenify-all": {
+      "version": "1.6.0",
+      "resolved": "https://registry.npmjs.org/thenify-all/-/thenify-all-1.6.0.tgz",
+      "integrity": "sha512-RNxQH/qI8/t3thXJDwcstUO4zeqo64+Uy/+sNVRBx4Xn2OX+OZ9oP+iJnNFqplFra2ZUVeKCSa2oVWi3T4uVmA==",
+      "dev": true,
+      "license": "MIT",
+      "dependencies": {
+        "thenify": ">= 3.1.0 < 4"
+      },
+      "engines": {
+        "node": ">=0.8"
+      }
+    },
+    "node_modules/tinyglobby": {
+      "version": "0.2.15",
+      "resolved": "https://registry.npmjs.org/tinyglobby/-/tinyglobby-0.2.15.tgz",
+      "integrity": "sha512-j2Zq4NyQYG5XMST4cbs02Ak8iJUdxRM0XI5QyxXuZOzKOINmWurp3smXu3y5wDcJrptwpSjgXHzIQxR0omXljQ==",
+      "dev": true,
+      "license": "MIT",
+      "dependencies": {
+        "fdir": "^6.5.0",
+        "picomatch": "^4.0.3"
+      },
+      "engines": {
+        "node": ">=12.0.0"
+      },
+      "funding": {
+        "url": "https://github.com/sponsors/SuperchupuDev"
+      }
+    },
+    "node_modules/tinyglobby/node_modules/fdir": {
+      "version": "6.5.0",
+      "resolved": "https://registry.npmjs.org/fdir/-/fdir-6.5.0.tgz",
+      "integrity": "sha512-tIbYtZbucOs0BRGqPJkshJUYdL+SDH7dVM8gjy+ERp3WAUjLEFJE+02kanyHtwjWOnwrKYBiwAmM0p4kLJAnXg==",
+      "dev": true,
+      "license": "MIT",
+      "engines": {
+        "node": ">=12.0.0"
+      },
+      "peerDependencies": {
+        "picomatch": "^3 || ^4"
+      },
+      "peerDependenciesMeta": {
+        "picomatch": {
+          "optional": true
+        }
+      }
+    },
+    "node_modules/tinyglobby/node_modules/picomatch": {
+      "version": "4.0.3",
+      "resolved": "https://registry.npmjs.org/picomatch/-/picomatch-4.0.3.tgz",
+      "integrity": "sha512-5gTmgEY/sqK6gFXLIsQNH19lWb4ebPDLA4SdLP7dsWkIXHWlG66oPuVvXSGFPppYZz8ZDZq0dYYrbHfBCVUb1Q==",
+      "dev": true,
+      "license": "MIT",
+      "engines": {
+        "node": ">=12"
+      },
+      "funding": {
+        "url": "https://github.com/sponsors/jonschlinkert"
+      }
+    },
+    "node_modules/to-regex-range": {
+      "version": "5.0.1",
+      "resolved": "https://registry.npmjs.org/to-regex-range/-/to-regex-range-5.0.1.tgz",
+      "integrity": "sha512-65P7iz6X5yEr1cwcgvQxbbIw7Uk3gOy5dIdtZ4rDveLqhrdJP+Li/Hx6tyK0NEb+2GCyneCMJiGqrADCSNk8sQ==",
+      "dev": true,
+      "license": "MIT",
+      "dependencies": {
+        "is-number": "^7.0.0"
+      },
+      "engines": {
+        "node": ">=8.0"
+      }
+    },
+    "node_modules/touch": {
+      "version": "3.1.1",
+      "resolved": "https://registry.npmjs.org/touch/-/touch-3.1.1.tgz",
+      "integrity": "sha512-r0eojU4bI8MnHr8c5bNo7lJDdI2qXlWWJk6a9EAFG7vbhTjElYhBVS3/miuE0uOuoLdb8Mc/rVfsmm6eo5o9GA==",
+      "dev": true,
+      "license": "ISC",
+      "bin": {
+        "nodetouch": "bin/nodetouch.js"
+      }
+    },
+    "node_modules/ts-interface-checker": {
+      "version": "0.1.13",
+      "resolved": "https://registry.npmjs.org/ts-interface-checker/-/ts-interface-checker-0.1.13.tgz",
+      "integrity": "sha512-Y/arvbn+rrz3JCKl9C4kVNfTfSm2/mEp5FSz5EsZSANGPSlQrpRI5M4PKF+mJnE52jOO90PnPSc3Ur3bTQw0gA==",
+      "dev": true,
+      "license": "Apache-2.0"
+    },
+    "node_modules/undefsafe": {
+      "version": "2.0.5",
+      "resolved": "https://registry.npmjs.org/undefsafe/-/undefsafe-2.0.5.tgz",
+      "integrity": "sha512-WxONCrssBM8TSPRqN5EmsjVrsv4A8X12J4ArBiiayv3DyyG3ZlIg6yysuuSYdZsVz3TKcTg2fd//Ujd4CHV1iA==",
+      "dev": true,
+      "license": "MIT"
+    },
+    "node_modules/update-browserslist-db": {
+      "version": "1.2.3",
+      "resolved": "https://registry.npmjs.org/update-browserslist-db/-/update-browserslist-db-1.2.3.tgz",
+      "integrity": "sha512-Js0m9cx+qOgDxo0eMiFGEueWztz+d4+M3rGlmKPT+T4IS/jP4ylw3Nwpu6cpTTP8R1MAC1kF4VbdLt3ARf209w==",
+      "dev": true,
+      "funding": [
+        {
+          "type": "opencollective",
+          "url": "https://opencollective.com/browserslist"
+        },
+        {
+          "type": "tidelift",
+          "url": "https://tidelift.com/funding/github/npm/browserslist"
+        },
+        {
+          "type": "github",
+          "url": "https://github.com/sponsors/ai"
+        }
+      ],
+      "license": "MIT",
+      "dependencies": {
+        "escalade": "^3.2.0",
+        "picocolors": "^1.1.1"
+      },
+      "bin": {
+        "update-browserslist-db": "cli.js"
+      },
+      "peerDependencies": {
+        "browserslist": ">= 4.21.0"
+      }
+    },
+    "node_modules/util-deprecate": {
+      "version": "1.0.2",
+      "resolved": "https://registry.npmjs.org/util-deprecate/-/util-deprecate-1.0.2.tgz",
+      "integrity": "sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==",
+      "dev": true,
+      "license": "MIT"
+    },
+    "node_modules/yaml": {
+      "version": "2.8.2",
+      "resolved": "https://registry.npmjs.org/yaml/-/yaml-2.8.2.tgz",
+      "integrity": "sha512-mplynKqc1C2hTVYxd0PU2xQAc22TI1vShAYGksCCfxbn/dFwnHTNi1bvYsBTkhdUNtGIf5xNOg938rrSSYvS9A==",
+      "dev": true,
+      "license": "ISC",
+      "bin": {
+        "yaml": "bin.mjs"
+      },
+      "engines": {
+        "node": ">= 14.6"
+      },
+      "funding": {
+        "url": "https://github.com/sponsors/eemeli"
+      }
+    }
+  }
+}
+--- FILE: ./package.json ---
+{
+  "name": "ange_koumba_portfolio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "tailwindcss -i ./src/input.css -o ./dist/css/style.css --watch",
+    "build": "tailwindcss -i ./src/input.css -o ./dist/css/style.css --minify",
+    "copy:js": "mkdir -p dist/js && cp src/js/main.js dist/js/main.js",
+    "prebuild:all": "rm -rf dist && mkdir -p dist/css dist/js",
+    "build:all": "npm run build && npm run copy:js",
+    "netlify": "npm run build:all"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kay1403/Ange_Koumba_PortFolio.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/kay1403/Ange_Koumba_PortFolio/issues"
+  },
+  "homepage": "https://github.com/kay1403/Ange_Koumba_PortFolio#readme",
+  "devDependencies": {
+    "autoprefixer": "^10.4.27",
+    "nodemon": "^3.1.14",
+    "postcss": "^8.5.8",
+    "tailwindcss": "^3.4.0"
+  }
+}--- FILE: ./postcss.config.js ---
+module.exports = {
+  plugins: {
+    tailwindcss: {},
+    autoprefixer: {},
+  },
+}
+--- FILE: ./src/js/main.js ---
+// ===== CONFIGURATION EMAILJS =====
+emailjs.init("xPli5Qr1N_RE53QJ9");
+
+// ===== SYSTÈME DE CHANGEMENT DE LANGUE =====
+const translations = {
+    fr: {
+        lang: { fr: "FR", en: "EN" },
+        nav: {
+            home: "Accueil",
+            about: "À propos",
+            experience: "Expérience",
+            projects: "Projets",
+            skills: "Compétences",
+            certifications: "Certifications",
+            contact: "Contact"
+        },
+        hero: {
+            available: "Disponible pour des opportunités",
+            description: "Diplômé en IT de l'University of Kigali,<br>spécialisé en <span class='text-blue-400'>Data Science</span> et <span class='text-blue-400'>Développement Full-Stack</span>.<br>Passionné par la fintech et l'IA.",
+            contact: "Me contacter",
+            cv: "CV",
+            scroll: "Défiler",
+            download: "Télécharger CV"
+        },
+        about: {
+            subtitle: "QUI SUIS-JE ?",
+            title: "À propos de moi",
+            education: {
+                title: "Formation",
+                degree1: "BSc en Information Technology",
+                school1: "University of Kigali (2022-2025)",
+                degree2: "Technologie Industrielle",
+                school2: "Lycée Technique Jean Fidèle Otando"
+            },
+            achievements: {
+                title: "Distinctions",
+                item1: "Champion Interdépartemental 2025",
+                item2: "WorldQuant AI Lab Selection",
+                item3: "The Gym Rwanda - Intensive Program"
+            }
+        },
+        experience: {
+            subtitle: "MON PARCOURS",
+            title: "Expérience professionnelle",
+            job1: {
+                title: "Développeur Front-End",
+                desc1: "Développement d'interfaces responsives avec React, TypeScript et Tailwind CSS",
+                desc2: "Amélioration de l'expérience utilisateur à travers des designs modernes",
+                desc3: "Collaboration avec l'équipe technique sur des problèmes complexes"
+            },
+            job2: {
+                title: "Représentant de classe",
+                desc1: "Liaison entre les étudiants et le corps professoral pour 50+ étudiants",
+                desc2: "Facilitation de la communication et résolution de problèmes académiques"
+            }
+        },
+        projects: {
+            subtitle: "MES RÉALISATIONS",
+            title: "Projets phares",
+            desc1: "Système de gestion de bibliothèque avec <span class='text-blue-400'>Django</span>,<br>API REST, et authentification JWT.",
+            desc2: "Backend complet pour plateforme e-commerce<br>avec <span class='text-blue-400'>Django REST Framework</span>.",
+            desc3: "Application de transfert d'argent<br>avec authentification sécurisée.",
+            desc4: "Application météo interactive<br>avec architecture responsive et système de favoris.",
+            desc5: "Système de gestion d'actes de naissance<br>avec génération de QR codes et PDF.",
+            desc6: "Plateforme SaaS avec authentification 2FA,<br>RBAC, et audit trail.",
+            desc7: "Système IoT de surveillance des sols<br>avec analyse de données en temps réel.",
+            demo: "Voir la démo",
+            source: "Code source",
+            comingSoon: "Démo à venir",
+            sourceComing: "Code source à venir"
+        },
+        skills: {
+            subtitle: "MON EXPERTISE",
+            title: "Compétences techniques",
+            languages: "Langues",
+            native: "Natif",
+            fluent: "Courant",
+            beginner: "Débutant"
+        },
+        certs: {
+            subtitle: "MES CERTIFICATIONS",
+            title: "Parcours ALX Africa",
+            click: "Cliquer pour voir",
+            backend: "Back-End Web Development",
+            frontend: "Front-End Web Development",
+            dataAnalytics: "Data Analytics",
+            python: "Python Programming",
+            prodev: "ProDev Backend",
+            founder: "Founder Academy",
+            professional: "Professional Foundations",
+            freelancer: "Freelancer Academy",
+            cybersecurity: "Cybersécurité",
+            machineLearning: "Machine Learning",
+            dataEngineering: "Data Engineering"
+        },
+        contact: {
+            subtitle: "RESTONS EN CONTACT",
+            title: "Contactez-moi",
+            phone: "Téléphone",
+            email: "Email",
+            location: "Localisation",
+            form: {
+                name: "Votre nom",
+                email: "Votre email",
+                subject: "Sujet",
+                message: "Votre message",
+                submit: "Envoyer le message",
+                sending: "Envoi...",
+                success: "Message envoyé avec succès ! Je vous répondrai bientôt.",
+                error: "Une erreur est survenue. Veuillez réessayer.",
+                close: "Fermer"
+            }
+        },
+        footer: {
+            description: "Créateur de solutions innovantes à l'intersection<br>des données et du développement logiciel.",
+            rights: "Tous droits réservés."
+        },
+        stats: {
+            projects: "Projets",
+            certifications: "Certifications",
+            experience: "Années d'exp.",
+            inProgress: "En cours",
+            comingSoon: "Mai 2026"
+        },
+        cv: {
+            title: "Choisissez votre langue",
+            french: "CV Français",
+            english: "CV English",
+            download: "Télécharger"
+        }
+    },
+    en: {
+        lang: { fr: "FR", en: "EN" },
+        nav: {
+            home: "Home",
+            about: "About",
+            experience: "Experience",
+            projects: "Projects",
+            skills: "Skills",
+            certifications: "Certifications",
+            contact: "Contact"
+        },
+        hero: {
+            available: "Available for opportunities",
+            description: "IT Graduate from the University of Kigali,<br>specializing in <span class='text-blue-400'>Data Science</span> and <span class='text-blue-400'>Full-Stack Development</span>.<br>Passionate about fintech and AI.",
+            contact: "Contact me",
+            cv: "Resume",
+            scroll: "Scroll",
+            download: "Download CV"
+        },
+        about: {
+            subtitle: "WHO AM I?",
+            title: "About me",
+            education: {
+                title: "Education",
+                degree1: "BSc in Information Technology",
+                school1: "University of Kigali (2022-2025)",
+                degree2: "Industrial Technology",
+                school2: "Lycée Technique Jean Fidèle Otando"
+            },
+            achievements: {
+                title: "Achievements",
+                item1: "Interdepartmental Champion 2025",
+                item2: "WorldQuant AI Lab Selection",
+                item3: "The Gym Rwanda - Intensive Program"
+            }
+        },
+        experience: {
+            subtitle: "MY JOURNEY",
+            title: "Professional Experience",
+            job1: {
+                title: "Front-End Developer",
+                desc1: "Development of responsive interfaces with React, TypeScript and Tailwind CSS",
+                desc2: "User experience improvement through modern designs",
+                desc3: "Collaboration with technical team on complex problems"
+            },
+            job2: {
+                title: "Class Representative",
+                desc1: "Liaison between students and faculty for 50+ students",
+                desc2: "Communication facilitation and academic problem solving"
+            }
+        },
+        projects: {
+            subtitle: "MY WORK",
+            title: "Featured Projects",
+            desc1: "Library management system with <span class='text-blue-400'>Django</span>,<br>REST API, and JWT authentication.",
+            desc2: "Complete backend for e-commerce platform<br>with <span class='text-blue-400'>Django REST Framework</span>.",
+            desc3: "Money transfer application<br>with secure authentication.",
+            desc4: "Interactive weather app<br>with responsive architecture and favorites system.",
+            desc5: "Birth certificate management system<br>with QR code and PDF generation.",
+            desc6: "SaaS platform with 2FA authentication,<br>RBAC, and audit trail.",
+            desc7: "IoT soil monitoring system<br>with real-time data analysis.",
+            demo: "Live demo",
+            source: "Source code",
+            comingSoon: "Demo coming soon",
+            sourceComing: "Source code coming soon"
+        },
+        skills: {
+            subtitle: "MY EXPERTISE",
+            title: "Technical Skills",
+            languages: "Languages",
+            native: "Native",
+            fluent: "Fluent",
+            beginner: "Beginner"
+        },
+        certs: {
+            subtitle: "MY CERTIFICATIONS",
+            title: "ALX Africa Journey",
+            click: "Click to view",
+            backend: "Back-End Web Development",
+            frontend: "Front-End Web Development",
+            dataAnalytics: "Data Analytics",
+            python: "Python Programming",
+            prodev: "ProDev Backend",
+            founder: "Founder Academy",
+            professional: "Professional Foundations",
+            freelancer: "Freelancer Academy",
+            cybersecurity: "Cybersecurity",
+            machineLearning: "Machine Learning",
+            dataEngineering: "Data Engineering"
+        },
+        contact: {
+            subtitle: "LET'S CONNECT",
+            title: "Contact me",
+            phone: "Phone",
+            email: "Email",
+            location: "Location",
+            form: {
+                name: "Your name",
+                email: "Your email",
+                subject: "Subject",
+                message: "Your message",
+                submit: "Send message",
+                sending: "Sending...",
+                success: "Message sent successfully! I'll get back to you soon.",
+                error: "An error occurred. Please try again.",
+                close: "Close"
+            }
+        },
+        footer: {
+            description: "Creator of innovative solutions at the intersection<br>of data and software development.",
+            rights: "All rights reserved."
+        },
+        stats: {
+            projects: "Projects",
+            certifications: "Certifications",
+            experience: "Years exp.",
+            inProgress: "In progress",
+            comingSoon: "May 2026"
+        },
+        cv: {
+            title: "Choose your language",
+            french: "French CV",
+            english: "English CV",
+            download: "Download"
+        }
+    }
+};
+
+// ===== FONCTION DE CHANGEMENT DE LANGUE =====
+window.switchLanguage = function(lang) {
+    console.log('🔄 Changement de langue vers:', lang);
+    if (!translations[lang]) {
+        console.error('❌ Langue non supportée:', lang);
+        return;
+    }
+    
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+        const path = element.getAttribute('data-i18n');
+        const keys = path.split('.');
+        let value = translations[lang];
+        try {
+            for (let key of keys) {
+                if (value && value[key] !== undefined) value = value[key];
+                else { value = null; break; }
+            }
+            if (value !== undefined && value !== null) element.innerHTML = value;
+            else console.warn('⚠️ Traduction manquante:', path);
+        } catch(e) { console.warn('⚠️ Erreur pour:', path); }
+    });
+
+    document.querySelectorAll('[data-i18n-placeholder]').forEach(element => {
+        const path = element.getAttribute('data-i18n-placeholder');
+        const keys = path.split('.');
+        let value = translations[lang];
+        try {
+            for (let key of keys) {
+                if (value && value[key] !== undefined) value = value[key];
+                else { value = null; break; }
+            }
+            if (value) element.placeholder = value;
+        } catch(e) { console.warn('⚠️ Placeholder manquant:', path); }
+    });
+
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.remove('active', 'bg-blue-500/20');
+        if (btn.getAttribute('data-lang') === lang) btn.classList.add('active', 'bg-blue-500/20');
+    });
+
+    localStorage.setItem('preferred-language', lang);
+    console.log('✅ Langue changée avec succès');
+};
+
+// ===== TÉLÉCHARGEMENT CV =====
+window.downloadCV = function() {
+    const currentLang = localStorage.getItem('preferred-language') || 'en';
+    const modal = document.createElement('div');
+    modal.className = 'fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm';
+    modal.innerHTML = `
+        <div class="bg-dark-200 p-8 rounded-2xl border border-blue-500/20 max-w-md w-full mx-4">
+            <h3 class="text-2xl font-bold text-white mb-6 text-center" data-i18n="cv.title">Choose your language</h3>
+            <div class="space-y-4">
+                <a href="Resume/Ange%20KOUMBA%20Resume%282025%29.pdf" 
+                   download="Ange_KOUMBA_CV_FR.pdf"
+                   class="block w-full py-4 px-6 bg-blue-600 hover:bg-blue-700 rounded-xl text-white font-medium text-center transition-all">
+                    🇫🇷 <span data-i18n="cv.french">French CV</span>
+                </a>
+                <a href="Resume/Ange%20KOUMBA%20Resume%282025%29_EN.pdf" 
+                   download="Ange_KOUMBA_CV_EN.pdf"
+                   class="block w-full py-4 px-6 bg-blue-600 hover:bg-blue-700 rounded-xl text-white font-medium text-center transition-all">
+                    🇬🇧 <span data-i18n="cv.english">English CV</span>
+                </a>
+            </div>
+            <button onclick="this.parentElement.parentElement.remove()" 
+                    class="mt-6 w-full py-2 text-gray-400 hover:text-white transition-colors">
+                ✕ <span data-i18n="contact.form.close">Close</span>
+            </button>
+        </div>
+    `;
+    document.body.appendChild(modal);
+    window.switchLanguage(currentLang);
+};
+
+// ===== CHARGEMENT DYNAMIQUE DEPUIS JSON =====
+async function loadJSON(url) {
+    try {
+        const response = await fetch(url);
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        return await response.json();
+    } catch (err) {
+        console.error(`Erreur chargement ${url}:`, err);
+        return null;
+    }
+}
+
+function renderProjects(projects) {
+    const container = document.getElementById('projects-container');
+    if (!container) return;
+    if (!projects || projects.length === 0) {
+        container.innerHTML = '<div class="col-span-full text-center text-gray-400">Aucun projet pour le moment.</div>';
+        return;
+    }
+    container.innerHTML = projects.map(proj => `
+        <div class="project-card group" data-aos="zoom-in">
+            <div class="relative overflow-hidden h-64">
+                <img src="${proj.image}" alt="${proj.title}" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                <div class="absolute inset-0 bg-gradient-to-t from-dark-500 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div class="absolute inset-0 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-4 group-hover:translate-y-0">
+                    ${proj.github ? `<a href="${proj.github}" target="_blank" class="w-12 h-12 rounded-full bg-blue-600 flex items-center justify-center hover:bg-blue-700 transition-colors"><i class="fab fa-github text-white"></i></a>` : ''}
+                    ${proj.demo ? `<a href="${proj.demo}" target="_blank" class="w-12 h-12 rounded-full bg-blue-600 flex items-center justify-center hover:bg-blue-700 transition-colors"><i class="fas fa-external-link-alt text-white"></i></a>` : '<div class="w-12 h-12 rounded-full bg-gray-600 flex items-center justify-center cursor-not-allowed opacity-50"><i class="fas fa-external-link-alt text-white"></i></div>'}
+                </div>
+            </div>
+            <div class="p-6">
+                <h3 class="text-xl font-display font-bold text-white mb-2">${proj.title}</h3>
+                <p class="text-gray-400 mb-4">${proj.description}</p>
+                <div class="flex flex-wrap gap-2 mb-4">
+                    ${proj.tech.map(t => `<span class="tech-badge">${t}</span>`).join('')}
+                </div>
+                <div class="flex flex-col gap-2">
+                    ${proj.github ? `<a href="${proj.github}" target="_blank" class="text-sm text-blue-400 hover:text-blue-300 transition-colors inline-flex items-center gap-1"><i class="fab fa-github"></i> <span data-i18n="projects.source">Source code</span></a>` : ''}
+                    ${proj.demo ? `<a href="${proj.demo}" target="_blank" class="text-sm text-blue-400 hover:text-blue-300 transition-colors inline-flex items-center gap-1"><i class="fas fa-external-link-alt"></i> <span>${proj.demo.replace('https://', '')}</span></a>` : `<span class="text-sm text-gray-500 inline-flex items-center gap-1"><i class="fas fa-external-link-alt"></i> <span data-i18n="projects.comingSoon">Demo coming soon</span></span>`}
+                </div>
+            </div>
+        </div>
+    `).join('');
+}
+
+function renderCertifications(certs) {
+    const container = document.getElementById('certifications-container');
+    if (!container) return;
+    if (!certs || certs.length === 0) {
+        container.innerHTML = '<div class="col-span-full text-center text-gray-400">Aucune certification.</div>';
+        return;
+    }
+    container.innerHTML = certs.map(cert => {
+        let statusBadge = '';
+        if (cert.status === 'inprogress') statusBadge = `<p class="text-sm text-yellow-400" data-i18n="stats.inProgress">In progress</p>`;
+        else if (cert.status === 'coming') statusBadge = `<p class="text-sm text-gray-400" data-i18n="stats.comingSoon">May 2026</p>`;
+        else statusBadge = `<p class="text-sm text-blue-400" data-i18n="certs.click">Click to view</p>`;
+
+        if (cert.file) {
+            return `
+                <a href="${cert.file}" target="_blank" class="stat-card hover:scale-105 transition-all duration-300 group">
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center group-hover:scale-110 transition-transform">
+                            <i class="${cert.icon} text-2xl text-blue-400"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-white">${cert.title}</h3>
+                            ${statusBadge}
+                        </div>
+                    </div>
+                </a>
+            `;
+        } else {
+            return `
+                <div class="stat-card opacity-75">
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center">
+                            <i class="${cert.icon} text-2xl text-blue-400"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-white">${cert.title}</h3>
+                            ${statusBadge}
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+    }).join('');
+}
+
+function renderExperiences(experiences) {
+    const container = document.getElementById('experiences-container');
+    if (!container) return;
+    if (!experiences || experiences.length === 0) {
+        container.innerHTML = '<div class="text-center text-gray-400">Aucune expérience.</div>';
+        return;
+    }
+    container.innerHTML = experiences.map((exp, idx) => `
+        <div class="relative pl-8 ${idx !== experiences.length-1 ? 'pb-12' : ''} border-l-2 border-blue-500/30 last:pb-0" data-aos="fade-left" data-aos-duration="800" data-aos-delay="${idx * 200}">
+            <div class="timeline-dot"></div>
+            <div class="mb-2">
+                <span class="inline-block px-4 py-2 glass-effect rounded-full text-blue-400 text-sm">${exp.period}</span>
+            </div>
+            <div class="glass-effect p-6 rounded-2xl hover:shadow-glow-lg transition-all duration-500">
+                <h3 class="text-2xl font-display font-bold text-white mb-2">${exp.title}</h3>
+                <h4 class="text-blue-400 mb-4">${exp.company}</h4>
+                <ul class="space-y-2 text-gray-300 mb-4">
+                    ${exp.description.map(d => `<li class="flex items-start gap-2"><i class="fas fa-chevron-right text-blue-400 mt-1"></i><span>${d}</span></li>`).join('')}
+                </ul>
+                <div class="flex flex-wrap gap-2">
+                    ${exp.tech.map(t => `<span class="tech-badge">${t}</span>`).join('')}
+                </div>
+            </div>
+        </div>
+    `).join('');
+}
+
+// ===== INITIALISATION AU CHARGEMENT =====
+document.addEventListener('DOMContentLoaded', async function() {
+    console.log('📦 DOM chargé, initialisation...');
+    
+    // Langue préférée
+    const savedLang = localStorage.getItem('preferred-language') || 'en';
+    window.switchLanguage(savedLang);
+
+    // AOS
+    AOS.init({
+        duration: 1000,
+        once: true,
+        offset: 100,
+        easing: 'ease-in-out'
+    });
+
+    // Typed.js
+    if (document.querySelector('.typed-text')) {
+        new Typed('.typed-text', {
+            strings: savedLang === 'fr' 
+                ? ['Data Scientist', 'Développeur Full-Stack', 'Passionné d\'IA', 'Résolveur de problèmes', 'Champion de football 🏆']
+                : ['Data Scientist', 'Full-Stack Developer', 'AI Enthusiast', 'Problem Solver', 'Football Champion 🏆'],
+            typeSpeed: 50,
+            backSpeed: 30,
+            backDelay: 2000,
+            startDelay: 500,
+            loop: true,
+            showCursor: true,
+            cursorChar: '|'
+        });
+    }
+
+    // Mobile Menu
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    if (menuBtn && mobileMenu) {
+        menuBtn.addEventListener('click', () => {
+            menuBtn.classList.toggle('open');
+            mobileMenu.classList.toggle('hidden');
+        });
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                menuBtn.classList.remove('open');
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    }
+
+    // Navbar scroll effect
+    const navbar = document.getElementById('navbar');
+    let lastScroll = 0;
+    window.addEventListener('scroll', () => {
+        const currentScroll = window.pageYOffset;
+        if (currentScroll <= 0) {
+            navbar.classList.remove('scroll-up');
+            return;
+        }
+        if (currentScroll > lastScroll && !navbar.classList.contains('scroll-down')) {
+            navbar.classList.remove('scroll-up');
+            navbar.classList.add('scroll-down');
+        } else if (currentScroll < lastScroll && navbar.classList.contains('scroll-down')) {
+            navbar.classList.remove('scroll-down');
+            navbar.classList.add('scroll-up');
+        }
+        lastScroll = currentScroll;
+    });
+
+    // Active navigation links
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-link');
+    window.addEventListener('scroll', () => {
+        let current = '';
+        const scrollY = window.pageYOffset;
+        const headerHeight = 100;
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop - headerHeight;
+            const sectionBottom = sectionTop + section.offsetHeight;
+            if (scrollY >= sectionTop && scrollY < sectionBottom) {
+                current = section.getAttribute('id');
+            }
+        });
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === `#${current}`) {
+                link.classList.add('active');
+            }
+        });
+    });
+
+    // Counter animation
+    const counters = document.querySelectorAll('.counter');
+    const speed = 200;
+    const animateCounter = (counter) => {
+        const target = parseInt(counter.getAttribute('data-target'));
+        let count = 0;
+        const updateCount = () => {
+            const increment = target / speed;
+            if (count < target) {
+                count += increment;
+                counter.innerText = Math.ceil(count);
+                setTimeout(updateCount, 1);
+            } else {
+                counter.innerText = target;
+            }
+        };
+        updateCount();
+    };
+    const counterObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                animateCounter(entry.target);
+                counterObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.5 });
+    counters.forEach(counter => counterObserver.observe(counter));
+
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            if (href === '#') return;
+            const target = document.querySelector(href);
+            if (target) {
+                e.preventDefault();
+                const headerOffset = 100;
+                const elementPosition = target.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+            }
+        });
+    });
+
+    // Contact form avec EmailJS
+    const contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+            const submitBtn = contactForm.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
+            const currentLang = localStorage.getItem('preferred-language') || 'en';
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> ' + (currentLang === 'fr' ? 'Envoi...' : 'Sending...');
+            submitBtn.disabled = true;
+            emailjs.sendForm('service_ou9f6zm', 'template_7w1lmkb', this)
+                .then(() => {
+                    showNotification(currentLang === 'fr' ? translations.fr.contact.form.success : translations.en.contact.form.success, 'success');
+                    contactForm.reset();
+                })
+                .catch((error) => {
+                    console.error('EmailJS error:', error);
+                    showNotification(currentLang === 'fr' ? translations.fr.contact.form.error : translations.en.contact.form.error, 'error');
+                })
+                .finally(() => {
+                    submitBtn.innerHTML = originalText;
+                    submitBtn.disabled = false;
+                });
+        });
+    }
+
+    // Dynamic year
+    const yearElement = document.querySelector('.footer .text-gray-500');
+    if (yearElement) {
+        yearElement.innerHTML = `© ${new Date().getFullYear()} Ange KOUMBA. <span data-i18n="footer.rights">All rights reserved.</span>`;
+    }
+
+    // ===== CHARGEMENT DES DONNÉES JSON =====
+    const projectsData = await loadJSON('/content/projects.json');
+    if (projectsData && projectsData.projects) {
+        const sorted = projectsData.projects.sort((a,b) => (a.order || 0) - (b.order || 0));
+        renderProjects(sorted);
+    }
+
+    const certsData = await loadJSON('/content/certifications.json');
+    if (certsData && certsData.certifications) {
+        renderCertifications(certsData.certifications);
+    }
+
+    const expData = await loadJSON('/content/experiences.json');
+    if (expData && expData.experiences) {
+        renderExperiences(expData.experiences);
+    }
+});
+
+// ===== NOTIFICATION SYSTEM =====
+function showNotification(message, type = 'success') {
+    const notification = document.createElement('div');
+    notification.className = `fixed top-24 right-4 z-50 px-6 py-4 rounded-xl shadow-glow-lg animate-slide-left ${
+        type === 'success' ? 'bg-green-500' : 'bg-red-500'
+    } text-white flex items-center gap-3`;
+    notification.innerHTML = `
+        <i class="fas fa-${type === 'success' ? 'check-circle' : 'exclamation-circle'} text-xl"></i>
+        <span>${message}</span>
+    `;
+    document.body.appendChild(notification);
+    setTimeout(() => {
+        notification.style.animation = 'slideRight 0.5s ease-out forwards';
+        setTimeout(() => notification.remove(), 500);
+    }, 4000);
+}
+
+// ===== PARALLAX EFFECT =====
+document.addEventListener('mousemove', (e) => {
+    const shapes = document.querySelectorAll('.floating-shape');
+    const mouseX = e.clientX / window.innerWidth;
+    const mouseY = e.clientY / window.innerHeight;
+    shapes.forEach((shape, index) => {
+        const speed = index + 1;
+        const x = (mouseX * speed * 20) - (speed * 10);
+        const y = (mouseY * speed * 20) - (speed * 10);
+        shape.style.transform = `translate(${x}px, ${y}px)`;
+    });
+});
+
+// ===== PRELOADER =====
+window.addEventListener('load', () => {
+    document.body.classList.add('loaded');
+    document.querySelectorAll('[data-aos]').forEach(el => {
+        el.classList.add('aos-animate');
+    });
+});--- FILE: ./src/input.css ---
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply m-0 p-0 box-border;
+  }
+
+  html {
+    @apply scroll-smooth;
+    scroll-padding-top: 80px;
+  }
+
+  body {
+    @apply bg-dark-500 text-gray-100 font-sans overflow-x-hidden;
+  }
+
+  ::-webkit-scrollbar {
+    @apply w-2;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-dark-300;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-blue-600 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-blue-700;
+  }
+}
+
+@layer components {
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-title {
+    @apply text-4xl md:text-5xl font-display font-bold mb-4;
+  }
+
+  .section-subtitle {
+    @apply text-blue-500 uppercase tracking-widest text-sm mb-2 block;
+  }
+
+  .glass-effect {
+    @apply backdrop-blur-xl bg-dark-200/30 border border-blue-500/20;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 bg-clip-text text-transparent animate-gradient bg-[length:200%_auto];
+  }
+
+  .hover-glow {
+    @apply transition-all duration-300 hover:shadow-glow hover:scale-105;
+  }
+
+  .tech-badge {
+    @apply px-3 py-1 rounded-full text-xs font-mono bg-blue-500/10 text-blue-400 border border-blue-500/20;
+  }
+
+  .project-card {
+    @apply relative overflow-hidden rounded-2xl bg-dark-200/50 border border-blue-500/20 backdrop-blur-sm hover:border-blue-500/40 transition-all duration-500 hover:scale-[1.02] hover:shadow-glow-lg;
+  }
+
+  .nav-link {
+    @apply relative px-4 py-2 text-gray-300 hover:text-blue-400 transition-colors duration-300 after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-0.5 after:bg-blue-500 after:transition-all after:duration-300 hover:after:w-full;
+  }
+
+  .nav-link.active {
+    @apply text-blue-400 after:w-full;
+  }
+
+  .btn-primary {
+    @apply relative px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-full font-medium overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-glow before:absolute before:inset-0 before:bg-gradient-to-r before:from-blue-400 before:to-blue-500 before:opacity-0 hover:before:opacity-100 before:transition-opacity before:duration-300 before:-z-10;
+  }
+
+  .btn-outline {
+    @apply px-8 py-4 border-2 border-blue-500/50 text-blue-400 rounded-full font-medium transition-all duration-300 hover:bg-blue-500/10 hover:border-blue-500 hover:scale-105 hover:shadow-glow;
+  }
+
+  .stat-card {
+    @apply p-6 rounded-2xl bg-dark-200/50 border border-blue-500/20 backdrop-blur-sm transition-all duration-500 hover:scale-105 hover:border-blue-500/40 hover:shadow-glow;
+  }
+
+  .timeline-dot {
+    @apply absolute w-4 h-4 bg-blue-500 rounded-full left-1/2 -translate-x-1/2 border-4 border-dark-500 shadow-glow;
+  }
+
+  .floating-shape {
+    @apply absolute opacity-20 blur-3xl rounded-full bg-gradient-to-r from-blue-600 to-blue-800 animate-blob;
+  }
+}
+
+@layer utilities {
+  .text-shadow {
+    text-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
+  }
+
+  .animation-delay-2000 {
+    animation-delay: 2s;
+  }
+
+  .animation-delay-4000 {
+    animation-delay: 4s;
+  }
+}
