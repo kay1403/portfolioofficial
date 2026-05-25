@@ -4,67 +4,78 @@
       "title": "Back-End Web Development",
       "file": "certificates/Transcript%20-%20backend-%20Ange%20Koumba.pdf",
       "icon": "fas fa-server",
-      "status": "published"
+      "status": "published",
+      "date": "2026-05-25T19:35:39.368Z"
     },
     {
       "title": "Front-End Web Development",
       "file": "certificates/Transcript%20-%20frontenddev-%20Ange%20Koumba-2.pdf",
       "icon": "fas fa-code",
-      "status": "published"
+      "status": "published",
+      "date": "2026-05-25T19:35:39.549Z"
     },
     {
       "title": "Data Analytics",
       "file": "certificates/51-data-analytics-certificate-ange-koumba.png",
       "icon": "fas fa-chart-bar",
-      "status": "published"
+      "status": "published",
+      "date": "2026-05-25T19:35:39.636Z"
     },
     {
       "title": "Python Programming",
       "file": "certificates/189-python-programming-certificate-ange-koumba.png",
       "icon": "fab fa-python",
-      "status": "published"
+      "status": "published",
+      "date": "2026-05-25T19:35:39.710Z"
     },
     {
       "title": "ProDev Backend",
       "file": "certificates/86-prodev-backend-certificate-ange-koumba.png",
       "icon": "fas fa-laptop-code",
-      "status": "published"
+      "status": "published",
+      "date": "2026-05-25T19:35:39.761Z"
     },
     {
       "title": "Founder Academy",
       "file": "certificates/118-founder-academy-4-week-certificate-ange-koumba.png",
       "icon": "fas fa-rocket",
-      "status": "published"
+      "status": "published",
+      "date": "2026-05-25T19:35:39.815Z"
     },
     {
       "title": "Professional Foundations",
       "file": "certificates/89-professional-foundations-certificate-ange-koumba.png",
       "icon": "fas fa-briefcase",
-      "status": "published"
+      "status": "published",
+      "date": "2026-05-25T19:35:39.862Z"
     },
     {
       "title": "Freelancer Academy",
       "file": "certificates/117-freelancer-academy-2-week-certificate-ange-koumba.png",
       "icon": "fas fa-user-tie",
-      "status": "published"
+      "status": "published",
+      "date": "2026-05-25T19:35:39.909Z"
     },
     {
       "title": "Cybersecurity",
-      "file": "",
+      "file": "/images/uploads/159-cybersecurity-certificate-ange-koumba.png",
       "icon": "fas fa-shield-alt",
-      "status": "inprogress"
+      "status": "published",
+      "date": "2026-05-25T19:35:39.955Z"
     },
     {
       "title": "Machine Learning",
       "file": "",
       "icon": "fas fa-brain",
-      "status": "inprogress"
+      "status": "inprogress",
+      "date": "2026-05-25T19:35:40.005Z"
     },
     {
       "title": "Data Engineering",
       "file": "",
       "icon": "fas fa-database",
-      "status": "coming"
+      "status": "coming",
+      "date": "2026-05-25T19:35:40.055Z"
     }
   ]
 }
