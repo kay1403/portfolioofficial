@@ -57,13 +57,6 @@
       "date": "2026-05-25T19:13:04.208Z"
     },
     {
-      "title": "Cybersecurity",
-      "file": "/images/uploads/159-cybersecurity-certificate-ange-koumba.png",
-      "icon": "fas fa-shield-alt",
-      "status": "published",
-      "date": "2026-05-25T19:13:04.287Z"
-    },
-    {
       "title": "Machine Learning",
       "file": "",
       "icon": "fas fa-brain",
@@ -76,6 +69,13 @@
       "icon": "fas fa-database",
       "status": "coming",
       "date": "2026-05-25T19:13:04.389Z"
+    },
+    {
+      "icon": "fa-certificate",
+      "status": "published",
+      "date": "2026-05-25T19:20:31.457Z",
+      "title": "Cybersecurity",
+      "file": "/images/uploads/159-cybersecurity-certificate-ange-koumba.png"
     }
   ]
 }
