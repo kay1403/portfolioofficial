@@ -1,6 +1,6 @@
 backend:
   name: git-gateway
-  branch: certification
+  branch: prod
 
 site_url: https://angekoumbaportfolio.netlify.app   # À remplacer par votre URL
 
