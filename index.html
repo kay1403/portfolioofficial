@@ -31,15 +31,7 @@
     <!-- AOS Animation -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
-    <script>
-  // Redirection automatique vers /admin après acceptation d'invitation
-  (function() {
-    if (window.location.hash && window.location.hash.indexOf('invite_token') !== -1) {
-      // On garde le hash (jeton) et on va vers /admin
-      window.location.href = '/admin' + window.location.hash;
-    }
-  })();
-</script>
+    <!-- Plus aucun script de redirection manuel ici – le widget Identity gère tout -->
 </head>
 <body class="relative">
     <!-- Floating Background Elements -->
@@ -202,17 +194,6 @@
                 </div>
             </div>
         </div>
-
-        <!-- Scroll Indicator 
-        <div class="absolute bottom-8 left-1/2 -translate-x-1/2">
-            <a href="#about" class="flex flex-col items-center space-y-2 group">
-                <span class="text-sm text-gray-400 group-hover:text-blue-400 transition-colors" data-i18n="hero.scroll">Scroll</span>
-                <div class="w-6 h-10 border-2 border-gray-400 rounded-full flex justify-center group-hover:border-blue-400 transition-colors">
-                    <div class="w-1 h-2 bg-gray-400 rounded-full mt-2 animate-bounce group-hover:bg-blue-400"></div>
-                </div>
-            </a>
-        </div>
-        -->
     </section>
 
     <!-- About Section -->
@@ -494,9 +475,6 @@
                         <span class="tech-badge">Redux</span>
                         <span class="tech-badge">Next.js (App Router)</span>
                         <span class="tech-badge">Zustand</span>
-
-                        
-
                     </div>
                 </div>
 
@@ -541,8 +519,7 @@
                         <span class="tech-badge">DRF</span>
                         <span class="tech-badge">MySQL</span>
                         <span class="tech-badge">PostgreSQL</span>
-                         <span class="tech-badge">MongoDB</span>
-
+                        <span class="tech-badge">MongoDB</span>
                     </div>
                 </div>
 
@@ -791,5 +768,18 @@
         })();
     </script>
     <script src="dist/js/main.js"></script>
+
+    <!-- Netlify Identity Widget + redirection automatique après connexion -->
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <script>
+      window.netlifyIdentity = window.netlifyIdentity || {};
+      window.netlifyIdentity.on("init", user => {
+        if (!user) {
+          window.netlifyIdentity.on("login", () => {
+            document.location.href = "/admin/";
+          });
+        }
+      });
+    </script>
 </body>
 </html>
