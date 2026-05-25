@@ -4,10 +4,12 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Admin - Ange KOUMBA Portfolio</title>
+  <!-- ✅ Netlify Identity Widget (obligatoire pour login/register) -->
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 <body>
   <script>
-    // Charger Decap CMS uniquement après que le DOM soit prêt
+    // Charger Decap CMS après le DOM
     (function() {
       var script = document.createElement('script');
       script.src = 'https://unpkg.com/decap-cms@3.0.0/dist/decap-cms.js';
