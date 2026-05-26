@@ -136,7 +136,7 @@
       ],
       "order": 0,
       "title": "LoveSurpriseExpress",
-      "description": "website use to make surprise to people",
+      "description": "Service de surprises et cadeaux personnalisés avec livraison (paniers, bouquets et packs événementiels) pour anniversaires, occasions spéciales et attentions romantiques.\n",
       "demo": "lovesupriseexpress.com"
     },
     {
@@ -144,7 +144,7 @@
       "tech": [],
       "order": 0,
       "title": "gabspot",
-      "description": "Marketplace ",
+      "description": "Plateforme de marketplace dédiée aux ventes et échanges dans la communauté gabonaise, permettant aux vendeurs de publier des produits et aux acheteurs de les découvrir via un catalogue organisé avec filtres et visibilité locale.\n",
       "demo": "gabspot.netlify.app"
     }
   ]
