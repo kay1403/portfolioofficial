@@ -159,6 +159,78 @@
       "title": "gabspot",
       "description": "Plateforme de marketplace dédiée aux ventes et échanges dans la communauté gabonaise, permettant aux vendeurs de publier des produits et aux acheteurs de les découvrir via un catalogue organisé avec filtres et visibilité locale.\n",
       "demo": "gabspot.netlify.app"
+    },
+    {
+      "image": "/images/uploads/portfolio2.jpg",
+      "tech": [
+        "Python",
+        "Pandas",
+        "NumPy",
+        "Scikit-learn",
+        "XGBoost",
+        "Flask",
+        "FastAPI",
+        "PostgreSQL",
+        "Jupyter Notebook",
+        "Docker"
+      ],
+      "order": 5,
+      "title": "Banking Fraud Detection System",
+      "description": "Machine learning system designed to detect fraudulent banking transactions in real time by analyzing patterns, anomalies, and user behavior to reduce financial risks and improve security.\n"
+    },
+    {
+      "image": "/images/uploads/portfolio2.jpg",
+      "tech": [
+        "Python",
+        "Pandas",
+        "NumPy",
+        "Scikit-learn",
+        "SQL",
+        "PostgreSQL",
+        "Matplotlib",
+        "Seaborn",
+        "Jupyter Notebook",
+        "XGBoost"
+      ],
+      "order": 3,
+      "title": "Credit Risk Analytics System",
+      "description": "Data-driven credit risk analysis platform that evaluates customer creditworthiness using predictive modeling and statistical analysis to support better loan approval decisions.\n"
+    },
+    {
+      "image": "/images/uploads/portfolio2.jpg",
+      "tech": [
+        "Python",
+        "Pandas",
+        "NumPy",
+        "Scikit-learn",
+        "K-Means Clustering",
+        "PCA",
+        "Matplotlib",
+        "Seaborn",
+        "Jupyter Notebook",
+        "SQL"
+      ],
+      "order": 10,
+      "title": "Customer Segmentation Analysis",
+      "description": "Clustering-based analysis of customers to identify distinct groups based on behavior, purchasing patterns, and demographics in order to improve targeted marketing strategies and business decisions.\n"
+    },
+    {
+      "image": "/images/uploads/portfolio2.jpg",
+      "tech": [
+        "Python",
+        "Pandas",
+        "NumPy",
+        "Prophet",
+        "ARIMA",
+        "Scikit-learn",
+        "Matplotlib",
+        "Seaborn",
+        "Jupyter Notebook",
+        "SQL"
+      ],
+      "order": 15,
+      "title": "Sales Forecasting System",
+      "description": "Time series forecasting model designed to predict future sales trends using historical data to help businesses optimize inventory management and demand planning.\n"
     }
   ]
 }
