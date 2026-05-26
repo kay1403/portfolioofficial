@@ -194,7 +194,8 @@
       ],
       "order": 3,
       "title": "Credit Risk Analytics System",
-      "description": "Data-driven credit risk analysis platform that evaluates customer creditworthiness using predictive modeling and statistical analysis to support better loan approval decisions.\n"
+      "description": "Data-driven credit risk analysis platform that evaluates customer creditworthiness using predictive modeling and statistical analysis to support better loan approval decisions.\n",
+      "github": "https://github.com/kay1403/credit-risk-analytics.git"
     },
     {
       "image": "/images/uploads/portfolio2.jpg",
