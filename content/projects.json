@@ -130,9 +130,13 @@
       "image": "/images/uploads/portfolio2.jpg",
       "tech": [
         "Next.js",
-        "TailwindCSS",
-        "framer motion",
-        "netlify cms"
+        "TypeScript",
+        "Tailwind CSS",
+        "Netlify Functions",
+        "Netlify Identity",
+        "Netlify Blobs",
+        "Google Apps Script",
+        "i18n"
       ],
       "order": 0,
       "title": "LoveSurpriseExpress",
@@ -141,7 +145,16 @@
     },
     {
       "image": "/images/uploads/gemini_generated_image_838yuu838yuu838y.png",
-      "tech": [],
+      "tech": [
+        "Next.js",
+        "TypeScript",
+        "Supabase (Auth",
+        "Postgres",
+        "Storage",
+        "Realtime)",
+        "Tailwind CSS",
+        "Capacitor"
+      ],
       "order": 0,
       "title": "gabspot",
       "description": "Plateforme de marketplace dédiée aux ventes et échanges dans la communauté gabonaise, permettant aux vendeurs de publier des produits et aux acheteurs de les découvrir via un catalogue organisé avec filtres et visibilité locale.\n",
