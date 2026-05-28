@@ -310,13 +310,13 @@ window.downloadCV = function() {
         <div class="bg-dark-200 p-8 rounded-2xl border border-blue-500/20 max-w-md w-full mx-4">
             <h3 class="text-2xl font-bold text-white mb-6 text-center" data-i18n="cv.title">Choose your language</h3>
             <div class="space-y-4">
-                <a href="Resume/Ange%20KOUMBA%20Resume%282025%29.pdf" 
-                   download="Ange_KOUMBA_CV_FR.pdf"
+                <a href="Resume/AngeKoumba_fr_cv.pdf"
+                   download="AngeKoumba_fr_cv.pd"
                    class="block w-full py-4 px-6 bg-blue-600 hover:bg-blue-700 rounded-xl text-white font-medium text-center transition-all">
                     🇫🇷 <span data-i18n="cv.french">French CV</span>
                 </a>
-                <a href="Resume/Ange%20KOUMBA%20Resume%282025%29_EN.pdf" 
-                   download="Ange_KOUMBA_CV_EN.pdf"
+                <a href="Resume/AngeKoumba_en_cv.pdf"
+                   download="AngeKoumba_en_cv.pdf"
                    class="block w-full py-4 px-6 bg-blue-600 hover:bg-blue-700 rounded-xl text-white font-medium text-center transition-all">
                     🇬🇧 <span data-i18n="cv.english">English CV</span>
                 </a>
