@@ -311,7 +311,7 @@ window.downloadCV = function() {
             <h3 class="text-2xl font-bold text-white mb-6 text-center" data-i18n="cv.title">Choose your language</h3>
             <div class="space-y-4">
                 <a href="Resume/AngeKoumba_fr_cv.pdf"
-                   download="AngeKoumba_fr_cv.pd"
+                   download="AngeKoumba_fr_cv.pdf"
                    class="block w-full py-4 px-6 bg-blue-600 hover:bg-blue-700 rounded-xl text-white font-medium text-center transition-all">
                     🇫🇷 <span data-i18n="cv.french">French CV</span>
                 </a>
