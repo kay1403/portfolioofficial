@@ -12,7 +12,7 @@
       ],
       "github": "https://github.com/kay1403/library-management-system-api",
       "demo": "https://libraryms-tfsy.onrender.com",
-      "order": 1
+      "order": 5
     },
     {
       "title": "E-commerce Backend",
@@ -174,7 +174,7 @@
         "Jupyter Notebook",
         "Docker"
       ],
-      "order": 5,
+      "order": 3,
       "title": "Banking Fraud Detection System",
       "description": "Machine learning system designed to detect fraudulent banking transactions in real time by analyzing patterns, anomalies, and user behavior to reduce financial risks and improve security.\n"
     },
@@ -211,7 +211,7 @@
         "Jupyter Notebook",
         "SQL"
       ],
-      "order": 10,
+      "order": 2,
       "title": "Customer Segmentation Analysis",
       "description": "Clustering-based analysis of customers to identify distinct groups based on behavior, purchasing patterns, and demographics in order to improve targeted marketing strategies and business decisions.\n"
     },
