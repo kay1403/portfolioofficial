@@ -1,6 +1,24 @@
 {
   "projects": [
     {
+      "image": "/images/uploads/portfolio2.jpg",
+      "tech": [
+        "Python",
+        "Pandas",
+        "NumPy",
+        "Scikit-learn",
+        "K-Means Clustering",
+        "PCA",
+        "Matplotlib",
+        "Seaborn",
+        "Jupyter Notebook",
+        "SQL"
+      ],
+      "order": 2,
+      "title": "Customer Segmentation Analysis",
+      "description": "Clustering-based analysis of customers to identify distinct groups based on behavior, purchasing patterns, and demographics in order to improve targeted marketing strategies and business decisions.\n"
+    },
+    {
       "title": "Library Management System",
       "description": "Système de gestion de bibliothèque avec <span class='text-blue-400'>Django</span>,<br>API REST, et authentification JWT.",
       "image": "images/portfolio1.jpg",
@@ -196,24 +214,6 @@
       "title": "Credit Risk Analytics System",
       "description": "Data-driven credit risk analysis platform that evaluates customer creditworthiness using predictive modeling and statistical analysis to support better loan approval decisions.\n",
       "github": "https://github.com/kay1403/credit-risk-analytics.git"
-    },
-    {
-      "image": "/images/uploads/portfolio2.jpg",
-      "tech": [
-        "Python",
-        "Pandas",
-        "NumPy",
-        "Scikit-learn",
-        "K-Means Clustering",
-        "PCA",
-        "Matplotlib",
-        "Seaborn",
-        "Jupyter Notebook",
-        "SQL"
-      ],
-      "order": 2,
-      "title": "Customer Segmentation Analysis",
-      "description": "Clustering-based analysis of customers to identify distinct groups based on behavior, purchasing patterns, and demographics in order to improve targeted marketing strategies and business decisions.\n"
     },
     {
       "image": "/images/uploads/portfolio2.jpg",
