@@ -33,6 +33,20 @@
       "order": 5
     },
     {
+      "title": "ENTRESAAS",
+      "description": "Plateforme SaaS avec authentification 2FA,<br>RBAC, et audit trail.",
+      "image": "images/portfolio6.jpg",
+      "tech": [
+        "NestJS",
+        "React",
+        "PostgreSQL",
+        "JWT"
+      ],
+      "github": "https://github.com/kay1403/ENTRESAAS",
+      "demo": "",
+      "order": 6
+    },
+    {
       "title": "E-commerce Backend",
       "description": "Backend complet pour plateforme e-commerce<br>avec <span class='text-blue-400'>Django REST Framework</span>.",
       "image": "images/portfolio2.jpg",
@@ -87,20 +101,6 @@
       "github": "https://github.com/kay1403/BornSafe",
       "demo": "",
       "order": 5
-    },
-    {
-      "title": "ENTRESAAS",
-      "description": "Plateforme SaaS avec authentification 2FA,<br>RBAC, et audit trail.",
-      "image": "images/portfolio6.jpg",
-      "tech": [
-        "NestJS",
-        "React",
-        "PostgreSQL",
-        "JWT"
-      ],
-      "github": "https://github.com/kay1403/ENTRESAAS",
-      "demo": "",
-      "order": 6
     },
     {
       "title": "SAWAI",
