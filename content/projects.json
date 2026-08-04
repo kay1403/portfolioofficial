@@ -33,6 +33,20 @@
       "order": 5
     },
     {
+      "title": "Baumeister",
+      "description": "Clone of the Baumeister website - Group project with modern and responsive design.",
+      "image": "images/portfolio2.jpg",
+      "tech": [
+        "HTML5",
+        "CSS3",
+        "JavaScript",
+        "Responsive"
+      ],
+      "github": "",
+      "demo": "https://websiteprojectgroup3.netlify.app",
+      "order": 9
+    },
+    {
       "title": "ENTRESAAS",
       "description": "Plateforme SaaS avec authentification 2FA,<br>RBAC, et audit trail.",
       "image": "images/portfolio6.jpg",
@@ -129,20 +143,6 @@
       "github": "",
       "demo": "https://tailwindcloninggate.netlify.app",
       "order": 8
-    },
-    {
-      "title": "Baumeister",
-      "description": "Clone of the Baumeister website - Group project with modern and responsive design.",
-      "image": "images/portfolio2.jpg",
-      "tech": [
-        "HTML5",
-        "CSS3",
-        "JavaScript",
-        "Responsive"
-      ],
-      "github": "",
-      "demo": "https://websiteprojectgroup3.netlify.app",
-      "order": 9
     },
     {
       "image": "/images/uploads/portfolio2.jpg",
